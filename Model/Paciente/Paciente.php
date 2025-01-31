@@ -5,9 +5,9 @@
  * @author Nai
  */
 
-namespace Plugins\Oftalmol\Model;
+namespace FacturaScripts\Plugins\Oftalmol\Model\Paciente;
 
-use Core\Model\Base;
+use FacturaScripts\Core\Model\Base;
 
 class Paciente extends Base\ModelClass{
     use Base\ModelTrait;
@@ -46,6 +46,6 @@ class Paciente extends Base\ModelClass{
 
     #[\Override]
     public static function tableName(): string {
-        return 'oft_pacientes';
+        return 'pacientes';
     }
 }
