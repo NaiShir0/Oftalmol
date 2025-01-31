@@ -18,13 +18,13 @@ class ListPaciente extends ListController{
      * Inserts the views or tabs to display.
      */
     #[\Override]
-    protected function createViews(string $viewName = 'Paciente\ListPaciente')
+    protected function createViews(string $viewName = 'ListPaciente')
     {
         
-        $this->addView($viewName, 'Paciente\Paciente');
+        $this->addView($viewName, 'Paciente');
         $this->addSearchFields($viewName, ['clientes.nombre', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
         //Desactivamos botones por defecto
-        $this->setSettings($viewName, 'btnNew', false);
+        $this->setSettings($viewName, 'btnNew', true);
         $this->setSettings($viewName, 'btnDelete', false);
         $this->setSettings($viewName, 'btnPrint', false);
         //Add Filter options

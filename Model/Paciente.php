@@ -5,7 +5,7 @@
  * @author Nai
  */
 
-namespace FacturaScripts\Plugins\Oftalmol\Model\Paciente;
+namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;
 
