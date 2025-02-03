@@ -30,15 +30,15 @@
     </column>
 
     <constraint>
-        <name>ofc_expedientes_pkey</name>
+        <name>oft_expedientes_pkey</name>
         <type>PRIMARY KEY (id)</type>
     </constraint>
     <constraint>
-        <name>ca_ofc_expedientes_clientes</name>
+        <name>ca_oft_expedientes_clientes</name>
         <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
     <constraint>
-        <name>ca_ofc_expedientes_motivos</name>
+        <name>ca_oft_expedientes_motivos</name>
         <type>FOREIGN KEY (idmotivo) REFERENCES oft_motivos (id) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
 </table>

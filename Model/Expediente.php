@@ -60,6 +60,6 @@ class Expediente extends Base\ModelClass {
 
     #[\Override]
     public static function tableName(): string {
-        return 'expedientes';
+        return 'oft_expedientes';
     }
 }

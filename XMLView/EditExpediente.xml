@@ -26,6 +26,7 @@
             </column>
         </group>
     </columns>
+    
     <modals>
         <group name="print-dossier" title="print-report" icon="print">
             <column name="fecha_report" title="print-date" numcolumns="6" >

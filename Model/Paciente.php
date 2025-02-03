@@ -40,6 +40,6 @@ class Paciente extends Base\ModelClass{
 
     #[\Override]
     public static function tableName(): string {
-        return 'pacientes';
+        return 'oft_pacientes';
     }
 }
