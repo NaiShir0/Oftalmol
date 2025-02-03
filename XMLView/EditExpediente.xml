@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="expedient" numcolumns="12">
+            <column name="code" display="none" order="100">
+                <widget type="text" fieldname="id" />
+            </column>
+            <column name="date-expedient" numcolumns="2" order="110">
+                <widget type="date" fieldname="fecha"/>
+            </column>
+            <column name="datemod" numcolumns="2" order="120">
+                    <widget type="datetime" fieldname="fechamodificacion"/>
+            </column>
+            <column name="patient" order="120">
+                <widget type="autocomplete" fieldname="codcliente" required="true" readonly="dinamic" onclick="EditCliente">
+                    <values source="clientes" fieldcode="codcliente" fieldtitle="nombre"></values>
+                </widget>
+            </column>
+            <column name="reason" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
+                <widget type="select" fieldname="idmotivo" required="true" readonly="dinamic" onclick="EditMotivo">
+                    <values source="oft_motivos" fieldcode="id" fieldtitle="name"/>
+                </widget>
+            </column>
+            <column name="discharge" numcolumns="2" order="140">
+                <widget type="date" fieldname="alta" readonly="true" />
+            </column>
+        </group>
+    </columns>
+    <modals>
+        <group name="print-dossier" title="print-report" icon="print">
+            <column name="fecha_report" title="print-date" numcolumns="6" >
+                <widget type="select" fieldname="fecha_report" required="true">
+                    <values>
+                    </values>
+                </widget>
+            </column>
+            <column name="test-to-date" title="test-to-date" numcolumns="6">
+                <widget type="date" fieldname="fecha_hasta" required="false"/>
+            </column>
+        </group>
+        <group name="print-treatment" title="print-treatment" icon="print">
+            <column name="fecha_treatment" title="print-date" numcolumns="6" >
+                <widget type="select" fieldname="fecha_treatment" required="true">
+                    <values>
+                    </values>
+                </widget>
+            </column>
+            <column name="test-to-date" title="test-to-date" numcolumns="6">
+                <widget type="date" fieldname="fecha_hasta" required="false"/>
+            </column>
+        </group>
+    </modals>
+</view>

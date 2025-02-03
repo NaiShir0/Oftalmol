@@ -3,7 +3,7 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 
-class EditPaciente extends EditController{
+class EditExpediente extends EditController{
     /**
      * Return the basic data for this page.
      *
@@ -12,13 +12,14 @@ class EditPaciente extends EditController{
     public function getPageData(): array {
         $data = parent::getPageData();
         $data['menu'] = 'ophthalmology';
-        $data['title'] = 'patients';
-        $data['icon'] = 'fas fa-bezier-curve';
+        $data['title'] = 'expedient';
+        $data['showonmenu'] = false;
+        $data['icon'] = 'fas fa-layer-group';
         return $data;
     }
     
     #[\Override]
-    public function getModelClassName(): string{
-        return 'Paciente';
+    public function getModelClassName(): string {
+        return 'Expediente';
     }
 }

@@ -1,10 +1,4 @@
 <?php
-/**
- * Description of Paciente
- *
- * @author Nai
- */
-
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;

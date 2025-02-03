@@ -28,11 +28,11 @@
     </column>
 
     <constraint>
-        <name>pacientes_pkey</name>
+        <name>ofc_pacientes_pkey</name>
         <type>PRIMARY KEY (codcliente)</type>
     </constraint>
     <constraint>
-        <name>ca_pacientes_clientes</name>
+        <name>ca_ofc_pacientes_clientes</name>
         <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
 </table>
