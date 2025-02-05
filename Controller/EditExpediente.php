@@ -2,6 +2,7 @@
 namespace FacturaScripts\Plugins\Oftalmol\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
+use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 class EditExpediente extends EditController{
     /**
@@ -21,5 +22,55 @@ class EditExpediente extends EditController{
     #[\Override]
     public function getModelClassName(): string {
         return 'Expediente';
+    }
+    /**
+     *
+     * @param string $viewName
+     * @param string $columnName
+     * @param int $numcolumns
+     */
+    private function setNumColumns(string $viewName, string $columnName, int $numcolumns)
+    {
+        $column = $this->views[$viewName]->columnForName($columnName);
+        if (isset($column)) {
+            $column->numcolumns = $numcolumns;
+        }
+    }
+    
+    /**
+     * Create the view to display.
+     */
+    protected function createViews()
+    {
+        parent::createViews();
+        $this->setTabsPosition('left-bottom');
+
+        $this->createViewPatient();
+        //$this->createViewAnamnesis();
+        //$this->createViewNotasProfesional();
+        //$this->createViewAcuity();
+        //$this->createViewFissureLamp();
+        //$this->createViewFuncionMotora();
+        //$this->createViewPresionIntraocular();
+        //$this->createViewViaLagrimal();
+        // $this->createViewExploration();
+          // $this->createViewTest();
+        //$this->createViewComplementary();
+
+        //$this->createViewEvolution();
+        //  $this->createViewClinicalJudgment();
+        //  $this->createViewTreatment();
+        //  $this->createViewPrescription();
+
+        //$this->createViewExpedientFiles();
+    }
+    private function createViewPatient(string $viewName = Constants::VIEW_PATIENT)
+    {
+        $this->addEditView($viewName, 'Paciente', 'clinic-history', 'fas fa-user-injured');
+        $this->setSettings($viewName, 'btnDelete', false);
+        $this->setNumColumns($viewName, 'allergies', 6);
+        $this->setNumColumns($viewName, 'ophthalmological-history', 6);
+        $this->setNumColumns($viewName, 'personal-history', 6);
+        $this->setNumColumns($viewName, 'family-history', 6);
     }
 }

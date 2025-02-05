@@ -8,28 +8,11 @@ class Expediente extends Base\ModelClass {
     use Base\ModelTrait;
     
     /**
-     *
+     * Strings variables
      * @var string
      */
     public $alta;
-
-    /**
-     * Link to Patient model.
-     *
-     * @var string
-     */
-    public $codcliente;
-
-    /**
-     *
-     * @var string
-     */
     public $fecha;
-	
-    /**
-     *
-     * @var string
-     */
     public $fechamodificacion;
 
     /**
@@ -45,6 +28,12 @@ class Expediente extends Base\ModelClass {
      * @var int
      */
     public $idmotivo;
+     /**
+     * Link to Patient model.
+     *
+     * @var string
+     */
+    public $codcliente;
     
     public function clear() {
         parent::clear();
