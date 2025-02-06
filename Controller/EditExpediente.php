@@ -10,6 +10,7 @@ class EditExpediente extends EditController{
      *
      * @return array
      */
+    #[\Override]
     public function getPageData(): array {
         $data = parent::getPageData();
         $data['menu'] = 'ophthalmology';
@@ -40,6 +41,7 @@ class EditExpediente extends EditController{
     /**
      * Create the view to display.
      */
+    #[\Override]
     protected function createViews()
     {
         parent::createViews();
@@ -76,7 +78,18 @@ class EditExpediente extends EditController{
     
     private function createViewAnamnesis(string $viewName = Constants::VIEW_ANAMNESIS)
     {
-        $this->addEditListView($viewName, 'Anamnesis', 'anamnesis', 'fas fa-chart-line');
+        $this->createViewTest();
+        
+       
+    }
+    private function createViewTest(string $viewName = Constants::VIEW_ANAMNESIS){
+        $this->addEditListView($viewName, 'Anamnesis', 'Notes', 'fas fa-chart-line');
+        
         $this->views[$viewName]->setInLine(true);
     }
+    /*private function createViewNotasProfesional(string $viewName = Constants::VIEW_ANAMNESIS)
+    {
+        $this->addEditListView($viewName, 'Anamnesis', 'professional-notes', 'fas fa-glasses');
+        $this->views[$viewName]->setInLine(true);
+    }*/
 }

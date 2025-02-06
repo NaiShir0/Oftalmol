@@ -8,6 +8,7 @@ class Constants {
     const VIEW_PATIENT = 'EditPaciente';
     const VIEW_EXPEDIENTE = 'ListExpediente';
     const VIEW_ANAMNESIS = 'EditAnamnesis';
-    
+    const VIEW_NOTASPROFESIONAL = 'EditNotasProfesional';
+
     //ACTIONS
 }

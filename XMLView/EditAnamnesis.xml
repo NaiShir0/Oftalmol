@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+
+        <columns>
+            <column name="code" display="none" order="100">
+                <widget type="text" fieldname="id" readonly="true" />
+            </column>
+            <column name="expedient" display="none" order="110">
+                <widget type="text" fieldname="idexpediente" readonly="true" />
+            </column>
+            <column name="date" numcolumns="2" order="120">
+                <widget type="date" fieldname="fecha" required="true" />
+            </column>
+            <column name="anamnesis" order="130">
+                <widget type="textarea" fieldname="name" required="true" rows="2"/>
+            </column>
+        </columns>
+    <!--
+    <group name="Group 2">
+        <columns>
+            <column name="code_2" display="none" order="200">
+                <widget type="text" fieldname="id_2" readonly="true" />
+            </column>
+            <column name="expedient_2" display="none" order="210">
+                <widget type="text" fieldname="idexpediente_2" readonly="true" />
+            </column>
+            <column name="date_2" numcolumns="2" order="220">
+                <widget type="date" fieldname="fecha_2" required="true" />
+            </column>
+            <column name="anamnesis_2" order="230">
+                <widget type="textarea" fieldname="name_2" required="true" rows="2"/>
+            </column>
+        </columns>
+    </group>
+        -->
+</view>
