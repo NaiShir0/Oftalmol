@@ -1,9 +1,21 @@
 <?php namespace FacturaScripts\Plugins\Oftalmol\Model\Join;
 
 use FacturaScripts\Core\Model\Base\JoinModel;
+use FacturaScripts\Dinamic\Model\Paciente as DinPaciente;
 
 class PacienteJoin extends JoinModel{
     //put your code here
+    /**
+     * Constructor and class initializer.
+     *
+     * @param array $data
+     */
+    #[\Override]
+    public function __construct($data = array())
+    {
+        parent::__construct($data);
+        $this->setMasterModel( new DinPaciente );
+    }
     
     #[\Override]
     protected function getFields(): array {

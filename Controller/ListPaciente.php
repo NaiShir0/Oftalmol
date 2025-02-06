@@ -25,7 +25,7 @@ class ListPaciente extends ListController{
         $this->addView($viewName, 'Join\PacienteJoin', 'patients', 'fas fa-user-injured');
         $this->addSearchFields($viewName, ['clientes.nombre', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
         //Desactivamos botones por defecto
-        $this->setSettings($viewName, 'btnNew', true);
+        $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
         $this->setSettings($viewName, 'btnPrint', false);
         //Add Filter options

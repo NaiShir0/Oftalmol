@@ -46,7 +46,7 @@ class EditExpediente extends EditController{
         $this->setTabsPosition('left-bottom');
 
         $this->createViewPatient();
-        //$this->createViewAnamnesis();
+        $this->createViewAnamnesis();
         //$this->createViewNotasProfesional();
         //$this->createViewAcuity();
         //$this->createViewFissureLamp();
@@ -72,5 +72,11 @@ class EditExpediente extends EditController{
         $this->setNumColumns($viewName, 'ophthalmological-history', 6);
         $this->setNumColumns($viewName, 'personal-history', 6);
         $this->setNumColumns($viewName, 'family-history', 6);
+    }
+    
+    private function createViewAnamnesis(string $viewName = Constants::VIEW_ANAMNESIS)
+    {
+        $this->addEditListView($viewName, 'Anamnesis', 'anamnesis', 'fas fa-chart-line');
+        $this->views[$viewName]->setInLine(true);
     }
 }

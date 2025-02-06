@@ -1,6 +1,7 @@
 <?php namespace FacturaScripts\Plugins\Oftalmol\Model\Join;
 
 use FacturaScripts\Core\Model\Base\JoinModel;
+use FacturaScripts\Dinamic\Model\Expediente as DinExpediente;
 /**
  * Description of ExpedienteJoin
  *
@@ -8,6 +9,12 @@ use FacturaScripts\Core\Model\Base\JoinModel;
  */
 class ExpedienteJoin extends JoinModel {
     //put your code here
+    public function __construct($data = array())
+    {
+        parent::__construct($data);
+        $this->setMasterModel( new DinExpediente() );
+    }
+    
     #[\Override]
     protected function getFields(): array {
         return [
