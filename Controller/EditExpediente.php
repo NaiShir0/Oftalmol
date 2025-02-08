@@ -49,7 +49,7 @@ class EditExpediente extends EditController{
 
         $this->createViewPatient();
         $this->createViewAnamnesis();
-        //$this->createViewNotasProfesional();
+        $this->createViewNotasProfesional();
         //$this->createViewAcuity();
         //$this->createViewFissureLamp();
         //$this->createViewFuncionMotora();
@@ -77,19 +77,14 @@ class EditExpediente extends EditController{
     }
     
     private function createViewAnamnesis(string $viewName = Constants::VIEW_ANAMNESIS)
-    {
-        $this->createViewTest();
-        
-       
-    }
-    private function createViewTest(string $viewName = Constants::VIEW_ANAMNESIS){
-        $this->addEditListView($viewName, 'Anamnesis', 'Notes', 'fas fa-chart-line');
-        
+    {        
+        $this->addEditListView($viewName, 'Notas', 'anamnesis', 'fas fa-chart-line');
         $this->views[$viewName]->setInLine(true);
     }
-    /*private function createViewNotasProfesional(string $viewName = Constants::VIEW_ANAMNESIS)
+ 
+    private function createViewNotasProfesional(string $viewName = Constants::VIEW_NOTASPROFESIONAL)
     {
-        $this->addEditListView($viewName, 'Anamnesis', 'professional-notes', 'fas fa-glasses');
+        $this->addEditListView($viewName, 'Notas', 'profesionalNotes', 'fas fa-glasses');
         $this->views[$viewName]->setInLine(true);
-    }*/
+    }
 }

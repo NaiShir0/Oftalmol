@@ -11,8 +11,8 @@
         <column name="date" numcolumns="2" order="120">
             <widget type="date" fieldname="fecha" required="true" />
         </column>
-        <column name="anamnesis" order="130">
-            <widget type="textarea" fieldname="anamnesis" required="true" rows="2"/>
+        <column name="notasProfesional" order="130">
+            <widget type="textarea" fieldname="notasProfesional" required="true" rows="2"/>
         </column>
     </columns>
 

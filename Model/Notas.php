@@ -5,13 +5,19 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 use FacturaScripts\Core\Model\Base;
 
 /**
- * Description of NotasProfesional
+ * Description of Notes
  *
  * @author Nai
  */
-class NotasProfesional extends Base\ModelClass {
+class Notas extends Base\ModelClass {
 
     use Base\ModelTrait;
+
+    /** Evolution description.
+     *
+     * @var string
+     */
+    public $Evolution;
 
     /**
      *
@@ -32,13 +38,6 @@ class NotasProfesional extends Base\ModelClass {
      * @var int
      */
     public $idexpediente;
-
-    /**
-     * Evolution description.
-     *
-     * @var string
-     */
-    public $Evolution;
 
     /**
      * Reset the values of all model properties.
@@ -66,6 +65,7 @@ class NotasProfesional extends Base\ModelClass {
      * @Return string
      */
 
+    #[\Override]
     public static function primaryColumn(): string {
         return 'id';
     }
@@ -75,8 +75,9 @@ class NotasProfesional extends Base\ModelClass {
      *
      * @return string
      */
+    #[\Override]
     public static function tableName(): string {
-        return 'oft_professionalnotes';
+        return 'oft_notas';
     }
 
     /**

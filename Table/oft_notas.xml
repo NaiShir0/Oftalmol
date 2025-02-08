@@ -22,11 +22,11 @@
 
 
     <constraint>
-        <name>oft_anamnesis_pkey</name>
+        <name>oft_notas_pkey</name>
         <type>PRIMARY KEY (id)</type>
     </constraint>
     <constraint>
-        <name>ca_oft_anamnesis_expedientes</name>
+        <name>ca_oft_notas_expedientes</name>
         <type>FOREIGN KEY (idexpediente) REFERENCES oft_expedientes (id) ON DELETE CASCADE ON UPDATE CASCADE</type>
     </constraint>
 </table>
