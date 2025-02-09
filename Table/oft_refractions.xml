@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table>
+    <column>
+        <name>id</name>
+        <type>serial</type>
+    </column>
+    <column>
+        <name>idSpeciality</name>
+        <type>integer</type>
+    </column>
+    <column>
+        <name>idExpedient</name>
+        <type>int</type>
+    </column>
+    <column>
+        <name>idTestType</name>
+        <type>int</type>
+    </column>
+        <column>
+        <name>idGlassesType</name>
+        <type>int</type>
+    </column>
+    <column>
+        <name>creationDate</name>
+        <type>datetime</type>
+    </column>
+    
+<!-- Campos para el lejos del OD -->
+    <column>
+        <name>ODfarSphere</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>ODfarCylinder</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>ODfarAxis</name>
+        <type>int</type>
+    </column>
+    <column>
+        <name>ODfarPrism</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>ODfarAcuity</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>ODfarAddition</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>ODfarNote</name>
+        <type>text</type>
+    </column>
+    
+<!-- Campos para el lejos del OS -->
+    <column>
+        <name>OSfarSphere</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>OSfarCylinder</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>OSfarAxis</name>
+        <type>int</type>
+    </column>
+    <column>
+        <name>OSfarPrism</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>OSfarAcuity</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>OSfarAddition</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>OSfarNote</name>
+        <type>text</type>
+    </column>
+    
+<!-- Campos para el cerca del OD -->
+    <column>
+        <name>ODcloseSphere</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>ODcloseCylinder</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>ODcloseAxis</name>
+        <type>int</type>
+    </column>
+    <column>
+        <name>ODcloseNote</name>
+        <type>text</type>
+    </column>
+    
+<!-- Campos para el cerca del OS -->
+    <column>
+        <name>OScloseSphere</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>OScloseCylinder</name>
+        <type>decimal</type>
+    </column>
+    <column>
+        <name>OScloseAxis</name>
+        <type>int</type>
+    </column>
+    <column>
+        <name>OScloseNote</name>
+        <type>text</type>
+    </column>
+    
+    
+<!-- Notas genéricas -->
+    <column>
+        <name>farNote</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>closeNote</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>generalNote</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>profesionalNote</name>
+        <type>text</type>
+    </column>
+    
+<!-- KEYS -->
+    <constraint>
+        <name>oft_refractions_pkey</name>
+        <type>PRIMARY KEY (id)</type>
+    </constraint>
+        <constraint>
+        <name>fk_oft_refractions_expedients</name>
+        <type>FOREIGN KEY (idExpedient) REFERENCES oft_expedients (id) ON UPDATE CASCADE ON DELETE RESTRICT</type>
+    </constraint>
+</table>
