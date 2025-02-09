@@ -17,7 +17,7 @@
         <name>idTestType</name>
         <type>int</type>
     </column>
-        <column>
+    <column>
         <name>idGlassesType</name>
         <type>int</type>
     </column>
