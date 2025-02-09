@@ -8,7 +8,7 @@
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
 
-namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
+namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base\ModelTrait;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;

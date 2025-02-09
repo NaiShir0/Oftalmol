@@ -8,15 +8,15 @@
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
 
-namespace FacturaScripts\Plugins\Oftalmologia\Model;
+namespace FacturaScripts\Plugins\Oftalmol\Model;
 
-use FacturaScripts\Core\Model\Base\ModelTrait;
+use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 class Gonioscopy extends Base\Test
 {
-    use ModelTrait;
+    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.

@@ -14,11 +14,11 @@
             <column name="edad" numcolumns="1" order="120">
                 <widget type="text" fieldname="edad" readonly="true" />
             </column>
-            <column name="insurance" order="130" numcolumns="2">
+            <!--<column name="insurance" order="130" numcolumns="2">
                 <widget type="select" fieldname="codgrupo" readonly="true">
                     <values source="gruposclientes" fieldcode="codgrupo" fieldtitle="nombre"/>
                 </widget>
-            </column>
+            </column>-->
             <column name="phone" numcolumns="1" order="140">
                 <widget type="text" fieldname="telefono1" readonly="true" />
             </column>

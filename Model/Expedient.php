@@ -42,14 +42,27 @@ class Expedient extends Base\ModelClass {
         
     }
     
+        /**
+     * This function is called when creating the model table. Returns the SQL
+     * that will be executed after the creation of the table. Useful to insert values
+     * default.
+     *
+     * @return string
+     */
+    public function install(): string {
+        new Reason();
+        return parent::install();
+    }
+    
+    
      /**
      * Get patient of the expedient.
      *
      * @return Paciente
      */
-    public function getPatient(): Paciente
+    public function getPatient(): Patient
     {
-        $patient = new Paciente();
+        $patient = new Patient();
         $patient->loadFromCode($this->codcliente);
         return $patient;
     }

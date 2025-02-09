@@ -7,7 +7,7 @@
  *
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
-namespace FacturaScripts\Plugins\Oftalmologia\Extension\Model;
+namespace FacturaScripts\Plugins\Oftalmol\Extension\Model;
 
 use FacturaScripts\Plugins\Oftalmol\Model\Patient;
 

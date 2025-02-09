@@ -4,7 +4,6 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Dinamic\Model\Cliente;
-use FacturaScripts\Plugins\Oftalmol\src\Utils;
 
 class Patient extends Base\ModelClass {
 

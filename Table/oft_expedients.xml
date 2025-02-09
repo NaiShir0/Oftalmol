@@ -40,7 +40,6 @@
     
     <constraint>
         <name>fk_oft_expedients_reasons</name>
-        <type>FOREIGN KEY (idreason) REFERENCES oft_reasons (idReason) ON DELETE RESTRICT ON UPDATE CASCADE</type>
+        <type>FOREIGN KEY (idReason) REFERENCES oft_reasons (idReason) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
-        
 </table>

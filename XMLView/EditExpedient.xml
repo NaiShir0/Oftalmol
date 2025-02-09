@@ -16,9 +16,9 @@
                     <values source="clientes" fieldcode="codcliente" fieldtitle="nombre"></values>
                 </widget>
             </column>
-            <column name="reason" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
+            <column name="reasonName" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
                 <widget type="select" fieldname="idReason" required="true" readonly="dinamic" onclick="EditMotivo">
-                    <values source="oft_reasons" fieldcode="idReason" fieldtitle="name"/>
+                    <values source="oft_reasons" fieldcode="reasonName" />
                 </widget>
             </column>
             <column name="release" numcolumns="2" order="140">
