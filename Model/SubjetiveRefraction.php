@@ -14,7 +14,7 @@ use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class Refraction extends Base\Test
+class SubjetiveRefraction extends Base\Test
 {
     use Base\ModelTrait;
 
@@ -25,7 +25,7 @@ class Refraction extends Base\Test
     public function clear()
     {
         parent::clear();
-        $this->idTestType = TestTypes::TEST_TYPE_REFRACTION;
+        $this->idTestType = TestTypes::TEST_TYPE_SUBJETIVEREFRACTION;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->date = date(self::DATETIME_STYLE);
     }
