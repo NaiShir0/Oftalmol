@@ -16,7 +16,7 @@ class Expedient extends Base\ModelClass {
     public $modificationDate;
 
     /**
-     * Primary key
+     * Primary keyS
      *
      * @var int
      */

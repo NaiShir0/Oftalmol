@@ -14,6 +14,7 @@ class Patient extends Base\ModelClass {
      * Strings variables
      * @var string
      */
+    
     public $allergies;
     public $personalHistory;
     public $familyHistory;
