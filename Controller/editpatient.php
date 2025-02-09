@@ -5,7 +5,7 @@ use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
 
-class EditPaciente extends EditController{
+class EditPatient extends EditController{
      
     /**
      * Return the basic data for this page.
@@ -37,15 +37,15 @@ class EditPaciente extends EditController{
         switch ($viewName){
             case Constants::VIEW_EXPEDIENTE:
                 $codcliente = $this->getViewModelValue($mainViewName, 'codcliente');
-                $where = [new DataBaseWhere('expedientes.codcliente', $codcliente)];
-                $view->loadData('', $where, ['expedientes.fecha' => 'DESC']);
+                $where = [new DataBaseWhere('expedients.codcliente', $codcliente)];
+                $view->loadData('', $where, ['expedients.creationDate' => 'DESC']);
                 break;
         }
     }
     
     #[\Override]
     public function getModelClassName(): string{
-        return 'Paciente';
+        return 'Patient';
     }
     #[\Override]
     protected function createViews() {
@@ -63,15 +63,15 @@ class EditPaciente extends EditController{
      */
     private function createViewsExpediente(string $viewName = Constants::VIEW_EXPEDIENTE)
     {
-        $this->addListView($viewName, 'Join\ExpedienteJoin', 'expedients');
+        $this->addListView($viewName, 'Join\ExpedientJoin', 'expedients');
 
-        $this->views[$viewName]->addSearchFields(['motivos.name',]);
+        $this->views[$viewName]->addSearchFields(['reasons.name',]);
         // FIXME:
         // $this->views[$viewName]->addFilterCheckbox('discharge', false);
 
         $this->views[$viewName]->disableColumn('date', true);
         $this->views[$viewName]->disableColumn('patient', true);
         $this->views[$viewName]->disableColumn('mobile', true);
-        $this->views[$viewName]->disableColumn('date-birth', true);
+        $this->views[$viewName]->disableColumn('birthDate', true);
     }
 }

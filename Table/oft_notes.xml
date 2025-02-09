@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <table>
     <column>
-        <name>fecha</name>
-        <type>date</type>
+        <name>creationDate</name>
+        <type>datetime</type>
         <null>NO</null>
     </column>
     <column>
@@ -10,23 +10,23 @@
         <type>serial</type>
     </column>
     <column>
-        <name>idexpediente</name>
+        <name>idexpedient</name>
         <type>integer</type>
         <null>NO</null>
     </column>
     <column>
-        <name>anamnesis</name>           <!-- Anamnesis -->
+        <name>desciption</name>           <!-- Anamnesis -->
         <type>text</type>
         <null>NO</null>
     </column>
 
 
     <constraint>
-        <name>oft_notas_pkey</name>
+        <name>oft_notes_pkey</name>
         <type>PRIMARY KEY (id)</type>
     </constraint>
     <constraint>
-        <name>ca_oft_notas_expedientes</name>
-        <type>FOREIGN KEY (idexpediente) REFERENCES oft_expedientes (id) ON DELETE CASCADE ON UPDATE CASCADE</type>
+        <name>fk_oft_notes_expedient</name>
+        <type>FOREIGN KEY (idexpedient) REFERENCES oft_expedients (id) ON DELETE CASCADE ON UPDATE CASCADE</type>
     </constraint>
 </table>

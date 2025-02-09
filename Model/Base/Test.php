@@ -39,13 +39,13 @@ class Test extends Base\ModelClass {
      *
      * @var string
      */
-    public $generalObserv; 
+    public $generalNotes; 
     
     /**
      *
      * @var string
      */
-    public $professionalObserv; 
+    public $professionalNote; 
     
     
 

@@ -32,22 +32,22 @@
 
         <group name="data2" numcolumns="12">
             <column name="allergies" order="160" >
-                <widget type="textarea" fieldname="alergias" rows="3"/>
+                <widget type="textarea" fieldname="allergies" rows="3"/>
             </column>
-            <column name="ophthalmological-history" order="170" >
-                <widget type="textarea" fieldname="antecedentes_oftalmologicos" rows="3"/>
+            <column name="oftalmolHistory" order="170" >
+                <widget type="textarea" fieldname="oftalmolHistory" rows="3"/>
             </column>
-            <column name="personal-history" order="180" >
-                <widget type="textarea" fieldname="antecedentes_personales" rows="3"/>
+            <column name="personalHistory" order="180" >
+                <widget type="textarea" fieldname="personalHistory" rows="3"/>
             </column>
-            <column name="family-history" order="190" >
-                <widget type="textarea" fieldname="antecedentes_familiares" rows="3"/>
+            <column name="familyHistory" order="190" >
+                <widget type="textarea" fieldname="familyHistory" rows="3"/>
             </column>
         </group>
 
         <group name="data3" numcolumns="12">
             <column name="observations" order="200" >
-                <widget type="textarea" fieldname="observaciones" rows="2"/>
+                <widget type="textarea" fieldname="observations" rows="2"/>
             </column>
         </group>
     </columns>

@@ -2,8 +2,9 @@
 namespace FacturaScripts\Plugins\Oftalmol\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\ListController;
+use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class ListPaciente extends ListController{
+class ListPatient extends ListController{
     
  #[\Override]
  public function getPageData(): array {
@@ -18,11 +19,11 @@ class ListPaciente extends ListController{
      * Inserts the views or tabs to display.
      */
     #[\Override]
-    protected function createViews(string $viewName = 'ListPaciente')
+    protected function createViews(string $viewName = Constants::VIEW_LIST_PATIENT)
     {
         
         //$this->addView($viewName, 'Paciente');
-        $this->addView($viewName, 'Join\PacienteJoin', 'patients', 'fas fa-user-injured');
+        $this->addView($viewName, 'Join\PatientJoin', 'patients', 'fas fa-user-injured');
         $this->addSearchFields($viewName, ['clientes.nombre', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
         //Desactivamos botones por defecto
         $this->setSettings($viewName, 'btnNew', false);

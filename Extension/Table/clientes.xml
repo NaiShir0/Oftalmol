@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    This file is part of Oftalmologia plugin for FacturaScripts.
+    FacturaScripts Copyright (C) 2015-2022 Carlos Garcia Gomez <carlos@facturascripts.com>
+    Oftalmologia   Copyright (C) 2022-2022 Clinica Castillo <info@clinicastillo.es>
+                   Copyright (C) 2022-2022 Jose Antonio Cuello Principal <yopli2000@gmail.com>
+
+    Document   : clientes.xml
+    Author     : Clinica Castillo    <info@clinicastillo.es>
+               : Jose Antonio Cuello <yopli2000@gmail.com>
+    Description:
+        add new fields to client.
+-->
+<table>
+    <column>
+        <name>birthDate</name>
+        <type>date</type>
+    </column>
+    <column>
+        <name>numInsurance</name>
+        <type>character varying(20)</type>
+    </column>
+</table>

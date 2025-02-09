@@ -1,9 +1,9 @@
 <?php namespace FacturaScripts\Plugins\Oftalmol\Model\Join;
 
 use FacturaScripts\Core\Model\Base\JoinModel;
-use FacturaScripts\Dinamic\Model\Paciente as DinPaciente;
+use FacturaScripts\Dinamic\Model\Patient as DinPatient;
 
-class PacienteJoin extends JoinModel{
+class PatientJoin extends JoinModel{
     //put your code here
     /**
      * Constructor and class initializer.
@@ -14,7 +14,7 @@ class PacienteJoin extends JoinModel{
     public function __construct($data = array())
     {
         parent::__construct($data);
-        $this->setMasterModel( new DinPaciente );
+        $this->setMasterModel( new DinPatient );
     }
     
     #[\Override]
@@ -25,26 +25,26 @@ class PacienteJoin extends JoinModel{
             'telefono1' => 'clientes.telefono1',
             'telefono2' => 'clientes.telefono2',
             'email' => 'clientes.email',
-            'nacimiento' => 'clientes.nacimiento',
+            'birthDate' => 'clientes.birthDate',
             'codgrupo' => 'clientes.codgrupo',
 
-            'aseguradora'=> 'grupos.nombre',
+            'aseguradora'=> 'clientGroup.nombre',
 
-            'alergias' => 'pacientes.alergias',
-            'antecedentes_personal' => 'pacientes.antecedentes_personales',
-            'antecedentes_familiar' => 'pacientes.antecedentes_familiares',
-            'antecedentes_oftalmolog' => 'pacientes.antecedentes_oftalmologicos',
-            'observaciones' => 'pacientes.observaciones',
-            'numexpedientes' => 'COUNT(expedientes.idmotivo)',
+            'allergies' => 'patients.allergies',
+            'personalHistory' => 'patients.personalHistory',
+            'familyHistory' => 'patients.familyHistory',
+            'oftalmolHistroy' => 'patients.oftalmolHistroy',
+            'observations' => 'patients.observations',
+            'expedientCount' => 'COUNT(expedients.idmotivo)',
         ];
     }
 
     #[\Override]
     protected function getSQLFrom(): string {
         return 'clientes'
-            . ' INNER JOIN oft_pacientes pacientes ON clientes.codcliente = pacientes.codcliente'
-            . ' LEFT JOIN gruposclientes grupos ON clientes.codgrupo = grupos.codgrupo'
-            . ' LEFT JOIN oft_expedientes expedientes ON pacientes.codcliente = expedientes.codcliente';
+            . ' INNER JOIN oft_patients patients ON clientes.codcliente = patients.codcliente'
+            . ' LEFT JOIN gruposclientes clientGroup ON clientes.codgrupo = clientGroup.codgrupo'
+            . ' LEFT JOIN oft_expedients expedients ON patients.codcliente = expedients.codcliente';
     }
 
     #[\Override]
@@ -52,11 +52,12 @@ class PacienteJoin extends JoinModel{
         return [
             'clientes',
             'gruposclientes',
-            'oft_pacientes',
+            'oft_patients',
+            'oft_expedients',
         ];
     }
     protected function getGroupFields(): string
     {
-        return 'pacientes.codcliente';
+        return 'patients.codcliente';
     }
 }

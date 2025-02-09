@@ -5,14 +5,14 @@
         <column name="code" display="none" order="100">
             <widget type="text" fieldname="id" readonly="true" />
         </column>
-        <column name="expedient" display="none" order="110">
+        <column name="idExpedient" display="none" order="110">
             <widget type="text" fieldname="idexpediente" readonly="true" />
         </column>
-        <column name="date" numcolumns="2" order="120">
+        <column name="creationDate" numcolumns="2" order="120">
             <widget type="date" fieldname="fecha" required="true" />
         </column>
-        <column name="notasProfesional" order="130">
-            <widget type="textarea" fieldname="notasProfesional" required="true" rows="2"/>
+        <column name="profesionalNote" order="130">
+            <widget type="textarea" fieldname="profesionalNote" required="true" rows="2"/>
         </column>
     </columns>
 

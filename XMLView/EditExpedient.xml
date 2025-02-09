@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view>
     <columns>
-        <group name="expedient" numcolumns="12">
+        <group name="idExpedient" numcolumns="12">
             <column name="code" display="none" order="100">
-                <widget type="text" fieldname="id" />
+                <widget type="text" fieldname="idExpedient" />
             </column>
-            <column name="date-expedient" numcolumns="2" order="110">
-                <widget type="date" fieldname="fecha"/>
+            <column name="creationDate" numcolumns="2" order="110">
+                <widget type="date" fieldname="creationDate"/>
             </column>
-            <column name="datemod" numcolumns="2" order="120">
-                    <widget type="datetime" fieldname="fechamodificacion"/>
+            <column name="modificationDate" numcolumns="2" order="120">
+                    <widget type="datetime" fieldname="modificationDate"/>
             </column>
             <column name="patient" order="120">
                 <widget type="autocomplete" fieldname="codcliente" required="true" readonly="dinamic" onclick="EditCliente">
@@ -17,12 +17,12 @@
                 </widget>
             </column>
             <column name="reason" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
-                <widget type="select" fieldname="idmotivo" required="true" readonly="dinamic" onclick="EditMotivo">
-                    <values source="oft_motivos" fieldcode="id" fieldtitle="name"/>
+                <widget type="select" fieldname="idreason" required="true" readonly="dinamic" onclick="EditMotivo">
+                    <values source="oft_reasons" fieldcode="id" fieldtitle="name"/>
                 </widget>
             </column>
-            <column name="discharge" numcolumns="2" order="140">
-                <widget type="date" fieldname="alta" readonly="true" />
+            <column name="release" numcolumns="2" order="140">
+                <widget type="date" fieldname="release" readonly="true" />
             </column>
         </group>
     </columns>

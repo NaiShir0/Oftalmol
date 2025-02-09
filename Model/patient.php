@@ -6,7 +6,7 @@ use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Dinamic\Model\Cliente;
 use FacturaScripts\Plugins\Oftalmol\src\Utils;
 
-class Paciente extends Base\ModelClass {
+class Patient extends Base\ModelClass {
 
     use Base\ModelTrait;
 
@@ -14,12 +14,12 @@ class Paciente extends Base\ModelClass {
      * Strings variables
      * @var string
      */
-    public $alergias;
-    public $antecedentes_personales;
-    public $antecedentes_familiares;
-    public $antecedentes_oftalmologicos;
-    public $observaciones;
-    public $nacimiento;
+    public $allergies;
+    public $personalHistory;
+    public $familyHistory;
+    public $oftalmolHistory;
+    public $observations;
+    public $birthDate;
     public $codgrupo;
 
     /**
@@ -51,7 +51,7 @@ class Paciente extends Base\ModelClass {
         $this->telefono1 = $client->telefono1;
         $this->telefono2 = $client->telefono2;
         $this->email = $client->email;
-        $this->nacimiento = $client->nacimiento;
+        $this->birthDate = $client->birthDate;
         $this->codgrupo = $client->codgrupo;
         $this->nif = $client->cifnif;
         //$this->edad = Utils::CalculaEdad($this->nacimiento);
@@ -66,6 +66,6 @@ class Paciente extends Base\ModelClass {
 
     #[\Override]
     public static function tableName(): string {
-        return 'oft_pacientes';
+        return 'oft_patients';
     }
 }

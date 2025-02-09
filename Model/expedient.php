@@ -4,16 +4,16 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 use FacturaScripts\Core\Model\Base;
 
 
-class Expediente extends Base\ModelClass {
+class Expedient extends Base\ModelClass {
     use Base\ModelTrait;
     
     /**
      * Strings variables
      * @var string
      */
-    public $alta;
-    public $fecha;
-    public $fechamodificacion;
+    public $releaseDate;
+    public $creationDate;
+    public $modificationDate;
 
     /**
      * Primary key
@@ -27,7 +27,7 @@ class Expediente extends Base\ModelClass {
      *
      * @var int
      */
-    public $idmotivo;
+    public $idReason;
      /**
      * Link to Patient model.
      *
@@ -37,8 +37,8 @@ class Expediente extends Base\ModelClass {
     
     public function clear() {
         parent::clear();
-        $this->fecha = date('d-m-Y');
-        $this->fechamodificacion = date('d-m-Y');
+        $this->creationDate = date('d-m-Y');
+        $this->modificationDate = date('d-m-Y');
         
     }
     
@@ -49,6 +49,6 @@ class Expediente extends Base\ModelClass {
 
     #[\Override]
     public static function tableName(): string {
-        return 'oft_expedientes';
+        return 'oft_expedients';
     }
 }

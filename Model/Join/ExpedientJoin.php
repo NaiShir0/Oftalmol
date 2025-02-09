@@ -7,7 +7,7 @@ use FacturaScripts\Dinamic\Model\Expediente as DinExpediente;
  *
  * @author Nai
  */
-class ExpedienteJoin extends JoinModel {
+class ExpedientJoin extends JoinModel {
     //put your code here
     public function __construct($data = array())
     {
@@ -18,33 +18,33 @@ class ExpedienteJoin extends JoinModel {
     #[\Override]
     protected function getFields(): array {
         return [
-            'alta' => 'expedientes.alta',
-            'fecha' => 'expedientes.fecha',
-            'fechamodificacion' => 'expedientes.fechamodificacion',
-            'codcliente' => 'expedientes.codcliente',
-            'id' => 'expedientes.id',
-            'idmotivo' => 'expedientes.idmotivo',
-            'motivo' => 'motivos.name',
+            'releaseDate' => 'expedients.releaseDate',
+            'creationDate' => 'expedients.creationDate',
+            'modificationDate' => 'expedients.modificationDate',
+            'codcliente' => 'expedients.codcliente',
+            'id' => 'expedients.id',
+            'idreason' => 'expedients.idreason',
+            'reason' => 'reasons.name',
             'nombre' => 'clientes.nombre',
             'telefono1' => 'clientes.telefono1',
             'telefono2' => 'clientes.telefono2',
             'email' => 'clientes.email',
-            'nacimiento' => 'clientes.nacimiento',
+            'birthDate' => 'clientes.birthDate',
         ];
     }
 
     #[\Override]
     protected function getSQLFrom(): string {
-        return 'oft_expedientes expedientes'
-            . ' INNER JOIN oft_motivos motivos ON motivos.id = expedientes.idmotivo'
-            . ' INNER JOIN clientes ON clientes.codcliente = expedientes.codcliente';
+        return 'oft_expedients expedients'
+            . ' INNER JOIN oft_reasons reasons ON reasons.id = expedients.idreason'
+            . ' INNER JOIN clientes ON clientes.codcliente = expedients.codcliente';
     }
 
     #[\Override]
     protected function getTables(): array {
         return [
-            'oft_expedientes',
-            'oft_motivos',
+            'oft_expedients',
+            'oft_reasons',
             'clientes',
         ];
     }

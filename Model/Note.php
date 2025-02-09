@@ -5,26 +5,25 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 use FacturaScripts\Core\Model\Base;
 
 /**
- * Description of Anamnesis
+ * Description of Notes
  *
  * @author Nai
  */
-class Anamnesis extends Base\ModelClass {
+class Note extends Base\ModelClass {
 
     use Base\ModelTrait;
 
-    /**
-     * Evolution description.
+    /** Evolution description.
      *
      * @var string
      */
-    public $Evolution;
+    public $description;
 
     /**
      *
      * @var string
      */
-    public $fecha;
+    public $date;
 
     /**
      * Primary key
@@ -38,7 +37,10 @@ class Anamnesis extends Base\ModelClass {
      *
      * @var int
      */
-    public $idexpediente;
+    public $idExpedient;
+    
+    public $idTestType;
+            
 
     /**
      * Reset the values of all model properties.
@@ -56,7 +58,7 @@ class Anamnesis extends Base\ModelClass {
      * @return string
      */
     public function install(): string {
-        new Expediente();
+        new Expedient();
         return parent::install();
     }
 
@@ -78,7 +80,7 @@ class Anamnesis extends Base\ModelClass {
      */
     #[\Override]
     public static function tableName(): string {
-        return 'oft_anamnesis';
+        return 'oft_notes';
     }
 
     /**

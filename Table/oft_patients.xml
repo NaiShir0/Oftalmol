@@ -2,23 +2,23 @@
 
 <table>
     <column>
-        <name>alergias</name>
+        <name>allergies</name>
         <type>text</type>
     </column>
     <column>
-        <name>antecedentes_personales</name>
+        <name>personalHistory</name>
         <type>text</type>
     </column>
     <column>
-        <name>antecedentes_familiares</name>
+        <name>familyHistory</name>
         <type>text</type>
     </column>
     <column>
-        <name>antecedentes_oftalmologicos</name>
+        <name>oftalmolHistroy</name>
         <type>text</type>
     </column>
     <column>
-        <name>observaciones</name>
+        <name>observations</name>
         <type>text</type>
     </column>
     <column>
@@ -28,11 +28,11 @@
     </column>
 
     <constraint>
-        <name>oft_pacientes_pkey</name>
+        <name>oft_patients_pkey</name>
         <type>PRIMARY KEY (codcliente)</type>
     </constraint>
     <constraint>
-        <name>ca_oft_pacientes_clientes</name>
+        <name>fk_oft_patients_clientes</name>
         <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
 </table>

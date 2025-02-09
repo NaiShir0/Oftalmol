@@ -5,7 +5,7 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class EditExpediente extends EditController {
+class EditExpedient extends EditController {
 
     /**
      * Return the basic data for this page.
@@ -24,7 +24,7 @@ class EditExpediente extends EditController {
 
     #[\Override]
     public function getModelClassName(): string {
-        return 'Expediente';
+        return 'Expedient';
     }
 
     /**
@@ -50,7 +50,7 @@ class EditExpediente extends EditController {
 
         $this->createViewPatient();
         $this->createViewAnamnesis();
-        $this->createViewNotasProfesional();
+        $this->createViewProfesionalNote();
         //$this->createViewAcuity();
         //$this->createViewFissureLamp();
         //$this->createViewFuncionMotora();
@@ -69,38 +69,38 @@ class EditExpediente extends EditController {
     }
 
     private function createViewPatient(string $viewName = Constants::VIEW_PATIENT) {
-        $this->addEditView($viewName, 'Paciente', 'clinic-history', 'fas fa-user-injured');
+        $this->addEditView($viewName, 'Patient', 'clinicHistory', 'fas fa-user-injured');
         $this->setSettings($viewName, 'btnDelete', false);
         $this->setNumColumns($viewName, 'allergies', 6);
-        $this->setNumColumns($viewName, 'ophthalmological-history', 6);
-        $this->setNumColumns($viewName, 'personal-history', 6);
-        $this->setNumColumns($viewName, 'family-history', 6);
+        $this->setNumColumns($viewName, 'ophthalmolHistory', 6);
+        $this->setNumColumns($viewName, 'personalHistory', 6);
+        $this->setNumColumns($viewName, 'familyHistory', 6);
     }
 
-    private function createViewAnamnesis(string $viewName = Constants::VIEW_ANAMNESIS) {
-        $this->addEditListView($viewName, 'Notas', 'anamnesis', 'fas fa-chart-line');
+    private function createViewAnamnesis(string $viewName = Constants::VIEW_EDIT_ANAMNESIS) {
+        $this->addEditListView($viewName, 'Note', 'anamnesisNote', 'fas fa-chart-line');
         $this->views[$viewName]->setInLine(true);
     }
 
-    private function createViewNotasProfesional(string $viewName = Constants::VIEW_NOTASPROFESIONAL) {
-        $this->addEditListView($viewName, 'Notas', 'profesionalNotes', 'fas fa-glasses');
+    private function createViewProfesionalNote(string $viewName = Constants::VIEW_EDIT_PROFESIONALNOTE) {
+        $this->addEditListView($viewName, 'Note', 'profesionalNote', 'fas fa-glasses');
         $this->views[$viewName]->setInLine(true);
     }
 
     private function createViewEvolution(string $viewName = Constants::VIEW_EVOLUTION) {
-        $this->addEditListView($viewName, 'Notas', 'evolution', 'fas fa-chart-line');
+        $this->addEditListView($viewName, 'Note', 'evolutionNote', 'fas fa-chart-line');
     }
     private function createViewClinicalJudgment(string $viewName = Constants::VIEW_CLINICAL)
     {
-        $this->addEditListView($viewName, 'Notas', 'clinical-judgment', 'fas fa-diagnoses');
+        $this->addEditListView($viewName, 'Note', 'clinicalJudgmentNote', 'fas fa-diagnoses');
         $this->views[$viewName]->setInLine(true);
     }
 
     private function createViewTreatment(string $viewName = Constants::VIEW_TREATMENT) {
-        $this->addEditListView($viewName, 'Notas', 'treatment', 'fas fa-prescription-bottle-alt');
+        $this->addEditListView($viewName, 'Note', 'treatmentNote', 'fas fa-prescription-bottle-alt');
     }
 
     private function createViewPrescription(string $viewName = Constants::VIEW_PRESCRIPTION) {
-        $this->addEditListView($viewName, 'Notas', 'optical-prescription', 'fas fa-glasses');
+        $this->addEditListView($viewName, 'Note', 'opticalPrescriptionNote', 'fas fa-glasses');
     }
 }

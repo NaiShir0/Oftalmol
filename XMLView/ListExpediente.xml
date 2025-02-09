@@ -4,17 +4,17 @@
         <column name="code" display="none" order="100">
             <widget type="text" fieldname="id" />
         </column>
-        <column name="date-expedient" order="110" display="center">
-            <widget type="date" fieldname="fecha"/>
+        <column name="creationDate" order="110" display="center">
+            <widget type="date" fieldname="creationDate"/>
         </column>
-        <column name="datemod" order="120" display="center">
-            <widget type="date" fieldname="fechamodificacion"/>
+        <column name="modificationDate" order="120" display="center">
+            <widget type="date" fieldname="modificationDate"/>
         </column>
         <column name="patient" order="120">
             <widget type="text" fieldname="nombre"/>
         </column>
         <column name="reason" title="reason-consultation" order="130">
-            <widget type="text" fieldname="motivo" />
+            <widget type="text" fieldname="reason" />
         </column>
         <column name="mobile" order="140" display="center">
             <widget type="text" fieldname="telefono1"/>
@@ -28,12 +28,12 @@
         <column name="date-birth" order="170" display="center">
             <widget type="text" fieldname="nacimiento"/>
         </column>
-        <column name="discharge" order="180" display="center">
-            <widget type="date" fieldname="alta" />
+        <column name="release" order="180" display="center">
+            <widget type="date" fieldname="release" />
         </column>
     </columns>
     <rows>
-        <row type="status" fieldname="alta">
+        <row type="status" fieldname="release">
             <option title="closed" color="info">&gt;0</option>
         </row>
     </rows>
