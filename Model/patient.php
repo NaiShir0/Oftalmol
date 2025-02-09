@@ -31,6 +31,7 @@ class Patient extends Base\ModelClass {
     public $codcliente;
 
     /**
+      /**
      * Get client data.
      *
      * @return Cliente
@@ -40,6 +41,7 @@ class Patient extends Base\ModelClass {
         $client->loadFromCode($this->codcliente);
         return $client;
     }
+
     /**
      * Load client data to patient view.
      *
@@ -56,8 +58,6 @@ class Patient extends Base\ModelClass {
         $this->nif = $client->cifnif;
         //$this->edad = Utils::CalculaEdad($this->nacimiento);
     }
-
-    
 
     #[\Override]
     public static function primaryColumn(): string {
