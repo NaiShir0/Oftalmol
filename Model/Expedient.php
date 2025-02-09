@@ -42,6 +42,34 @@ class Expedient extends Base\ModelClass {
         
     }
     
+     /**
+     * Get patient of the expedient.
+     *
+     * @return Paciente
+     */
+    public function getPatient(): Paciente
+    {
+        $patient = new Paciente();
+        $patient->loadFromCode($this->codcliente);
+        return $patient;
+    }
+    
+       /**
+     * Update the model data in the database.
+     *
+     * @param array $values
+        * 
+     * @return bool
+     */
+    protected function saveUpdate(array $values = []): bool {
+        if (false === empty($this->alta)) {
+            $this->toolBox()->i18nLog()->error('no-update-discharged');
+
+            return false;
+        }
+        return parent::saveUpdate($values);
+    }
+    
     #[\Override]
     public static function primaryColumn(): string {
         return 'id';

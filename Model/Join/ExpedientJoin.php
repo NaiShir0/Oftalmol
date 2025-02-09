@@ -1,7 +1,7 @@
 <?php namespace FacturaScripts\Plugins\Oftalmol\Model\Join;
 
 use FacturaScripts\Core\Model\Base\JoinModel;
-use FacturaScripts\Dinamic\Model\Expediente as DinExpediente;
+use FacturaScripts\Dinamic\Model\Expedient as DinExpedient;
 /**
  * Description of ExpedienteJoin
  *
@@ -12,7 +12,7 @@ class ExpedientJoin extends JoinModel {
     public function __construct($data = array())
     {
         parent::__construct($data);
-        $this->setMasterModel( new DinExpediente() );
+        $this->setMasterModel( new DinExpedient() );
     }
     
     #[\Override]
@@ -23,7 +23,7 @@ class ExpedientJoin extends JoinModel {
             'modificationDate' => 'expedients.modificationDate',
             'codcliente' => 'expedients.codcliente',
             'id' => 'expedients.id',
-            'idreason' => 'expedients.idreason',
+            'idReason' => 'expedients.idReason',
             'reason' => 'reasons.name',
             'nombre' => 'clientes.nombre',
             'telefono1' => 'clientes.telefono1',
@@ -36,7 +36,7 @@ class ExpedientJoin extends JoinModel {
     #[\Override]
     protected function getSQLFrom(): string {
         return 'oft_expedients expedients'
-            . ' INNER JOIN oft_reasons reasons ON reasons.id = expedients.idreason'
+            . ' INNER JOIN oft_reasons reasons ON reasons.idReason = expedients.idReason'
             . ' INNER JOIN clientes ON clientes.codcliente = expedients.codcliente';
     }
 

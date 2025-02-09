@@ -2,12 +2,12 @@
 <view>
     <columns>
         <group name="contact">
-            <column name="birth-date" numcolumns="2" order="169">
+            <column name="birthDate" numcolumns="2" order="169">
                 <widget type="date" fieldname="birthDate" />
             </column>
         </group>
         <group name="comercial">
-            <column name="insurance-policy" numcolumns="2" order="120">
+            <column name="numInsurance" numcolumns="2" order="120">
                 <widget type="text" fieldname="numInsurance" />
             </column>
         </group>

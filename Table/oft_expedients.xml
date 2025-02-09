@@ -37,8 +37,10 @@
         <name>fk_oft_expedients_clients</name>
         <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
+    
     <constraint>
         <name>fk_oft_expedients_reasons</name>
-        <type>FOREIGN KEY (idreason) REFERENCES oft_reasons (id) ON DELETE RESTRICT ON UPDATE CASCADE</type>
+        <type>FOREIGN KEY (idreason) REFERENCES oft_reasons (idReason) ON DELETE RESTRICT ON UPDATE CASCADE</type>
     </constraint>
+        
 </table>

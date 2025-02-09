@@ -14,7 +14,7 @@
         <type>text</type>
     </column>
     <column>
-        <name>oftalmolHistroy</name>
+        <name>oftalmolHistory</name>
         <type>text</type>
     </column>
     <column>
@@ -33,6 +33,6 @@
     </constraint>
     <constraint>
         <name>fk_oft_patients_clientes</name>
-        <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) ON DELETE RESTRICT ON UPDATE CASCADE</type>
+        <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) </type>
     </constraint>
 </table>

@@ -28,6 +28,37 @@ class EditExpedient extends EditController {
     }
 
     /**
+     * Loads the data to display.
+     *
+     * @param string $viewName
+     * @param BaseView $view
+     */
+    protected function loadData($viewName, $view) {
+        $mainViewName = $this->getMainViewName();
+        if ($viewName === $mainViewName) {
+            parent::loadData($viewName, $view);
+            $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
+            if (false === empty($idpatient)) {
+                //$this->addActionsButton();
+            }
+            $idexpedient = $this->getViewModelValue($mainViewName, 'id');
+            //$this->setValueSelectFechas($idexpedient);
+            return;
+        }
+        switch ($viewName) {
+
+            case Constants::VIEW_EDIT_PATIENT:
+                $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
+                if (false === empty($idpatient)) {
+                    $view->loadData($idpatient);
+                    $view->model->loadClientData();
+                    $view->count = -1;
+                }
+                break;
+        }
+    }
+
+    /**
      *
      * @param string $viewName
      * @param string $columnName
@@ -59,16 +90,14 @@ class EditExpedient extends EditController {
         // $this->createViewExploration();
         // $this->createViewTest();
         //$this->createViewComplementary();
-
-        $this->createViewEvolution();
-        $this->createViewClinicalJudgment();
-        $this->createViewTreatment();
-        $this->createViewPrescription();
-
+        //$this->createViewEvolution();
+        //$this->createViewClinicalJudgment();
+        //$this->createViewTreatment();
+        //$this->createViewPrescription();
         //$this->createViewExpedientFiles();
     }
 
-    private function createViewPatient(string $viewName = Constants::VIEW_PATIENT) {
+    private function createViewPatient(string $viewName = Constants::VIEW_LIST_PATIENT) {
         $this->addEditView($viewName, 'Patient', 'clinicHistory', 'fas fa-user-injured');
         $this->setSettings($viewName, 'btnDelete', false);
         $this->setNumColumns($viewName, 'allergies', 6);
@@ -90,8 +119,8 @@ class EditExpedient extends EditController {
     private function createViewEvolution(string $viewName = Constants::VIEW_EVOLUTION) {
         $this->addEditListView($viewName, 'Note', 'evolutionNote', 'fas fa-chart-line');
     }
-    private function createViewClinicalJudgment(string $viewName = Constants::VIEW_CLINICAL)
-    {
+
+    private function createViewClinicalJudgment(string $viewName = Constants::VIEW_CLINICAL) {
         $this->addEditListView($viewName, 'Note', 'clinicalJudgmentNote', 'fas fa-diagnoses');
         $this->views[$viewName]->setInLine(true);
     }
@@ -102,5 +131,54 @@ class EditExpedient extends EditController {
 
     private function createViewPrescription(string $viewName = Constants::VIEW_PRESCRIPTION) {
         $this->addEditListView($viewName, 'Note', 'opticalPrescriptionNote', 'fas fa-glasses');
+    }
+
+    private function addActionsButton() {
+        $mainViewName = $this->getMainViewName();
+        $discharge = $this->getViewModelValue($mainViewName, 'alta');
+        if (false === empty($discharge)) {
+            $this->addButton($mainViewName, [
+                'action' => self::ACTION_OPEN_EXPEDIENT,
+                'color' => 'warning',
+                'icon' => 'far fa-folder-open',
+                'label' => 'reopen',
+                'confirm' => 'true',
+            ]);
+            return;
+        }
+
+        $this->addButton($mainViewName, [
+            'action' => self::ACTION_CLOSE_EXPEDIENT,
+            'color' => 'danger',
+            'icon' => 'fas fa-archive',
+            'label' => 'close',
+            'confirm' => 'true',
+        ]);
+
+        $this->addButton($mainViewName, [
+            'action' => self::ACTION_NEW_TREATMENT,
+            'color' => 'info',
+            'icon' => 'fas fa-medkit',
+            'label' => 'add-treatment',
+            'type' => 'modal',
+        ]);
+
+        $this->addButton($mainViewName, [
+            'action' => self::ACTION_PRINT_TREATMENT,
+            'color' => 'warning',
+            'icon' => 'fas fa-print',
+            'label' => 'print-treatment',
+            'type' => 'modal',
+        ]);
+
+        $this->addButton($mainViewName, [
+            'action' => self::ACTION_PRINT_DOSSIER,
+            'color' => 'info',
+            'icon' => 'fas fa-print',
+            'label' => 'print-dossier',
+            'type' => 'modal',
+                // level para que sólo le aparezca el botón a los administradores
+                //'level' => '99'
+        ]);
     }
 }

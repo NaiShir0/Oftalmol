@@ -33,9 +33,9 @@ class PatientJoin extends JoinModel{
             'allergies' => 'patients.allergies',
             'personalHistory' => 'patients.personalHistory',
             'familyHistory' => 'patients.familyHistory',
-            'oftalmolHistroy' => 'patients.oftalmolHistroy',
+            'oftalmolHistory' => 'patients.oftalmolHistory',
             'observations' => 'patients.observations',
-            'expedientCount' => 'COUNT(expedients.idmotivo)',
+            'expedientCount' => 'COUNT(expedients.idReason)',
         ];
     }
 
@@ -53,7 +53,7 @@ class PatientJoin extends JoinModel{
             'clientes',
             'gruposclientes',
             'oft_patients',
-            'oft_expedients',
+           // 'oft_expedients',
         ];
     }
     protected function getGroupFields(): string

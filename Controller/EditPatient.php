@@ -35,7 +35,7 @@ class EditPatient extends EditController{
         }
 
         switch ($viewName){
-            case Constants::VIEW_EXPEDIENTE:
+            case Constants::VIEW_LIST_EXPEDIENT:
                 $codcliente = $this->getViewModelValue($mainViewName, 'codcliente');
                 $where = [new DataBaseWhere('expedients.codcliente', $codcliente)];
                 $view->loadData('', $where, ['expedients.creationDate' => 'DESC']);
@@ -53,7 +53,7 @@ class EditPatient extends EditController{
         $this->setSettings($this->getMainViewName(), 'btnDelete', false);
         $this->setTabsPosition("bottom");
 
-        $this->createViewsExpediente();
+        $this->createViewsExpedient();
     }
     
     /**
@@ -61,7 +61,7 @@ class EditPatient extends EditController{
      *
      * @param string $viewName
      */
-    private function createViewsExpediente(string $viewName = Constants::VIEW_EXPEDIENTE)
+    private function createViewsExpedient(string $viewName = Constants::VIEW_LIST_EXPEDIENT)
     {
         $this->addListView($viewName, 'Join\ExpedientJoin', 'expedients');
 

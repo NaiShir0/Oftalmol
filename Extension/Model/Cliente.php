@@ -9,7 +9,7 @@
  */
 namespace FacturaScripts\Plugins\Oftalmologia\Extension\Model;
 
-use FacturaScripts\Plugins\Oftalmologia\Model\Patient;
+use FacturaScripts\Plugins\Oftalmol\Model\Patient;
 
 /**
  * Extension of Cliente

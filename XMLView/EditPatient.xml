@@ -8,8 +8,8 @@
             <column name="name" order="110" numcolumns ="3">
                 <widget type="text" fieldname="nombre" readonly="true" />
             </column>
-            <column name="birth-date" numcolumns="1" order="120">
-                <widget type="date" fieldname="nacimiento" readonly="true" />
+            <column name="birthDate" numcolumns="1" order="120">
+                <widget type="date" fieldname="birthDate" readonly="true" />
             </column>
             <column name="edad" numcolumns="1" order="120">
                 <widget type="text" fieldname="edad" readonly="true" />

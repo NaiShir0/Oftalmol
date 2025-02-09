@@ -47,7 +47,7 @@ class Note extends Base\ModelClass {
      */
     public function clear() {
         parent::clear();
-        $this->fecha = date(self::DATE_STYLE);
+        $this->date = date(self::DATETIME_STYLE);
     }
 
     /**

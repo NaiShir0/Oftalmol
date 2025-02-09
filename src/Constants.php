@@ -12,5 +12,6 @@ class Constants {
     const VIEW_EDIT_ANAMNESIS = 'EditAnamnesis';
     const VIEW_EDIT_PROFESIONALNOTE = 'EditProfesionalNote';
     const VIEW_ACUITY = 'ListPruebaAgudeza';
+    const VIEW_EVOLUTION = 'EditEvolucion';
     //ACTIONS
 }
