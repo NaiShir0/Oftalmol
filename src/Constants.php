@@ -4,6 +4,9 @@ namespace FacturaScripts\Plugins\Oftalmol\src;
 
 class Constants {
 
+    const SPECIALITE_OPHTALMOLOGY = 1;
+    
+    
     //VIEWS
     const VIEW_EDIT_PATIENT = 'EditPatient';
     const VIEW_LIST_PATIENT = 'ListPatient';
@@ -13,5 +16,4 @@ class Constants {
     const VIEW_EDIT_PROFESIONALNOTE = 'EditProfesionalNote';
     const VIEW_ACUITY = 'ListPruebaAgudeza';
     const VIEW_EVOLUTION = 'EditEvolucion';
-    //ACTIONS
 }

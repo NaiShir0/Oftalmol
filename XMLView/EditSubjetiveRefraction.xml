@@ -1,0 +1,118 @@
+<view>
+    <columns>
+        <group name="header" numcolumns="12">
+            <column name="id" order="100" display="none" numcolumns="1">
+                <widget type="text" fieldname="id" />
+            </column>
+           <column name="idSpeciality" order="110" display="none" numcolumns="1">
+                <widget type="text" fieldname="idSpeciality" />
+            </column>
+            <column name="idExpedient" order="120" display="none" numcolumns="1">
+                <widget type="text" fieldname="idExpedient" />
+            </column>
+            <column name="idTestType" order="130" display="none" numcolumns="1">
+                <widget type="text" fieldname="idTestType" />
+            </column>
+            <column name="creationDate" order="140" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+        </group>
+        
+        <group name="withoutCycle" numcolumns="6" title="withoutCycle">    
+            <!-- Campos para el lejos del OD -->    
+            <column name="ODfarSphere" order="200" numcolumns="4">
+                <widget type="text" fieldname="ODfarSphere" />
+            </column>
+            <column name="ODfarCylinder" order="210" numcolumns="4">
+                <widget type="text" fieldname="ODfarCylinder" />
+            </column>
+            <column name="ODfarAxis" order="220" numcolumns="4">
+                <widget type="text" fieldname="ODfarAxis" />
+            </column>
+            <column name="ODfarPrism" order="230" numcolumns="4">
+                <widget type="text" fieldname="ODfarPrism" />
+            </column>
+            <column name="ODfarAcuity" order="240" numcolumns="4">
+                <widget type="text" fieldname="ODfarAcuity" />
+            </column>
+            <column name="ODfarAddition" order="250" numcolumns="4">
+                <widget type="text" fieldname="ODfarAddition" />
+            </column>
+            <column name="ODfarNote" order="260" numcolumns="12">
+                <widget type="text" fieldname="ODfarNote" />
+            </column>
+            
+            <!-- Campos para el lejos del OS -->    
+            <column name="OSfarSphere" order="270" numcolumns="4">
+                <widget type="text" fieldname="OSfarSphere" />
+            </column>
+            <column name="OSfarCylinder" order="280" numcolumns="4">
+                <widget type="text" fieldname="OSfarCylinder" />
+            </column>
+            <column name="OSfarAxis" order="290" numcolumns="4">
+                <widget type="text" fieldname="OSfarAxis" />
+            </column>
+            <column name="OSfarPrism" order="300" numcolumns="4">
+                <widget type="text" fieldname="OSfarPrism" />
+            </column>
+            <column name="OSfarAcuity" order="310" numcolumns="4">
+                <widget type="text" fieldname="OSfarAcuity" />
+            </column>
+            <column name="OSfarAddition" order="320" numcolumns="4">
+                <widget type="text" fieldname="OSfarAddition" />
+            </column>
+            <column name="OSfarNote" order="330" numcolumns="12">
+                <widget type="text" fieldname="OSfarNote" />
+            </column>
+            
+             <column name="farNote" order="340" numcolumns="12" rows="1">
+                <widget type="textarea" fieldname="farNote"/>
+            </column>
+        </group>
+        
+        
+        <group name="withCycle" numcolumns="6" title="withCycle">    
+            <!-- Campos para el cerca del OD -->    
+            <column name="ODcloseSphere" order="350" numcolumns="4">
+                <widget type="text" fieldname="ODcloseSphere" />
+            </column>
+            <column name="ODcloseCylinder" order="360" numcolumns="4">
+                <widget type="text" fieldname="ODcloseCylinder" />
+            </column>
+            <column name="ODcloseAxis" order="370" numcolumns="4">
+                <widget type="text" fieldname="ODcloseAxis" />
+            </column>
+            <column name="ODcloseAcuity" order="380" numcolumns="4">
+                <widget type="text" fieldname="ODcloseAcuity" />
+            </column>
+            <column name="ODcloseNote" order="390" numcolumns="12">
+                <widget type="text" fieldname="ODcloseNote" />
+            </column>
+            
+            <!-- Campos para el cerca del OS -->    
+            <column name="OScloseSphere" order="400" numcolumns="4">
+                <widget type="text" fieldname="OScloseSphere" />
+            </column>
+            <column name="OScloseCylinder" order="410" numcolumns="4">
+                <widget type="text" fieldname="OScloseCylinder" />
+            </column>
+            <column name="OScloseAxis" order="420" numcolumns="4">
+                <widget type="text" fieldname="OScloseAxis" />
+            </column>
+            <column name="OScloseAcuity" order="430" numcolumns="4">
+                <widget type="text" fieldname="OScloseAcuity" />
+            </column>
+            <column name="OScloseNote" order="440" numcolumns="12">
+                <widget type="text" fieldname="OScloseNote" />
+            </column>
+            
+            <column name="closeNote" order="450" numcolumns="12" rows="1">
+                <widget type="textarea" fieldname="closeNote"/>
+            </column>
+        </group>
+        
+        <column name="profesionalNote" order="460" numcolumns="12" rows="1">
+            <widget type="textarea" fieldname="profesionalNote"/>
+        </column>
+    </columns>
+</view>
