@@ -18,7 +18,7 @@
             </column>
             <column name="reasonName" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
                 <widget type="select" fieldname="idReason" required="true" readonly="dinamic" onclick="EditMotivo">
-                    <values source="oft_reasons" fieldcode="reasonName" />
+                    <values source="oft_reasons" fieldcode="idReason" fieldtitle="reasonName"/>
                 </widget>
             </column>
             <column name="release" numcolumns="2" order="140">

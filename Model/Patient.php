@@ -42,7 +42,6 @@ class Patient extends Base\ModelClass {
         return parent::install();
     }
     /**
-      /**
      * Get client data.
      *
      * @return Cliente

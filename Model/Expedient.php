@@ -49,10 +49,10 @@ class Expedient extends Base\ModelClass {
      *
      * @return string
      */
-    public function install(): string {
+    /*public function install(): string {
         new Reason();
         return parent::install();
-    }
+    }*/
     
     
      /**
@@ -60,12 +60,12 @@ class Expedient extends Base\ModelClass {
      *
      * @return Paciente
      */
-    public function getPatient(): Patient
+    /*public function getPatient(): Patient
     {
         $patient = new Patient();
         $patient->loadFromCode($this->codcliente);
         return $patient;
-    }
+    }*/
     
        /**
      * Update the model data in the database.
@@ -74,14 +74,14 @@ class Expedient extends Base\ModelClass {
         * 
      * @return bool
      */
-    protected function saveUpdate(array $values = []): bool {
+    /*protected function saveUpdate(array $values = []): bool {
         if (false === empty($this->alta)) {
             $this->toolBox()->i18nLog()->error('no-update-discharged');
 
             return false;
         }
         return parent::saveUpdate($values);
-    }
+    }*/
     
     #[\Override]
     public static function primaryColumn(): string {
