@@ -23,8 +23,8 @@ class Note extends Base\ModelClass {
      *
      * @var string
      */
-    public $date;
-
+    public $creationDate;
+    
     /**
      * Primary key
      *
@@ -47,7 +47,7 @@ class Note extends Base\ModelClass {
      */
     public function clear() {
         parent::clear();
-        $this->date = date(self::DATETIME_STYLE);
+        $this->creationDate = date(self::DATETIME_STYLE);
     }
 
     /**
@@ -57,10 +57,10 @@ class Note extends Base\ModelClass {
      *
      * @return string
      */
-    public function install(): string {
+     /* public function install(): string {
         new Expedient();
         return parent::install();
-    }
+    }*/
 
     /*
      * Returns the name of the column that is the model's primary key.
@@ -92,7 +92,7 @@ class Note extends Base\ModelClass {
      * @return string
      */
     public function url(string $type = 'auto', string $list = 'List'): string {
-        $list = 'EditExpediente?code=' . $this->idexpediente . '&active=Edit';
+        $list = 'EditExpedient?code=' . $this->idExpedient . '&active=Edit';
         return parent::url($type, $list);
     }
 }

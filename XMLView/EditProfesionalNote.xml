@@ -2,17 +2,23 @@
 <view>
 
     <columns>
+        <column name="idSpeciality" display="none" order="100">
+            <widget type="text" fieldname="idSpeciality" readonly="true" />
+        </column>
         <column name="code" display="none" order="100">
             <widget type="text" fieldname="id" readonly="true" />
         </column>
         <column name="idExpedient" display="none" order="110">
-            <widget type="text" fieldname="idexpediente" readonly="true" />
+            <widget type="text" fieldname="idExpedient" readonly="true" />
+        </column>
+        <column name="idTestType" display="none" order="110">
+            <widget type="text" fieldname="idTestType" readonly="true" />
         </column>
         <column name="creationDate" numcolumns="2" order="120">
-            <widget type="date" fieldname="fecha" required="true" />
+            <widget type="dateTime" fieldname="creationDate" required="true" />
         </column>
         <column name="profesionalNote" order="130">
-            <widget type="textarea" fieldname="profesionalNote" required="true" rows="2"/>
+            <widget type="textarea" fieldname="description" required="true" rows="2"/>
         </column>
     </columns>
 

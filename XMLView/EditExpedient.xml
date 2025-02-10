@@ -17,7 +17,7 @@
                 </widget>
             </column>
             <column name="reasonName" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
-                <widget type="select" fieldname="idReason" required="true" readonly="dinamic" onclick="EditMotivo">
+                <widget type="select" fieldname="reasonName" required="true" readonly="dinamic" onclick="EditMotivo">
                     <values source="oft_reasons" fieldcode="idReason" fieldtitle="reasonName"/>
                 </widget>
             </column>

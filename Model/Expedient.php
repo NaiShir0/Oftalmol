@@ -2,6 +2,7 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;
+use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 
 class Expedient extends Base\ModelClass {
@@ -14,6 +15,7 @@ class Expedient extends Base\ModelClass {
     public $releaseDate;
     public $creationDate;
     public $modificationDate;
+    public $idSpeciality;
 
     /**
      * Primary keyS
@@ -37,8 +39,9 @@ class Expedient extends Base\ModelClass {
     
     public function clear() {
         parent::clear();
-        $this->creationDate = date('d-m-Y');
-        $this->modificationDate = date('d-m-Y');
+        $this->creationDate = date(self::DATETIME_STYLE);
+        $this->modificationDate = date(self::DATETIME_STYLE);
+        $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         
     }
     
@@ -49,10 +52,11 @@ class Expedient extends Base\ModelClass {
      *
      * @return string
      */
-    /*public function install(): string {
+    public function install(): string {
         new Reason();
+        new Notes();
         return parent::install();
-    }*/
+    }
     
     
      /**

@@ -10,16 +10,25 @@
         <type>serial</type>
     </column>
     <column>
-        <name>idexpedient</name>
+        <name>idSpeciality</name>
+        <type>int</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idTestType</name>
+        <type>int</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idExpedient</name>
         <type>integer</type>
         <null>NO</null>
     </column>
     <column>
-        <name>desciption</name>           <!-- Anamnesis -->
+        <name>description</name>           <!-- Anamnesis -->
         <type>text</type>
         <null>NO</null>
     </column>
-
 
     <constraint>
         <name>oft_notes_pkey</name>
@@ -27,6 +36,6 @@
     </constraint>
     <constraint>
         <name>fk_oft_notes_expedient</name>
-        <type>FOREIGN KEY (idexpedient) REFERENCES oft_expedients (id) ON DELETE CASCADE ON UPDATE CASCADE</type>
+        <type>FOREIGN KEY (idExpedient) REFERENCES oft_expedients (id) ON DELETE CASCADE ON UPDATE CASCADE</type>
     </constraint>
 </table>

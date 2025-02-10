@@ -28,6 +28,11 @@
         <type>integer</type>
         <null>NO</null>
     </column>
+    <column>
+        <name>idSpeciality</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
 
     <constraint>
         <name>oft_expedients_pkey</name>
