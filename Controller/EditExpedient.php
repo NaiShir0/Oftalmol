@@ -4,6 +4,7 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
+use FacturaScripts\Core\Tools;
 
 class EditExpedient extends EditController {
 
@@ -34,20 +35,21 @@ class EditExpedient extends EditController {
      * @param BaseView $view
      */
     protected function loadData($viewName, $view) {
+
         $mainViewName = $this->getMainViewName();
         if ($viewName === $mainViewName) {
             parent::loadData($viewName, $view);
             $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
             if (false === empty($idpatient)) {
-                //$this->addActionsButton();
+                $this->addActionsButton();
             }
             $idexpedient = $this->getViewModelValue($mainViewName, 'id');
             //$this->setValueSelectFechas($idexpedient);
             return;
         }
+        //Tools::log()->warning($viewName);
         switch ($viewName) {
-
-            case Constants::VIEW_EDIT_PATIENT:
+            case Constants::VIEW_LIST_PATIENT:
                 $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
                 if (false === empty($idpatient)) {
                     $view->loadData($idpatient);
@@ -132,28 +134,27 @@ class EditExpedient extends EditController {
     private function createViewPrescription(string $viewName = Constants::VIEW_PRESCRIPTION) {
         $this->addEditListView($viewName, 'Note', 'opticalPrescriptionNote', 'fas fa-glasses');
     }
-    
-    private function createViewRefraction(string $viewName = Constants::VIEW_EDIT_test)
-    {
-        
-       // $this->addListView($viewName, 'PruebaBasica', 'acuity-tests', 'fas fa-laptop-medical');
+
+    private function createViewRefraction(string $viewName = Constants::VIEW_EDIT_SUBJETIVEREFRACTION) {
+
+        // $this->addListView($viewName, 'PruebaBasica', 'acuity-tests', 'fas fa-laptop-medical');
         $this->addListView($viewName, 'Join\RefractionJoin', 'refractionTests', 'fas fa-laptop-medical');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 
         //$this->views[$viewName]->addOrderBy(['COALESCE(graduaciones.fecha)'], 'date', 2);
         //$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
-        /*$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
-        $i18n = $this->toolBox()->i18n();
-        $values = [
-            ['code' => 0, 'description' => '----------------------'],
-            ['code' => PruebaGraduacion::TIPO_REFRACCION, 'description' => $i18n->trans('refraction')],
-            ['code' => PruebaGraduacion::TIPO_AGUDEZAVISUAL, 'description' => $i18n->trans('visual-acuity')],
-            ['code' => PruebaGraduacion::TIPO_AUTOREFRACTOMETRO, 'description' => $i18n->trans('autorefractometro')],
-            ['code' => PruebaGraduacion::TIPO_ESQUIASCOPIA, 'description' => $i18n->trans('skiascopy')],
-            ['code' => PruebaGraduacion::TIPO_FRONTOFOCOMETRO, 'description' => $i18n->trans('lensmeter')],
-        ];
-        $this->views[$viewName]->addFilterSelect('type', 'acuity-tests', 'tipo', $values);*/
+        /* $this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
+          $i18n = $this->toolBox()->i18n();
+          $values = [
+          ['code' => 0, 'description' => '----------------------'],
+          ['code' => PruebaGraduacion::TIPO_REFRACCION, 'description' => $i18n->trans('refraction')],
+          ['code' => PruebaGraduacion::TIPO_AGUDEZAVISUAL, 'description' => $i18n->trans('visual-acuity')],
+          ['code' => PruebaGraduacion::TIPO_AUTOREFRACTOMETRO, 'description' => $i18n->trans('autorefractometro')],
+          ['code' => PruebaGraduacion::TIPO_ESQUIASCOPIA, 'description' => $i18n->trans('skiascopy')],
+          ['code' => PruebaGraduacion::TIPO_FRONTOFOCOMETRO, 'description' => $i18n->trans('lensmeter')],
+          ];
+          $this->views[$viewName]->addFilterSelect('type', 'acuity-tests', 'tipo', $values); */
     }
 
     private function addActionsButton() {
@@ -171,7 +172,7 @@ class EditExpedient extends EditController {
         }
 
         $this->addButton($mainViewName, [
-            'action' => self::ACTION_CLOSE_EXPEDIENT,
+            'action' => Constants::ACTION_CLOSE_EXPEDIENT,
             'color' => 'danger',
             'icon' => 'fas fa-archive',
             'label' => 'close',
@@ -179,7 +180,7 @@ class EditExpedient extends EditController {
         ]);
 
         $this->addButton($mainViewName, [
-            'action' => self::ACTION_NEW_TREATMENT,
+            'action' => Constants::ACTION_NEW_TREATMENT,
             'color' => 'info',
             'icon' => 'fas fa-medkit',
             'label' => 'add-treatment',
@@ -187,7 +188,7 @@ class EditExpedient extends EditController {
         ]);
 
         $this->addButton($mainViewName, [
-            'action' => self::ACTION_PRINT_TREATMENT,
+            'action' => Constants::ACTION_PRINT_TREATMENT,
             'color' => 'warning',
             'icon' => 'fas fa-print',
             'label' => 'print-treatment',
@@ -195,7 +196,7 @@ class EditExpedient extends EditController {
         ]);
 
         $this->addButton($mainViewName, [
-            'action' => self::ACTION_PRINT_DOSSIER,
+            'action' => Constants::ACTION_PRINT_DOSSIER,
             'color' => 'info',
             'icon' => 'fas fa-print',
             'label' => 'print-dossier',

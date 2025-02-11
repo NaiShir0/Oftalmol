@@ -23,4 +23,11 @@ class Constants {
     const VIEW_EDIT_SHIASCOPY = 'EditShiascopy';
     const VIEW_EDIT_FRONTOFOCOMETER = 'EditFrontofocometer';
     const VIEW_EDIT_SUBJETIVEREFRACTION = 'EditSubjetiveRefraction';
+    
+    //ACTIONS
+    const ACTION_OPEN_EXPEDIENT = 'open-expedient';
+    const ACTION_CLOSE_EXPEDIENT = 'close-expedient';
+    const ACTION_NEW_TREATMENT = 'new-treatment';
+    const ACTION_PRINT_TREATMENT = 'print-treatment';
+    const ACTION_PRINT_DOSSIER = 'print-dossier';
 }

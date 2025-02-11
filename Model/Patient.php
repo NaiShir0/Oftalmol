@@ -47,6 +47,7 @@ class Patient extends Base\ModelClass {
      * @return Cliente
      */
     public function getClient(): Cliente {
+       
         $client = new Cliente();
         $client->loadFromCode($this->codcliente);
         return $client;

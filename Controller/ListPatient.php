@@ -25,7 +25,7 @@ class ListPatient extends ListController{
         //$this->addView($viewName, 'Patient');
         
         $this->addView($viewName, 'Join\PatientJoin', 'patients', 'fas fa-user-injured');
-        /*$this->addSearchFields($viewName, ['clientes.nombre', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
+        $this->addSearchFields($viewName, ['clientes.nombre', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
         //Desactivamos botones por defecto
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
@@ -34,6 +34,6 @@ class ListPatient extends ListController{
         $this->addFilterCheckbox($viewName, 'conexpedientes', 'with-expedients', 'expedientes.idmotivo');
         //Add more OrdersBy types
         $this->addOrderBy($viewName, ['count(expedients.idReason)'], 'numexpedients', 2);
-        $this->addOrderBy($viewName, ['clientes.nombre'], 'name', 1);*/
+        $this->addOrderBy($viewName, ['clientes.nombre'], 'name', 1);
     }
 }

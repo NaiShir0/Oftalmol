@@ -4,7 +4,6 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-
 class Expedient extends Base\ModelClass {
     use Base\ModelTrait;
     
@@ -64,12 +63,12 @@ class Expedient extends Base\ModelClass {
      *
      * @return Paciente
      */
-    /*public function getPatient(): Patient
+    public function getPatient(): Patient
     {
         $patient = new Patient();
         $patient->loadFromCode($this->codcliente);
         return $patient;
-    }*/
+    }
     
        /**
      * Update the model data in the database.
@@ -78,14 +77,15 @@ class Expedient extends Base\ModelClass {
         * 
      * @return bool
      */
-    /*protected function saveUpdate(array $values = []): bool {
+    #[\Override]
+    protected function saveUpdate(array $values = []): bool {
         if (false === empty($this->alta)) {
             $this->toolBox()->i18nLog()->error('no-update-discharged');
 
             return false;
         }
         return parent::saveUpdate($values);
-    }*/
+    }
     
     #[\Override]
     public static function primaryColumn(): string {
@@ -96,4 +96,5 @@ class Expedient extends Base\ModelClass {
     public static function tableName(): string {
         return 'oft_expedients';
     }
+    
 }

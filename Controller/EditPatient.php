@@ -33,7 +33,6 @@ class EditPatient extends EditController{
             $view->model->loadClientData();
             return;
         }
-
         switch ($viewName){
             case Constants::VIEW_LIST_EXPEDIENT:
                 $codcliente = $this->getViewModelValue($mainViewName, 'codcliente');
@@ -47,6 +46,7 @@ class EditPatient extends EditController{
     public function getModelClassName(): string{
         return 'Patient';
     }
+    
     #[\Override]
     protected function createViews() {
         parent::createViews();
