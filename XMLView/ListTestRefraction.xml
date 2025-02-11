@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="code" order="100">
+            <widget type="text" fieldname="idprueba" display="none" />
+        </column>
+        <column name="patient" display="none" order="110">
+            <widget type="text" fieldname="nombre"/>
+        </column>
+        <column name="date" order="120">
+            <widget type="date" fieldname="fecha"/>
+        </column>
+        <column name="type" order="130">
+            <widget type="select" fieldname="tipo" translate="true" required="true">
+                <values title="visual-acuity">165</values>
+                <values title="visual-acuity-without">56</values>
+                <values title="auto-without">52</values>
+                <values title="auto-with">51</values>
+                <values title="subjetive-refraction">53</values>
+                <values title="lensmeter">54</values>
+                <values title="skiascopy">57</values>
+                <values title="keratometry">999</values>
+                <values title="Frontofocometro">154</values>
+                <values title="Autorefractometro">151</values>
+            </widget>
+        </column>
+       
+        <column name="right-eyde" order="140" title="far-OD">
+            <widget type="text" fieldname="lejosOD"/>
+        </column>
+        <column name="observations" order="150" title="far-OI">
+            <widget type="text" fieldname="lejosOI"/>
+        </column>
+        <column name="left-eyvggde" order="160" title="far-notes">
+            <widget type="text" fieldname="lejosobservaciones"/>
+        </column>
+         <column name="left-eye" order="170" title="close-OD">
+            <widget type="text" fieldname="cercaOD"/>
+        </column>
+        <column name="right-eye" order="180" title="close-OI">
+            <widget type="text" fieldname="cercaOI"/>
+        </column>
+        <column name="left-eyde" order="190" title="close-notes">
+            <widget type="text" fieldname="cercaobservaciones"/>
+        </column>
+    </columns>
+    <rows>
+        <row type="actions">
+            <button action="insertacuity" color="success" icon="fas fa-plus fa-fw" label="new" />
+        </row>
+    </rows>
+</view>

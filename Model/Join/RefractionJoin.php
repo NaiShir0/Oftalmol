@@ -3,14 +3,14 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model\Join;
 
 use FacturaScripts\Core\Model\Base;
-use FacturaScripts\Dinamic\Model\Test as DinTest;
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
 
 class RefractionJoin extends Base\JoinModel
 {
     public function __construct($data = array())
     {
         parent::__construct($data);
-        $this->setMasterModel( new DinTest() );
+        $this->setMasterModel( new Test() );
     }
     #[\Override]
     protected function getFields(): array {

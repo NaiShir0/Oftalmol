@@ -18,6 +18,7 @@ class Constants {
     const VIEW_EVOLUTION = 'EditEvolucion';
     
     //REFRACTIONS TEST VIEWS
+    const  VIEW_LIST_REFRACTIONTEST = 'ListTestRefraction';
     const VIEW_EDIT_VISUALACUITY = 'EditVisualAcuity';
     const VIEW_EDIT_AUTOREFRACTOMETER = 'EditAutorefractometer';
     const VIEW_EDIT_SHIASCOPY = 'EditShiascopy';

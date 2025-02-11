@@ -56,6 +56,6 @@ class Test extends Base\ModelClass {
 
     #[\Override]
     public static function tableName(): string {
-        
+        return '';
     }
 }

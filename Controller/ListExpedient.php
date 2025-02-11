@@ -23,7 +23,7 @@ class ListExpedient extends ListController {
 
         //$this->addView($viewName, 'Expediente');
         $this->addView($viewName, 'Join\ExpedientJoin', 'expedients', 'fas fa-layer-group');
-    /*    $this->addSearchFields('ListExpedient', ['clientes.nombre', 'reasons.name', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
+      $this->addSearchFields('ListExpedient', ['clientes.nombre', 'reasons.name', 'clientes.telefono1', 'clientes.telefono2', 'clientes.email']);
         $this->addOrderBy($viewName, ['expedients.modificationDate'], 'datemod', 2);
         $this->addOrderBy($viewName, ['expedients.creationDate'], 'date');
         $this->addOrderBy($viewName, ['clientes.nombre'], 'name');
@@ -38,6 +38,6 @@ class ListExpedient extends ListController {
         ];
 
         $this->addFilterSelectWhere($viewName, 'release', $values2);
-        $this->addFilterPeriod($viewName, 'datemod', 'datemod', 'expedients.modificationDate'); */
+        $this->addFilterPeriod($viewName, 'datemod', 'datemod', 'expedients.modificationDate'); 
     }
 }

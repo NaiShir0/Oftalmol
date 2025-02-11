@@ -5,6 +5,8 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 use FacturaScripts\Core\Tools;
+use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
+use FacturaScripts\Core\Base\DataBase;
 
 class EditExpedient extends EditController {
 
@@ -34,6 +36,7 @@ class EditExpedient extends EditController {
      * @param string $viewName
      * @param BaseView $view
      */
+    #[\Override]
     protected function loadData($viewName, $view) {
 
         $mainViewName = $this->getMainViewName();
@@ -57,21 +60,16 @@ class EditExpedient extends EditController {
                     $view->count = -1;
                 }
                 break;
+            case Constants::VIEW_LIST_REFRACTIONTEST:
+                Tools::log()->warning($viewName);
+                $idexpedient = $this->getViewModelValue($mainViewName, 'id');
+                $where = [new DataBaseWhere('idExpedient', $idexpedient)];
+                $view->loadData(false, $where);
+                break;
         }
     }
 
-    /**
-     *
-     * @param string $viewName
-     * @param string $columnName
-     * @param int $numcolumns
-     */
-    private function setNumColumns(string $viewName, string $columnName, int $numcolumns) {
-        $column = $this->views[$viewName]->columnForName($columnName);
-        if (isset($column)) {
-            $column->numcolumns = $numcolumns;
-        }
-    }
+ 
 
     /**
      * Create the view to display.
@@ -84,13 +82,13 @@ class EditExpedient extends EditController {
         $this->createViewPatient();
         $this->createViewAnamnesis();
         $this->createViewProfesionalNote();
-        //$this->createViewRefraction();
+        $this->createViewRefraction();
         //$this->createViewFissureLamp();
         //$this->createViewFuncionMotora();
         //$this->createViewPresionIntraocular();
         //$this->createViewViaLagrimal();
-        // $this->createViewExploration();
-        // $this->createViewTest();
+        //$this->createViewExploration();
+        //$this->createViewTest();
         //$this->createViewComplementary();
         //$this->createViewEvolution();
         //$this->createViewClinicalJudgment();
@@ -135,7 +133,7 @@ class EditExpedient extends EditController {
         $this->addEditListView($viewName, 'Note', 'opticalPrescriptionNote', 'fas fa-glasses');
     }
 
-    private function createViewRefraction(string $viewName = Constants::VIEW_EDIT_SUBJETIVEREFRACTION) {
+    private function createViewRefraction(string $viewName = Constants::VIEW_LIST_REFRACTIONTEST) {
 
         // $this->addListView($viewName, 'PruebaBasica', 'acuity-tests', 'fas fa-laptop-medical');
         $this->addListView($viewName, 'Join\RefractionJoin', 'refractionTests', 'fas fa-laptop-medical');
@@ -144,7 +142,7 @@ class EditExpedient extends EditController {
 
         //$this->views[$viewName]->addOrderBy(['COALESCE(graduaciones.fecha)'], 'date', 2);
         //$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
-        /* $this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
+         /*$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
           $i18n = $this->toolBox()->i18n();
           $values = [
           ['code' => 0, 'description' => '----------------------'],
@@ -204,5 +202,17 @@ class EditExpedient extends EditController {
                 // level para que sólo le aparezca el botón a los administradores
                 //'level' => '99'
         ]);
+    }
+       /**
+     *
+     * @param string $viewName
+     * @param string $columnName
+     * @param int $numcolumns
+     */
+    private function setNumColumns(string $viewName, string $columnName, int $numcolumns) {
+        $column = $this->views[$viewName]->columnForName($columnName);
+        if (isset($column)) {
+            $column->numcolumns = $numcolumns;
+        }
     }
 }
