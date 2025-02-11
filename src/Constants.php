@@ -18,7 +18,10 @@ class Constants {
     
     
     
-    
+    //TEST TYPE LÁMPARA HENDIDURA
+    const VIEW_EDIT_BIOMICROSCOPY = 'EditBiomicroscopy';
+    const VIEW_EDIT_EYEFUNDUS = 'EditEyeFundus';
+    const VIEW_EDIT_GONIOSCOPY = 'EditGonioscopy';
     
     
     //ACTIONS

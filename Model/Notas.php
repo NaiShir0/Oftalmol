@@ -44,7 +44,7 @@ class Notas extends Base\ModelClass {
      */
     public function clear() {
         parent::clear();
-        $this->fecha = date(self::DATE_STYLE);
+        $this->creationDate = date(self::DATE_STYLE);
     }
 
     /**
