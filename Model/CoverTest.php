@@ -13,7 +13,7 @@ use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class Frontofocometer extends Base\Test
+class CoverTest extends Base\Test
 {
     use Base\ModelTrait;
 
@@ -24,7 +24,7 @@ class Frontofocometer extends Base\Test
     public function clear()
     {
         parent::clear();
-        $this->idTestType = TestTypes::TEST_TYPE_FRONTOFOCOMETER;
+        $this->idTestType = TestTypes::TEST_TYPE_COVERTEST;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->date = date(self::DATETIME_STYLE);
     }

@@ -23,4 +23,16 @@ class Constants {
     const VIEW_EDIT_SHIASCOPY = 'EditShiascopy';
     const VIEW_EDIT_FRONTOFOCOMETER = 'EditFrontofocometer';
     const VIEW_EDIT_SUBJETIVEREFRACTION = 'EditSubjetiveRefraction';
+    
+    
+    //MOTOR FUNCTION TEST VIEWS
+    const VIEW_EDIT_COVERTEST = 'EditCoverTest';
+    const VIEW_EDIT_STEREOPSIS = 'EditStereopsis';
+    const VIEW_EDIT_EYELIDFUNCTION = 'EditEyelidFunction';
+    const VIEW_EDIT_EXOPHTHALMOMETRY = 'EditExophthalmometry';
+    const VIEW_EDIT_WORTHLIGHT = 'EditWorthLight';
+    const VIEW_EDIT_BIELSCHOSWSKY = 'EditBielschoswsky';
+    const VIEW_EDIT_OCULARMOTILITY = 'EditOcularMotility';
+    const VIEW_EDIT_CONVERGENCEPOINT = 'EditConvergencePoint';
+    
 }
