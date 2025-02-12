@@ -27,6 +27,6 @@ class EyeFundus extends Base\Test
         parent::clear();
         $this->idTestType = TestTypes::TEST_TYPE_EYEFUNDUS;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->date = date(self::DATETIME_STYLE);
+        $this->creationDate = date(self::DATETIME_STYLE);
     }
 }
