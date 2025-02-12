@@ -29,4 +29,8 @@ class Biomicroscopy extends Base\Test
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->date = date(self::DATETIME_STYLE);
     }
+    #[\Override]
+    public static function tableName(): string {
+        return 'oft_refractions';
+    }
 }

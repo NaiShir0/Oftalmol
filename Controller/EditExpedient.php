@@ -6,7 +6,6 @@ use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
-use FacturaScripts\Core\Base\DataBase;
 
 class EditExpedient extends EditController {
 
@@ -50,7 +49,6 @@ class EditExpedient extends EditController {
             //$this->setValueSelectFechas($idexpedient);
             return;
         }
-        //Tools::log()->warning($viewName);
         switch ($viewName) {
             case Constants::VIEW_LIST_PATIENT:
                 $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
@@ -61,15 +59,12 @@ class EditExpedient extends EditController {
                 }
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
-                Tools::log()->warning($viewName);
                 $idexpedient = $this->getViewModelValue($mainViewName, 'id');
                 $where = [new DataBaseWhere('idExpedient', $idexpedient)];
                 $view->loadData(false, $where);
                 break;
         }
     }
-
- 
 
     /**
      * Create the view to display.
@@ -135,14 +130,14 @@ class EditExpedient extends EditController {
 
     private function createViewRefraction(string $viewName = Constants::VIEW_LIST_REFRACTIONTEST) {
 
-        // $this->addListView($viewName, 'PruebaBasica', 'acuity-tests', 'fas fa-laptop-medical');
         $this->addListView($viewName, 'Join\RefractionJoin', 'refractionTests', 'fas fa-laptop-medical');
+        Tools::log()->warning('After refraction');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 
         //$this->views[$viewName]->addOrderBy(['COALESCE(graduaciones.fecha)'], 'date', 2);
         //$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
-         /*$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
+        /* $this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
           $i18n = $this->toolBox()->i18n();
           $values = [
           ['code' => 0, 'description' => '----------------------'],
@@ -153,6 +148,22 @@ class EditExpedient extends EditController {
           ['code' => PruebaGraduacion::TIPO_FRONTOFOCOMETRO, 'description' => $i18n->trans('lensmeter')],
           ];
           $this->views[$viewName]->addFilterSelect('type', 'acuity-tests', 'tipo', $values); */
+    }
+
+    #[\Override]
+    protected function execPreviousAction($action) {
+        switch ($action) {
+            case Constants::ACTION_NEW_TEST_REFRACTION:
+                $idexpedient = (int) $this->request->get('code', 0);
+                $newtype = $this->request->request->get('newtype', 0);
+                if (false === empty($idexpedient)) {
+                    //$this->redirect('EditTestRefraction?code=' . $idexpedient . '&newtest=' . $newtype, 0);
+                    return false;
+                }
+                return true;
+            default:
+                return parent::execPreviousAction($action);
+        }
     }
 
     private function addActionsButton() {
@@ -203,7 +214,8 @@ class EditExpedient extends EditController {
                 //'level' => '99'
         ]);
     }
-       /**
+
+    /**
      *
      * @param string $viewName
      * @param string $columnName

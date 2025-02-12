@@ -13,6 +13,7 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 
 use FacturaScripts\Plugins\Oftalmol\Controller\Base\EditTest;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
+use FacturaScripts\Core\Tools;
 
 /**
  * Class for view all basic test data from expedient.
@@ -38,11 +39,12 @@ class EditTestRefraction extends EditTest {
     protected function createViews() {
         parent::createViews();
 
+        Tools::log()->warning('aaaaaaaaaa');
         //$this->createViewsVisualAcuity();
-        $this->createViewsAutorefractometer();
-        $this->createViewsShiascopy();
-        $this->createViewsFrontofocometer();
-        $this->createViewsSubjetiveRefraction();
+        //$this->createViewsAutorefractometer();
+        //$this->createViewsShiascopy();
+        //$this->createViewsFrontofocometer();
+        //$this->createViewsSubjetiveRefraction();
     }
 
     /**
@@ -84,7 +86,7 @@ class EditTestRefraction extends EditTest {
      *
      * @param string $viewName
      */
-    private function createViewsAgudeza() {
+    private function createViewsVisualAcuity() {
         $this->addEditListView(Constants::VIEW_EDIT_VISUALACUITY, 'visualAcuity', 'visualAcuity');
     }
 
@@ -92,7 +94,7 @@ class EditTestRefraction extends EditTest {
      *
      * @param string $viewName
      */
-    private function createViewsautorefractometer() {
+    private function createViewsAutorefractometer() {
         $this->addEditListView(Constants::VIEW_EDIT_AUTOREFRACTOMETER, 'Autorefractometer', 'autorefractometer');
     }
 
@@ -116,7 +118,7 @@ class EditTestRefraction extends EditTest {
      *
      * @param string $viewName
      */
-    private function createViewsVisualRefraction() {
+    private function createViewsSubjetiveRefraction() {
         $this->addEditListView(Constants::VIEW_EDIT_SUBJETIVEREFRACTION, 'SubjetiveRefraction', 'subjetiveRefraction');
     }
 }

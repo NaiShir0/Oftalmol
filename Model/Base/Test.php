@@ -52,6 +52,7 @@ class Test extends Base\ModelClass {
     
     #[\Override]
     public static function primaryColumn(): string {
+        return 'id';
     }
 
     #[\Override]

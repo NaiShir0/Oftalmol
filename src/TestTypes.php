@@ -4,6 +4,7 @@ namespace FacturaScripts\Plugins\Oftalmol\src;
 
 class TestTypes {
 
+    const TEST_TYPE_VISUALACUITY = 0;
     const TEST_TYPE_AUTOREFRACTOMETER = 1;
     const TEST_TYPE_SHIASCOPY = 2;
     const TEST_TYPE_FRONTOFOCOMETER = 3;
@@ -12,4 +13,3 @@ class TestTypes {
     const TEST_TYPE_EYEFUNDUS = 6;
     const TEST_TYPE_GONIOSCOPY = 7;
 }
-

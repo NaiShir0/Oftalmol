@@ -6,6 +6,8 @@ use FacturaScripts\Core\Base\InitClass;
 use FacturaScripts\Core\Base\DataBase;
 use FacturaScripts\Plugins\Oftalmol\Model\Patient;
 use FacturaScripts\Plugins\Oftalmol\Model\Expedient;
+use FacturaScripts\Plugins\Oftalmol\Model\VisualAcuity;
+use FacturaScripts\Plugins\Oftalmol\Model\Autorefractometer;
 
 class Init extends InitClass {
 
@@ -22,7 +24,7 @@ class Init extends InitClass {
 
     #[\Override]
     public function update(): void {
-        //$this->createModels();
+        $this->createModels();
 
         /*$dataBase = new DataBase();
         $sql = 'SELECT DISTINCT t1.codcliente'
@@ -41,6 +43,8 @@ class Init extends InitClass {
         //new PlantillaTratamiento();
         new Patient();
         new Expedient();
+        new VisualAcuity();
+        new Autorefractometer();
         //new Amsler();
         //new TestIshihara();
         //new AgudezaVisualCon();

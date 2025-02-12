@@ -2,26 +2,26 @@
 <view>
     <columns>
         <column name="code" order="100">
-            <widget type="text" fieldname="idprueba" display="none" />
+            <widget type="text" fieldname="idTest" display="none" />
         </column>
-        <column name="patient" display="none" order="110">
-            <widget type="text" fieldname="nombre"/>
+        <column name="patientName" display="none" order="110">
+            <widget type="text" fieldname="patientName"/>
         </column>
-        <column name="date" order="120">
-            <widget type="date" fieldname="fecha"/>
+        <column name="creationDate" order="120">
+            <widget type="date" fieldname="creationDate"/>
         </column>
         <column name="type" order="130">
             <widget type="select" fieldname="tipo" translate="true" required="true">
-                <values title="visual-acuity">165</values>
-                <values title="visual-acuity-without">56</values>
-                <values title="auto-without">52</values>
-                <values title="auto-with">51</values>
-                <values title="subjetive-refraction">53</values>
+                <values title="visualAcuity">165</values>
+                <values title="visualAcuityWithout">56</values>
+                <values title="autoWithout">52</values>
+                <values title="autoWith">51</values>
+                <values title="subjetiveRefraction">53</values>
                 <values title="lensmeter">54</values>
                 <values title="skiascopy">57</values>
                 <values title="keratometry">999</values>
-                <values title="Frontofocometro">154</values>
-                <values title="Autorefractometro">151</values>
+                <values title="frontofocometro">154</values>
+                <values title="autorefractometro">151</values>
             </widget>
         </column>
        
@@ -46,7 +46,7 @@
     </columns>
     <rows>
         <row type="actions">
-            <button action="insertacuity" color="success" icon="fas fa-plus fa-fw" label="new" />
+            <button action="newTestRefraction" color="success" icon="fas fa-plus fa-fw" label="new" />
         </row>
     </rows>
 </view>

@@ -39,6 +39,7 @@ class Patient extends Base\ModelClass {
      */
     public function install(): string {
         new Cliente();
+        
         return parent::install();
     }
     /**

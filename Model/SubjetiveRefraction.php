@@ -10,13 +10,11 @@
 
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
-use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 class SubjetiveRefraction extends Base\Test
 {
-    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.
@@ -28,5 +26,11 @@ class SubjetiveRefraction extends Base\Test
         $this->idTestType = TestTypes::TEST_TYPE_SUBJETIVEREFRACTION;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->date = date(self::DATETIME_STYLE);
+    }
+
+
+    #[\Override]
+    public static function tableName(): string {
+        return 'oft_refractions';
     }
 }

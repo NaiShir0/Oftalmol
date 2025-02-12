@@ -10,18 +10,17 @@
 
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
-use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 class Frontofocometer extends Base\Test
 {
-    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.
      * Set the medical test type.
      */
+    #[\Override]
     public function clear()
     {
         parent::clear();

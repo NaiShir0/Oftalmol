@@ -18,7 +18,7 @@ class Constants {
     const VIEW_EVOLUTION = 'EditEvolucion';
     
     //REFRACTIONS TEST VIEWS
-    const  VIEW_LIST_REFRACTIONTEST = 'ListTestRefraction';
+    const VIEW_LIST_REFRACTIONTEST = 'ListTestRefraction';
     const VIEW_EDIT_VISUALACUITY = 'EditVisualAcuity';
     const VIEW_EDIT_AUTOREFRACTOMETER = 'EditAutorefractometer';
     const VIEW_EDIT_SHIASCOPY = 'EditShiascopy';
@@ -31,4 +31,5 @@ class Constants {
     const ACTION_NEW_TREATMENT = 'new-treatment';
     const ACTION_PRINT_TREATMENT = 'print-treatment';
     const ACTION_PRINT_DOSSIER = 'print-dossier';
+    const ACTION_NEW_TEST_REFRACTION = 'newTestRefraction';
 }
