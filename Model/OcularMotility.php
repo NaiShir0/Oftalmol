@@ -9,13 +9,13 @@
 
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
-use FacturaScripts\Core\Model\Base\ModelTrait;
+use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class EyeFundus extends Base\Test
+class OcularMotility extends Base\Test
 {
-    use ModelTrait;
+    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.
@@ -24,8 +24,8 @@ class EyeFundus extends Base\Test
     public function clear()
     {
         parent::clear();
-        $this->idTestType = TestTypes::TEST_TYPE_EYEFUNDUS;
+        $this->idTestType = TestTypes::TEST_TYPE_OCULARMOTILITY;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->creationDate = date(self::DATETIME_STYLE);
+        $this->date = date(self::DATETIME_STYLE);
     }
 }

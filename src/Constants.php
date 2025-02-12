@@ -36,4 +36,15 @@ class Constants {
     const ACTION_PRINT_TREATMENT = 'print-treatment';
     const ACTION_PRINT_DOSSIER = 'print-dossier';
     const ACTION_NEW_TEST_REFRACTION = 'newTestRefraction';
+    
+    //MOTOR FUNCTION TEST VIEWS
+    const VIEW_EDIT_COVERTEST = 'EditCoverTest';
+    const VIEW_EDIT_STEREOPSIS = 'EditStereopsis';
+    const VIEW_EDIT_EYELIDFUNCTION = 'EditEyelidFunction';
+    const VIEW_EDIT_EXOPHTHALMOMETRY = 'EditExophthalmometry';
+    const VIEW_EDIT_WORTHLIGHT = 'EditWorthLight';
+    const VIEW_EDIT_BIELSCHOSWSKY = 'EditBielschoswsky';
+    const VIEW_EDIT_OCULARMOTILITY = 'EditOcularMotility';
+    const VIEW_EDIT_CONVERGENCEPOINT = 'EditConvergencePoint';
+    
 }

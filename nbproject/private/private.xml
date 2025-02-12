@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nai/Documents/GitHub/Oftalmol/Controller/EditPatient.php</file>
-            <file>file:/C:/Users/Nai/Documents/GitHub/Oftalmol/Model/Expedient.php</file>
-            <file>file:/C:/Users/Nai/Documents/GitHub/Oftalmol/Table/oft_expedients.xml</file>
-            <file>file:/C:/Users/Nai/Documents/GitHub/Oftalmol/Controller/ListExpedient.php</file>
+            <file>file:/C:/xampp/htdocs/FacturaScripts/Plugins/Oftalmol/Controller/EditExpedient.php</file>
+            <file>file:/C:/xampp/htdocs/FacturaScripts/Plugins/Oftalmol/Table/oft_expedients.xml</file>
+            <file>file:/C:/xampp/htdocs/FacturaScripts/Plugins/Oftalmol/Model/Expedient.php</file>
         </group>
     </open-files>
 </project-private>
