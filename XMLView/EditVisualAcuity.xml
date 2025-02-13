@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="header" numcolumns="12">
+            <column name="id" order="100" display="none" numcolumns="1">
+                <widget type="text" fieldname="id" />
+            </column>
+            <column name="idSpeciality" order="110" display="none" numcolumns="1">
+                <widget type="text" fieldname="idSpeciality" />
+            </column>
+            <column name="idExpedient" order="120" display="none" numcolumns="1">
+                <widget type="text" fieldname="idExpedient" />
+            </column>
+            <column name="idTestType" order="130" display="none" numcolumns="1">
+                <widget type="text" fieldname="idTestType" />
+            </column>
+            <column name="creationDate" order="140" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+        </group>
+        <!-- Campos para el lejos del OD -->  
+        <group name="FarWithoutCompensation"  title="withoutCompensation" numcolumns="6">
+            <!-- Campos para el lejos del OD -->  
+            <column name="ODfarSCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="ODfarSCnote"/>
+            </column>
+            <column name="OSfarSCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="OSfarSCnote"/>
+            </column>
+            <!-- Campos para el lejos del OS -->  
+            <column name="OSfarSCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="OSfarSCnote"/>
+            </column>
+            <column name="OSfarSCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="OSfarSCnote"/>
+            </column>
+            <!-- Campo para observaciones sin compensacion -->  
+            <column name="FarSCnote" order="160" numcolumns="4" title="observations">
+                <widget type="textarea" fieldname="FarSCnote" rows="1"/>
+            </column>
+        </group>
+        
+        
+        <group name="FarWithCompensation" title="withCompensation" numcolumns="6">
+            <!-- Campos para el lejos del OD -->  
+            <column name="ODfarCCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="ODfarCCnote"/>
+            </column>
+            <column name="ODfarCCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="ODfarCCnote"/>
+            </column>
+            <!-- Campos para el lejos del OS -->  
+            <column name="OSfarCCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="OSfarCCnote"/>
+            </column>
+            <column name="OSfarCCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="OSfarCCnote"/>
+            </column>
+            <!-- Campo para observaciones sin compensacion -->  
+            <column name="FarCCnote" order="160" numcolumns="4" title="observations">
+                <widget type="textarea" fieldname="FarCCnote" rows="1"/>
+            </column>
+        </group>
+        <group name="CloseWithoutCompensation"  title="withoutCompensation">
+            <!-- Campos para el lejos del OD -->  
+            <column name="ODcloseSCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="ODcloseSCnote"/>
+            </column>
+            <column name="OScloseSCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="OScloseSCnote"/>
+            </column>
+            <!-- Campos para el lejos del OS -->  
+            <column name="OScloseSCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="OScloseSCnote"/>
+            </column>
+            <column name="OScloseSCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="OScloseSCnote"/>
+            </column>
+            <!-- Campo para observaciones sin compensacion -->  
+            <column name="CloseSCnote" order="160" numcolumns="4" title="observations">
+                <widget type="textarea" fieldname="CloseSCnote" rows="1"/>
+            </column>
+        </group>
+        
+        <group name="CloseWithCompensation" title="withCompensation">
+            <!-- Campos para el lejos del OD -->  
+            <column name="ODcloseCCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="ODcloseCCnote"/>
+            </column>
+            <column name="ODcloseCCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="ODcloseCCnote"/>
+            </column>
+            <!-- Campos para el lejos del OS -->  
+            <column name="OScloseCCnote" order="140" numcolumns="3" title="right-eye">
+                <widget type="text" fieldname="OScloseCCnote"/>
+            </column>
+            <column name="OScloseCCnote" order="150" numcolumns="3" title="left-eye">
+                <widget type="text" fieldname="OScloseCCnote"/>
+            </column>
+            <!-- Campo para observaciones sin compensacion -->  
+            <column name="closeCCnote" order="160" numcolumns="4" title="observations">
+                <widget type="textarea" fieldname="closeCCnote" rows="1"/>
+            </column>
+        </group>
+    </columns>
+</view>

@@ -60,8 +60,8 @@ class EditExpedient extends EditController {
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
                 $idexpedient = $this->getViewModelValue($mainViewName, 'id');
-                $where = [new DataBaseWhere('idExpedient', $idexpedient)];
-                $view->loadData(false, $where);
+                //$where = [new DataBaseWhere('oft_expedients.id', $idexpedient)];
+                $view->loadData(false);
                 break;
         }
     }
@@ -154,8 +154,10 @@ class EditExpedient extends EditController {
     protected function execPreviousAction($action) {
         switch ($action) {
             case Constants::ACTION_NEW_TEST_REFRACTION:
+                Tools::log()->warning('aaaaaaaaaaaaaaaaaaaaaa');
                 $idexpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('newtype', 0);
+                $newtype = $this->request->request->get('typeTest', 0);
+                Tools::log()->warning($idexpedient);
                 if (false === empty($idexpedient)) {
                     //$this->redirect('EditTestRefraction?code=' . $idexpedient . '&newtest=' . $newtype, 0);
                     return false;

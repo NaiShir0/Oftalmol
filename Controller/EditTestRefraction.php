@@ -21,32 +21,65 @@ use FacturaScripts\Core\Tools;
  * @author Clinica Castillo <info@clinicastillo.es>
  */
 class EditTestRefraction extends EditTest {
-
-    /**
+ /**
      * Return the basic data for this page.
      *
      * @return array
      */
+    #[\Override]
     public function getPageData(): array {
         $data = parent::getPageData();
         $data['title'] = 'expedient-acuity-test';
         return $data;
     }
-
     /**
      * Create the view to display.
      */
-    protected function createViews() {
+    protected function createViews()
+    {
         parent::createViews();
 
-        Tools::log()->warning('aaaaaaaaaa');
-        //$this->createViewsVisualAcuity();
-        //$this->createViewsAutorefractometer();
-        //$this->createViewsShiascopy();
-        //$this->createViewsFrontofocometer();
-        //$this->createViewsSubjetiveRefraction();
-    }
 
+        $this->createVsualAcuity();
+
+        $this->createViewsAutoRefractometer();
+        $this->createViewsShiascopy();
+        $this->createViewsFrontofocometer();
+        
+        //$this->createViewsRefraccion();
+    }
+    /**
+     *
+     * @param string $viewName
+     */
+    private function createVsualAcuity(string $viewName = Constants::VIEW_EDIT_VISUALACUITY) {
+        $this->addEditListView($viewName, 'VisualAcuity', 'visualAcuity');
+    }
+    
+    private function createViewsAutoRefractometer(string $viewName = Constants::VIEW_EDIT_AUTOREFRACTOMETER) {
+        $this->addEditListView($viewName, 'Autorefractometer', 'autoRefractometer');
+    }
+    
+    /**
+     *
+     * @param string $viewName
+     */
+    private function createViewsShiascopy(string $viewName = Constants::VIEW_EDIT_SHIASCOPY)
+    {
+        $this->addEditListView($viewName, 'Shiascopy', 'shiascopy');
+    }
+    private function createViewsFrontofocometer(string $viewName = Constants::VIEW_EDIT_FRONTOFOCOMETER)
+    {
+        $this->addEditListView($viewName, 'Frontofocometer', 'Frontofocometer');
+    }
+    
+    
+    /**
+     * Returns the class name of the model to use in the editView.
+     */
+    public function getModelClassName(): string {
+        return 'Expedient';
+    }
     /**
      * Get the name of the view for the test type.
      *
@@ -81,44 +114,4 @@ class EditTestRefraction extends EditTest {
       }
       return $default;
       } */
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsVisualAcuity() {
-        $this->addEditListView(Constants::VIEW_EDIT_VISUALACUITY, 'visualAcuity', 'visualAcuity');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsAutorefractometer() {
-        $this->addEditListView(Constants::VIEW_EDIT_AUTOREFRACTOMETER, 'Autorefractometer', 'autorefractometer');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsShiascopy() {
-        $this->addEditListView(Constants::VIEW_EDIT_SHIASCOPY, 'Shiascopy', 'shiascopy');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsFrontofocometer() {
-        $this->addEditListView(Constants::VIEW_EDIT_FRONTOFOCOMETER, 'Frontofocometer', 'frontofocometer');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsSubjetiveRefraction() {
-        $this->addEditListView(Constants::VIEW_EDIT_SUBJETIVEREFRACTION, 'SubjetiveRefraction', 'subjetiveRefraction');
-    }
 }
