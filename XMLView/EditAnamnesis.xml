@@ -8,16 +8,19 @@
         <column name="idExpedient" display="none" order="110">
             <widget type="text" fieldname="idExpedient" readonly="true" />
         </column>
-        <column name="creationDate" numcolumns="2" order="120">
-            <widget type="date" fieldname="creationDate" required="true" />
-        </column>
-        <column name="idNoteType" display="none" order="110">
+        <column name="idNoteType" display="none" order="120">
             <widget type="text" fieldname="idNoteType" readonly="true" />
         </column>
-        <column name="creationTime" numcolumns="2" order="120">
+        <column name="idSpeciality" display="none" order="130">
+            <widget type="text" fieldname="idSpeciality" readonly="true" />
+        </column>
+        <column name="creationDate" numcolumns="2" order="140">
+            <widget type="date" fieldname="creationDate" required="true" />
+        </column>
+        <column name="creationTime" numcolumns="2" order="150">
             <widget type="time" fieldname="creationTime" required="true" />
         </column>
-        <column name="note" order="130">
+        <column name="note" order="160">
             <widget type="textarea" fieldname="note" required="true" rows="2"/>
         </column>
     </columns>

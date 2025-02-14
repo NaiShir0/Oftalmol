@@ -60,17 +60,18 @@ class EditExpedient extends EditController {
                 }
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
-            case Constants::VIEW_EDIT_ANAMNESIS:
                 $where = [new DataBaseWhere('id', $idexpedient)];
-                
-                $view->loadData(false, $where);
                 break;
+            case Constants::VIEW_EDIT_ANAMNESIS:
             case Constants::VIEW_EDIT_PROFESIONALNOTE:
-                $where = [new DataBaseWhere('id', $idexpedient)];
-                Tools::log()->warning('aa'.$idexpedient);
-                $view->loadData(false, $where, ['creationDate' => 'DESC']);
+                $idnotetype = $this->getViewModelValue($viewName, 'idNoteType');
+                $where = [
+                    new DataBaseWhere('idExpedient', $idexpedient),
+                    new DataBaseWhere('idNoteType', $idnotetype)];
+
                 break;
         }
+        $view->loadData(false, $where, ['creationDate' => 'DESC']);
     }
 
     /**
@@ -109,12 +110,12 @@ class EditExpedient extends EditController {
     }
 
     private function createViewAnamnesis(string $viewName = Constants::VIEW_EDIT_ANAMNESIS) {
-        $this->addEditListView($viewName, 'Note', 'anamnesisNote', 'fas fa-chart-line');
+        $this->addEditListView($viewName, 'Anamnesis', 'anamnesis', 'fas fa-chart-line');
         $this->views[$viewName]->setInLine(true);
     }
 
     private function createViewProfesionalNote(string $viewName = Constants::VIEW_EDIT_PROFESIONALNOTE) {
-        $this->addEditListView($viewName, 'Note', 'profesionalNote', 'fas fa-glasses');
+        $this->addEditListView($viewName, 'ProfesionalNote', 'profesionalNote', 'fas fa-glasses');
         $this->views[$viewName]->setInLine(true);
     }
 

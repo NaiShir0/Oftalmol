@@ -10,7 +10,7 @@
         <column name="creationDate" order="120">
             <widget type="date" fieldname="creationDate"/>
         </column>
-        <column name="type" order="130">
+        <!--<column name="type" order="130">
             <widget type="select" fieldname="tipo" translate="true" required="true">
                 <values title="visualAcuity">165</values>
                 <values title="visualAcuityWithout">56</values>
@@ -23,25 +23,28 @@
                 <values title="frontofocometro">154</values>
                 <values title="autorefractometro">151</values>
             </widget>
-        </column>
+        </column>-->
        
-        <column name="right-eyde" order="140" title="far-OD">
-            <widget type="text" fieldname="lejosOD"/>
+       
+       
+       
+        <column name="ODfar" order="140" >
+            <widget type="text" fieldname="ODfar"/>
         </column>
-        <column name="observations" order="150" title="far-OI">
-            <widget type="text" fieldname="lejosOI"/>
+        <column name="OSfar" order="150" >
+            <widget type="text" fieldname="OSfar"/>
         </column>
-        <column name="left-eyvggde" order="160" title="far-notes">
-            <widget type="text" fieldname="lejosobservaciones"/>
+        <column name="farNotes" order="160">
+            <widget type="text" fieldname="farNotes"/>
         </column>
-         <column name="left-eye" order="170" title="close-OD">
-            <widget type="text" fieldname="cercaOD"/>
+        <column name="ODclose" order="140" >
+            <widget type="text" fieldname="ODclose"/>
         </column>
-        <column name="right-eye" order="180" title="close-OI">
-            <widget type="text" fieldname="cercaOI"/>
+        <column name="OSclose" order="150" >
+            <widget type="text" fieldname="OSclose"/>
         </column>
-        <column name="left-eyde" order="190" title="close-notes">
-            <widget type="text" fieldname="cercaobservaciones"/>
+        <column name="closeNotes" order="160">
+            <widget type="text" fieldname="closeNotes"/>
         </column>
     </columns>
     <rows>

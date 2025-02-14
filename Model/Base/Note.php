@@ -1,10 +1,10 @@
 <?php
 
-namespace FacturaScripts\Plugins\Oftalmol\Model;
+namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
 
 use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
-use FacturaScripts\Plugins\Oftalmol\src\NoteTypes;
+
 
 /**
  * Description of Notes
@@ -19,7 +19,7 @@ class Note extends Base\ModelClass {
      *
      * @var string
      */
-    public $description;
+    public $note;
 
     /**
      *
@@ -40,7 +40,8 @@ class Note extends Base\ModelClass {
      * @var int
      */
     public $idExpedient;
-    public $idTestType;
+    public $idNoteType;
+    public $idSpeciality;
 
     /**
      * Reset the values of all model properties.
@@ -49,7 +50,6 @@ class Note extends Base\ModelClass {
     public function clear() {
         parent::clear();
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->idNoteType = NoteTypes::NOTE_TYPE_ANAMNESIS;
         $this->creationDate = date(self::DATE_STYLE);
         $this->creationTime = date(self::HOUR_STYLE);
     }
@@ -83,8 +83,8 @@ class Note extends Base\ModelClass {
      *
      * @return string
      */
-    public function url(string $type = 'auto', string $list = 'List'): string {
+    /*public function url(string $type = 'auto', string $list = 'List'): string {
         $list = 'EditExpedient?code=' . $this->idExpedient . '&active=Edit';
         return parent::url($type, $list);
-    }
+    }*/
 }

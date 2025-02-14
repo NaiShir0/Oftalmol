@@ -36,13 +36,6 @@ class EditTestRefraction extends EditTest {
     }
 
     /**
-     * Returns the class name of the model to use in the editView.
-     */
-    public function getModelClassName(): string {
-        return 'Expedient';
-    }
-
-    /**
      * Get the name of the view for the test type.
      *
      * @param int $testType

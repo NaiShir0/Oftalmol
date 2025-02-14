@@ -7,16 +7,6 @@
     </column>
     <column>
         <name>idSpeciality</name>
-        <type>integer</type>
-        <null>NO</null>
-    </column>
-    <column>
-        <name>idExpedient</name>
-        <type>int</type>
-        <null>NO</null>
-    </column>
-    <column>
-        <name>idTestType</name>
         <type>int</type>
         <null>NO</null>
     </column>
@@ -30,6 +20,16 @@
         <type>time</type>
         <null>NO</null>
     </column>
+        <column>
+        <name>modificationDate</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+        <column>
+        <name>modificationTime</name>
+        <type>time</type>
+        <null>NO</null>
+    </column>
     
     <column>
         <name>releaseDate</name>
@@ -38,7 +38,7 @@
     
     <column>
         <name>idReason</name>
-        <type>integer</type>
+        <type>int</type>
         <null>NO</null>
     </column>
     
