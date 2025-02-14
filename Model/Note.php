@@ -44,6 +44,7 @@ class Note extends Base\ModelClass {
     /**
      * Reset the values of all model properties.
      */
+    #[\Override]
     public function clear() {
         parent::clear();
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;

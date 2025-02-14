@@ -39,19 +39,20 @@ class EditExpedient extends EditController {
     protected function loadData($viewName, $view) {
 
         $mainViewName = $this->getMainViewName();
+        $idexpedient = $this->getViewModelValue($mainViewName, 'id');
+        $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
+
         if ($viewName === $mainViewName) {
             parent::loadData($viewName, $view);
-            $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
             if (false === empty($idpatient)) {
                 $this->addActionsButton();
             }
-            $idexpedient = $this->getViewModelValue($mainViewName, 'id');
             //$this->setValueSelectFechas($idexpedient);
             return;
         }
+
         switch ($viewName) {
             case Constants::VIEW_LIST_PATIENT:
-                $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
                 if (false === empty($idpatient)) {
                     $view->loadData($idpatient);
                     $view->model->loadClientData();
@@ -60,9 +61,12 @@ class EditExpedient extends EditController {
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
             case Constants::VIEW_EDIT_ANAMNESIS:
-                $idexpedient = $this->getViewModelValue($mainViewName, 'id');
                 $where = [new DataBaseWhere('id', $idexpedient)];
                 $view->loadData(false, $where);
+                break;
+            case Constants::VIEW_EDIT_PROFESIONALNOTE:
+                $where = [new DataBaseWhere('id', $idexpedient)];
+                $view->loadData(false, $where, ['creationDate' => 'DESC']);
                 break;
         }
     }

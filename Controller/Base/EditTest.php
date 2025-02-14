@@ -32,6 +32,7 @@ class EditTest extends EditController {
      * @param string $viewName
      * @param BaseView $view
      */
+    #[\Override]
     protected function loadData($viewName, $view)
     {
         if ($viewName === $this->getMainViewName()) {
