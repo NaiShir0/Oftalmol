@@ -1,10 +1,10 @@
 <view>
     <columns>
         <group name="header" numcolumns="12">
-            <column name="id" order="100" display="none" numcolumns="1">
+            <column name="id" order="100" display="none" numcolumns="1" >
                 <widget type="text" fieldname="id" />
             </column>
-           <column name="idSpeciality" order="110" display="none" numcolumns="1">
+            <column name="idSpeciality" order="110" display="none" numcolumns="1">
                 <widget type="text" fieldname="idSpeciality" />
             </column>
             <column name="idExpedient" order="120" display="none" numcolumns="1">
@@ -15,6 +15,9 @@
             </column>
             <column name="creationDate" order="140" numcolumns="2">
                 <widget type="date" fieldname="creationDate" />
+            </column>
+            <column name="creationTime" order="140" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
             </column>
         </group>
         
