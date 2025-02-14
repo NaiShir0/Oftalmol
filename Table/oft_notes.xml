@@ -31,7 +31,7 @@
     </column>
     
     <column>
-        <name>description</name>           <!-- Anamnesis -->
+        <name>note</name>           
         <type>text</type>
         <null>NO</null>
     </column>
