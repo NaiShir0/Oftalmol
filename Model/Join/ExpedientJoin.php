@@ -23,7 +23,7 @@ class ExpedientJoin extends JoinModel {
             'modificationDate' => 'expedients.modificationDate',
             'codcliente' => 'expedients.codcliente',
             'id' => 'expedients.id',
-            'idReason' => 'expedients.idReason',
+            'idReason' => 'reasons.id',
             'reasonName' => 'reasons.reasonName',
             'nombre' => 'clientes.nombre',
             'telefono1' => 'clientes.telefono1',

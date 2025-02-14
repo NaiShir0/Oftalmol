@@ -3,9 +3,10 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;
+use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 /**
- * Description of Notes
+ * Description of Reasons
  *
  * @author Nai
  */
@@ -15,7 +16,17 @@ class Reason extends Base\ModelClass {
 
     public $id;
     public $reasonName;
-            
+    public $creationDate;
+    public $creationTime;
+    public $idSpeciality;
+       
+    public function clear()
+    {
+        parent::clear();
+        $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
+        $this->creationDate = date(self::DATE_STYLE);
+        $this->creationTime = date(self::HOUR_STYLE);
+    }
 
     /*
      * Returns the name of the column that is the model's primary key.

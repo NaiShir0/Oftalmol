@@ -105,6 +105,10 @@
         <type>int</type>
     </column>
     <column>
+        <name>ODclosePrism</name>
+        <type>text</type>
+    </column>
+    <column>
         <name>ODcloseNote</name>
         <type>text</type>
     </column>
@@ -121,6 +125,10 @@
     <column>
         <name>OScloseAxis</name>
         <type>int</type>
+    </column>
+    <column>
+        <name>OSclosePrism</name>
+        <type>text</type>
     </column>
     <column>
         <name>OScloseNote</name>

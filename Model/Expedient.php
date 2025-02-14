@@ -53,7 +53,7 @@ class Expedient extends Base\ModelClass {
      */
     public function install(): string {
         new Reason();
-        new Notes();
+        new Note();
         //REFRACTION TESTS
         new VisualAcuity();
         new Autorefractometer();

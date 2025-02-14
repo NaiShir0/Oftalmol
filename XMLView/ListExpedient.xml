@@ -13,8 +13,8 @@
         <column name="patient" order="120">
             <widget type="text" fieldname="nombre"/>
         </column>
-        <column name="reason" order="130">
-            <widget type="text" fieldname="reason" />
+        <column name="reasonName" order="130">
+            <widget type="text" fieldname="reasonName" />
         </column>
         <column name="mobile" order="140" display="center">
             <widget type="text" fieldname="telefono1"/>

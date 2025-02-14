@@ -17,8 +17,9 @@
                 <widget type="date" fieldname="creationDate" />
             </column>
         </group>
+        
 
-        <group name="farGlasses" numcolumns="6" title="farGlasses">    
+        <group name="farGlasses" numcolumns="5" title="farGlasses">    
             <!-- Campos para el lejos del OD -->    
             <column name="ODfarSphere" order="200" numcolumns="4">
                 <widget type="text" fieldname="ODfarSphere" />
@@ -29,42 +30,43 @@
             <column name="ODfarAxis" order="220" numcolumns="4">
                 <widget type="text" fieldname="ODfarAxis" />
             </column>
-            <column name="ODfarPrism" order="225" numcolumns="4">
+            <column name="ODfarPrism" order="235" numcolumns="4">
                 <widget type="text" fieldname="ODfarPrism" />
             </column>
-            <column name="ODfarAddition" order="230" numcolumns="4">
+            <column name="ODfarAddition" order="240" numcolumns="4">
                 <widget type="text" fieldname="ODfarAddition" />
             </column>
-            <column name="ODfarNote" order="240" numcolumns="12">
+            <column name="ODfarNote" order="250" numcolumns="12">
                 <widget type="text" fieldname="ODfarNote" />
             </column>
                     
        
             <!-- Campos para el lejos del OS -->    
-            <column name="OSfarSphere" order="250" numcolumns="4">
+            <column name="OSfarSphere" order="260" numcolumns="4">
                 <widget type="text" fieldname="OSfarSphere" />
             </column>
-            <column name="OSfarCylinder" order="260" numcolumns="4">
+            <column name="OSfarCylinder" order="270" numcolumns="4">
                 <widget type="text" fieldname="OSfarCylinder" />
             </column>
-            <column name="OSfarAxis" order="270" numcolumns="4">
+            <column name="OSfarAxis" order="280" numcolumns="4">
                 <widget type="text" fieldname="OSfarAxis" />
             </column>
-            <column name="OSfarPrism" order="275" numcolumns="4">
+            <column name="OSfarPrism" order="290" numcolumns="4">
                 <widget type="text" fieldname="OSfarPrism" />
             </column>
-            <column name="OSfarAddition" order="280" numcolumns="4">
+            <column name="OSfarAddition" order="300" numcolumns="4">
                 <widget type="text" fieldname="OSfarAddition" />
             </column>
-            <column name="OSfarNote" order="290" numcolumns="12">
+            <column name="OSfarNote" order="310" numcolumns="12">
                 <widget type="text" fieldname="OSfarNote" />
             </column>
             
-            <column name="farNote" order="300" numcolumns="12" rows="1">
+            <column name="farNote" order="320" numcolumns="12" rows="1">
                 <widget type="textarea" fieldname="farNote"/>
             </column>
         </group>
         
+        <group name="separator1" numcolumns="1" title=""></group>
         
         <group name="closeGlasses" numcolumns="6" title="closeGlasses">    
             <!-- Campos para el cerca del OD -->    
@@ -77,35 +79,35 @@
             <column name="ODcloseAxis" order="370" numcolumns="4">
                 <widget type="text" fieldname="ODcloseAxis" />
             </column>
-            <column name="ODclosePrism" order="375" numcolumns="4">
+            <column name="ODclosePrism" order="380" numcolumns="4">
                 <widget type="text" fieldname="OSfarPrism" />
             </column>
-            <column name="ODcloseNote" order="380" numcolumns="12">
+            <column name="ODcloseNote" order="390" numcolumns="12">
                 <widget type="text" fieldname="ODcloseNote" />
             </column>
             
             <!-- Campos para el cerca del OS -->    
-            <column name="OScloseSphere" order="390" numcolumns="4">
+            <column name="OScloseSphere" order="400" numcolumns="4">
                 <widget type="text" fieldname="OScloseSphere" />
             </column>
-            <column name="OScloseCylinder" order="400" numcolumns="4">
+            <column name="OScloseCylinder" order="410" numcolumns="4">
                 <widget type="text" fieldname="OScloseCylinder" />
             </column>
-            <column name="OScloseAxis" order="410" numcolumns="4">
+            <column name="OScloseAxis" order="420" numcolumns="4">
                 <widget type="text" fieldname="OScloseAxis" />
             </column>
-            <column name="OSclosePrism" order="415" numcolumns="4">
+            <column name="OSclosePrism" order="430" numcolumns="4">
                 <widget type="text" fieldname="OSfarPrism" />
             </column>
-            <column name="OScloseNote" order="420" numcolumns="12">
+            <column name="OScloseNote" order="440" numcolumns="12">
                 <widget type="text" fieldname="OScloseNote" />
             </column>
-            <column name="closeNote" order="430" numcolumns="12" rows="1">
+            <column name="closeNote" order="450" numcolumns="12" rows="1">
                 <widget type="textarea" fieldname="closeNote"/>
             </column>
         </group>
         
-        <column name="profesionalNote" order="440" numcolumns="12" rows="1">
+        <column name="profesionalNote" order="460" numcolumns="12" rows="1">
             <widget type="textarea" fieldname="profesionalNote"/>
         </column>
     </columns>
