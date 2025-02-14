@@ -4,6 +4,7 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
+use FacturaScripts\Plugins\Oftalmol\src\NoteTypes;
 
 /**
  * Description of Notes
@@ -48,6 +49,7 @@ class Note extends Base\ModelClass {
     public function clear() {
         parent::clear();
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
+        $this->idNoteType = NoteTypes::NOTE_TYPE_ANAMNESIS;
         $this->creationDate = date(self::DATE_STYLE);
         $this->creationTime = date(self::HOUR_STYLE);
     }

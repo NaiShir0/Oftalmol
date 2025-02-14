@@ -15,7 +15,7 @@
         <null>NO</null>
     </column>
     <column>
-        <name>idTestType</name>
+        <name>idNoteType</name>
         <type>int</type>
         <null>NO</null>
     </column>

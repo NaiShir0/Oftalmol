@@ -62,10 +62,12 @@ class EditExpedient extends EditController {
             case Constants::VIEW_LIST_REFRACTIONTEST:
             case Constants::VIEW_EDIT_ANAMNESIS:
                 $where = [new DataBaseWhere('id', $idexpedient)];
+                
                 $view->loadData(false, $where);
                 break;
             case Constants::VIEW_EDIT_PROFESIONALNOTE:
                 $where = [new DataBaseWhere('id', $idexpedient)];
+                Tools::log()->warning('aa'.$idexpedient);
                 $view->loadData(false, $where, ['creationDate' => 'DESC']);
                 break;
         }
@@ -157,7 +159,6 @@ class EditExpedient extends EditController {
     protected function execPreviousAction($action) {
         switch ($action) {
             case Constants::ACTION_NEW_TEST_REFRACTION:
-                Tools::log()->warning('aaaaaaaaaaaaaaaaaaaaaa');
                 $idExpedient = (int) $this->request->get('code', 0);
                 $newtype = $this->request->request->get('typeTest', 0);
                 Tools::log()->warning($idExpedient);
