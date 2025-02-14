@@ -23,7 +23,7 @@ class EditTest extends EditController {
 
     #[\Override]
     public function getModelClassName(): string {
-        return 'Test';
+        return 'Expedient';
     }
     
     /**
