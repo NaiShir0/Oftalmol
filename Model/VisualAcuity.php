@@ -17,7 +17,8 @@ class VisualAcuity extends Base\Test {
         parent::clear();
         $this->idTestType = TestTypes::TEST_TYPE_VISUALACUITY;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->date = date(self::DATETIME_STYLE);
+        $this->creationDate = date(self::DATE_STYLE);
+        $this->creationTime = date(self::HOUR_STYLE);
     }
 
     #[\Override]

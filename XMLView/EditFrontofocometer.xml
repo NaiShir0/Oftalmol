@@ -16,11 +16,6 @@
             <column name="creationDate" order="140" numcolumns="2">
                 <widget type="date" fieldname="creationDate" />
             </column>
-            <column name="glassesType" order="150" numcolumns="2" titleurl="ListAdministracion?activetab=ListGlassesType">
-                <widget type="select" fieldname="idGlassesType" required="true" readonly="dinamic" onclick="EditGlassesType">
-                    <values source="oft_glassesType" fieldcode="id" fieldtitle="glasses"/>
-                </widget>
-            </column>
             <column name="ODfarPrism" order="160" numcolumns="4">
                 <widget type="text" fieldname="ODfarPrism" />
             </column>

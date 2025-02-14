@@ -17,6 +17,9 @@
             <column name="creationDate" order="140" numcolumns="2">
                 <widget type="date" fieldname="creationDate" />
             </column>
+            <column name="creationTime" order="140" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
         </group>
         <!-- Campos para el lejos del OD -->  
         <group name="FarWithoutCompensation"  title="withoutCompensation" numcolumns="6">

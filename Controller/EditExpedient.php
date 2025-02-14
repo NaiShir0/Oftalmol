@@ -4,8 +4,8 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
-use FacturaScripts\Core\Tools;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
+use FacturaScripts\Core\Tools;
 
 class EditExpedient extends EditController {
 
@@ -59,9 +59,10 @@ class EditExpedient extends EditController {
                 }
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
+            case Constants::VIEW_EDIT_ANAMNESIS:
                 $idexpedient = $this->getViewModelValue($mainViewName, 'id');
-                //$where = [new DataBaseWhere('oft_expedients.id', $idexpedient)];
-                $view->loadData(false);
+                $where = [new DataBaseWhere('id', $idexpedient)];
+                $view->loadData(false, $where);
                 break;
         }
     }
@@ -129,9 +130,7 @@ class EditExpedient extends EditController {
     }
 
     private function createViewRefraction(string $viewName = Constants::VIEW_LIST_REFRACTIONTEST) {
-
         $this->addListView($viewName, 'Join\RefractionJoin', 'refractionTests', 'fas fa-laptop-medical');
-        Tools::log()->warning('After refraction');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 
@@ -155,11 +154,11 @@ class EditExpedient extends EditController {
         switch ($action) {
             case Constants::ACTION_NEW_TEST_REFRACTION:
                 Tools::log()->warning('aaaaaaaaaaaaaaaaaaaaaa');
-                $idexpedient = (int) $this->request->get('code', 0);
+                $idExpedient = (int) $this->request->get('code', 0);
                 $newtype = $this->request->request->get('typeTest', 0);
-                Tools::log()->warning($idexpedient);
-                if (false === empty($idexpedient)) {
-                    //$this->redirect('EditTestRefraction?code=' . $idexpedient . '&newtest=' . $newtype, 0);
+                Tools::log()->warning($idExpedient);
+                if (false === empty($idExpedient)) {
+                    $this->redirect('EditTestRefraction?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
                 }
                 return true;

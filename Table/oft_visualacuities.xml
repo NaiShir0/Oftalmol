@@ -19,7 +19,11 @@
     </column>
     <column>
         <name>creationDate</name>
-        <type>datetime</type>
+        <type>date</type>
+    </column>
+    <column>
+        <name>creationTime</name>
+        <type>time</type>
     </column>
     
     <column>

@@ -2,7 +2,12 @@
 <table>
     <column>
         <name>creationDate</name>
-        <type>datetime</type>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>creationTime</name>
+        <type>time</type>
         <null>NO</null>
     </column>
     <column>

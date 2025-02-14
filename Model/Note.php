@@ -3,6 +3,7 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base;
+use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 /**
  * Description of Notes
@@ -24,7 +25,7 @@ class Note extends Base\ModelClass {
      * @var string
      */
     public $creationDate;
-    
+
     /**
      * Primary key
      *
@@ -38,29 +39,17 @@ class Note extends Base\ModelClass {
      * @var int
      */
     public $idExpedient;
-    
     public $idTestType;
-            
 
     /**
      * Reset the values of all model properties.
      */
     public function clear() {
         parent::clear();
-        $this->creationDate = date(self::DATETIME_STYLE);
+        $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
+        $this->creationDate = date(self::DATE_STYLE);
+        $this->creationTime = date(self::HOUR_STYLE);
     }
-
-    /**
-     * This function is called when creating the model table. Returns the SQL
-     * that will be executed after the creation of the table. Useful to insert values
-     * default.
-     *
-     * @return string
-     */
-     /* public function install(): string {
-        new Expedient();
-        return parent::install();
-    }*/
 
     /*
      * Returns the name of the column that is the model's primary key.

@@ -3,15 +3,17 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model\Join;
 
 use FacturaScripts\Core\Model\Base;
-use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+
 
 class RefractionJoin extends Base\JoinModel
 {
-    public function __construct($data = array())
+/**TODO: mirar si sirve para algo. Javi tiene que revisarlo
+ *     public function __construct($data = array())
     {
         parent::__construct($data);
         $this->setMasterModel( new Test() );
-    }
+    }*/
+    
     #[\Override]
     protected function getFields(): array {
         return [

@@ -26,6 +26,11 @@ class Frontofocometer extends Base\Test
         parent::clear();
         $this->idTestType = TestTypes::TEST_TYPE_FRONTOFOCOMETER;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->date = date(self::DATETIME_STYLE);
+        $this->creationDate = date(self::DATETIME_STYLE);
+    }
+    
+    #[\Override]
+    public static function tableName(): string {
+        return 'oft_refractions';
     }
 }
