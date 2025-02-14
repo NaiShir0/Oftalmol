@@ -28,7 +28,7 @@ class Expedient extends Base\ModelClass {
      *
      * @var int
      */
-    public $idReason;
+    public $id;
      /**
      * Link to Patient model.
      *

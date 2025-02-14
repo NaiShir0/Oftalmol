@@ -8,24 +8,29 @@
     <column>
         <name>idSpeciality</name>
         <type>integer</type>
+        <null>NO</null>
     </column>
     <column>
         <name>idExpedient</name>
         <type>int</type>
+        <null>NO</null>
     </column>
     <column>
         <name>idTestType</name>
         <type>int</type>
+        <null>NO</null>
     </column>
     <column>
         <name>creationDate</name>
         <type>date</type>
+        <null>NO</null>
     </column>
     <column>
         <name>creationTime</name>
         <type>time</type>
+        <null>NO</null>
     </column>
-    
+        
     <column>
         <name>ODfarSCnote</name>
         <type>text</type>

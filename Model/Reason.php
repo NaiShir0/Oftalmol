@@ -13,7 +13,7 @@ class Reason extends Base\ModelClass {
 
     use Base\ModelTrait;
 
-    public $idReason;
+    public $id;
     public $reasonName;
             
 
@@ -25,7 +25,7 @@ class Reason extends Base\ModelClass {
 
     #[\Override]
     public static function primaryColumn(): string {
-        return 'idReason';
+        return 'id';
     }
 
     /**

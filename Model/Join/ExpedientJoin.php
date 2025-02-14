@@ -36,7 +36,7 @@ class ExpedientJoin extends JoinModel {
     #[\Override]
     protected function getSQLFrom(): string {
         return 'oft_expedients expedients'
-            . ' INNER JOIN oft_reasons reasons ON reasons.idReason = expedients.idReason'
+            . ' INNER JOIN oft_reasons reasons ON reasons.id = expedients.idReason'
             . ' INNER JOIN clientes ON clientes.codcliente = expedients.codcliente';
     }
 

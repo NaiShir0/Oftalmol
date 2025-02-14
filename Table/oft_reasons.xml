@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    This file is part of Oftalmologia plugin for FacturaScripts.
-    FacturaScripts Copyright (C) 2015-2022 Carlos Garcia Gomez <carlos@facturascripts.com>
-    Oftalmologia   Copyright (C) 2022-2022 Clinica Castillo <info@clinicastillo.es>
-                   Copyright (C) 2022-2022 Jose Antonio Cuello Principal <yopli2000@gmail.com>
 
-    Document   : oft_motivos.xml
-    Author     : Clinica Castillo    <info@clinicastillo.es>
-               : Jose Antonio Cuello <yopli2000@gmail.com>
-    Description:
-        List of reasons for ophthalmological consultation.
--->
 <table>
     <column>
-        <name>idReason</name>
+        <name>id</name>
         <type>serial</type>
+    </column>
+    <column>
+        <name>idSpeciality</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>creationDate</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>creationTime</name>
+        <type>time</type>
         <null>NO</null>
     </column>
     <column>
@@ -25,6 +28,6 @@
 
     <constraint>
         <name>oft_reasons_pkey</name>
-        <type>PRIMARY KEY (idReason)</type>
+        <type>PRIMARY KEY (id)</type>
     </constraint>
 </table>

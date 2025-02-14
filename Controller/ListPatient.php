@@ -33,7 +33,7 @@ class ListPatient extends ListController{
         //Add Filter options
         $this->addFilterCheckbox($viewName, 'conexpedientes', 'with-expedients', 'expedientes.idmotivo');
         //Add more OrdersBy types
-        $this->addOrderBy($viewName, ['count(expedients.idReason)'], 'numexpedients', 2);
+        $this->addOrderBy($viewName, ['count(expedients.id)'], 'numexpedients', 2);
         $this->addOrderBy($viewName, ['clientes.nombre'], 'name', 1);
     }
 }
