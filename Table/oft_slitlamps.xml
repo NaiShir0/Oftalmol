@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table>
+    <column>
+        <name>id</name>
+        <type>serial</type>
+    </column>
+    <column>
+        <name>idSpeciality</name>
+        <type>integer</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idExpedient</name>
+        <type>int</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>idTestType</name>
+        <type>int</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>creationDate</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>creationTime</name>
+        <type>time</type>
+        <null>NO</null>
+    </column>
+        <column>
+        <name>modificationDate</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>modificationTime</name>
+        <type>time</type>
+        <null>NO</null>
+    </column>
+        
+    <column>
+        <name>ODnote</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>OSnote</name>
+        <type>text</type>
+    </column>
+
+    <!-- Notas genéricas -->
+    <column>
+        <name>generalNote</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>profesionalNote</name>
+        <type>text</type>
+    </column>
+
+    <!-- KEYS -->
+    <constraint>
+        <name>oft_slitlamp_pkey</name>
+        <type>PRIMARY KEY (id)</type>
+    </constraint>
+    <constraint>
+        <name>fk_oft_slitlamp_expedients</name>
+        <type>FOREIGN KEY (idExpedient) REFERENCES oft_expedients (id) ON UPDATE CASCADE ON DELETE RESTRICT</type>
+    </constraint>
+</table>

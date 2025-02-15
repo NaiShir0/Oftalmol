@@ -8,25 +8,40 @@
     <column>
         <name>idSpeciality</name>
         <type>integer</type>
+        <null>NO</null>
     </column>
     <column>
         <name>idExpedient</name>
         <type>int</type>
+        <null>NO</null>
     </column>
     <column>
         <name>idTestType</name>
         <type>int</type>
-    </column>
-    <column>
-        <name>idGlassesType</name>
-        <type>int</type>
+        <null>NO</null>
     </column>
     <column>
         <name>creationDate</name>
-        <type>datetime</type>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>creationTime</name>
+        <type>time</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>modificationDate</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>modificationTime</name>
+        <type>time</type>
+        <null>NO</null>
     </column>
     
-<!-- Campos para el lejos del OD -->
+    <!-- Campos para el lejos del OD -->
     <column>
         <name>ODfarSphere</name>
         <type>decimal</type>
@@ -56,7 +71,7 @@
         <type>text</type>
     </column>
     
-<!-- Campos para el lejos del OS -->
+    <!-- Campos para el lejos del OS -->
     <column>
         <name>OSfarSphere</name>
         <type>decimal</type>
@@ -86,7 +101,7 @@
         <type>text</type>
     </column>
     
-<!-- Campos para el cerca del OD -->
+    <!-- Campos para el cerca del OD -->
     <column>
         <name>ODcloseSphere</name>
         <type>decimal</type>
@@ -100,11 +115,15 @@
         <type>int</type>
     </column>
     <column>
+        <name>ODclosePrism</name>
+        <type>text</type>
+    </column>
+    <column>
         <name>ODcloseNote</name>
         <type>text</type>
     </column>
     
-<!-- Campos para el cerca del OS -->
+    <!-- Campos para el cerca del OS -->
     <column>
         <name>OScloseSphere</name>
         <type>decimal</type>
@@ -118,12 +137,16 @@
         <type>int</type>
     </column>
     <column>
+        <name>OSclosePrism</name>
+        <type>text</type>
+    </column>
+    <column>
         <name>OScloseNote</name>
         <type>text</type>
     </column>
     
     
-<!-- Notas genéricas -->
+    <!-- Notas genéricas -->
     <column>
         <name>farNote</name>
         <type>text</type>
@@ -141,12 +164,12 @@
         <type>text</type>
     </column>
     
-<!-- KEYS -->
+    <!-- KEYS -->
     <constraint>
         <name>oft_refractions_pkey</name>
         <type>PRIMARY KEY (id)</type>
     </constraint>
-        <constraint>
+    <constraint>
         <name>fk_oft_refractions_expedients</name>
         <type>FOREIGN KEY (idExpedient) REFERENCES oft_expedients (id) ON UPDATE CASCADE ON DELETE RESTRICT</type>
     </constraint>

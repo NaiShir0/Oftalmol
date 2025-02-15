@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="code" display="none" order="100">
+            <widget type="text" fieldname="id" />
+        </column>
+        <column name="creationDate" order="110" display="center">
+            <widget type="date" fieldname="creationDate"/>
+        </column>
+        <column name="modificationDate" order="120" display="center">
+            <widget type="date" fieldname="modificationDate"/>
+        </column>
+        <column name="patient" order="120">
+            <widget type="text" fieldname="nombre"/>
+        </column>
+        <column name="reasonName" order="130">
+            <widget type="text" fieldname="reasonName" />
+        </column>
+        <column name="mobile" order="140" display="center">
+            <widget type="text" fieldname="telefono1"/>
+        </column>
+        <column name="phone" display="none" order="150">
+            <widget type="text" fieldname="telefono2"/>
+        </column>
+        <column name="email" display="none" order="160">
+            <widget type="text" fieldname="email"/>
+        </column>
+        <column name="birthDate" order="170" display="center">
+            <widget type="text" fieldname="birthDate"/>
+        </column>
+        <column name="release" order="180" display="center">
+            <widget type="date" fieldname="release" />
+        </column>
+    </columns>
+    <rows>
+        <row type="status" fieldname="release">
+            <option title="closed" color="info">&gt;0</option>
+        </row>
+    </rows>
+</view>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="header" numcolumns="12">
+            <column name="id" order="100" display="none" numcolumns="1" >
+                <widget type="text" fieldname="id" />
+            </column>
+            <column name="idSpeciality" order="110" display="none" numcolumns="1">
+                <widget type="text" fieldname="idSpeciality" />
+            </column>
+            <column name="idExpedient" order="120" display="none" numcolumns="1">
+                <widget type="text" fieldname="idExpedient" />
+            </column>
+            <column name="idTestType" order="130" display="none" numcolumns="1">
+                <widget type="text" fieldname="idTestType" />
+            </column>
+            <column name="creationDate" order="140" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+            <column name="creationTime" order="150" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
+            <column name="modificationDate" order="160" numcolumns="2">
+                <widget type="date" fieldname="modificationDate" />
+            </column>
+            <column name="modificationTime" order="170" numcolumns="2">
+                <widget type="time" fieldname="modificationTime" />
+            </column>
+        </group>
+        
+        <group name="farVision" title="farVision" numcolumns="12"/>
+
+        <group name="withoutCompensation" title="withoutCompensation" numcolumns="6">
+            <!-- Campos para el lejos del OD -->
+            <column name="ODfarSCnote" order="200" numcolumns="3" >
+                <widget type="text" fieldname="ODfarSCnote"/>
+            </column>
+            <column name="OSfarSCnote" order="210" numcolumns="3" >
+                <widget type="text" fieldname="OSfarSCnote"/>
+            </column>
+            <column name="FarSCnote" order="220" numcolumns="4" >
+                <widget type="textarea" fieldname="FarSCnote" rows="1"/>
+            </column>
+        </group>
+            
+        <group name="withCompensation" title="withCompensation" numcolumns="6">
+            <!-- Campos para el lejos del OS -->  
+            <column name="ODfarCCnote" order="230" numcolumns="3" >
+                <widget type="text" fieldname="ODfarCCnote"/>
+            </column>
+            <column name="OSfarCCnote" order="240" numcolumns="3" >
+                <widget type="text" fieldname="OSfarCCnote"/>
+            </column>
+            <column name="FarCCnote" order="250" numcolumns="4" >
+                <widget type="textarea" fieldname="FarCCnote" rows="1"/>
+            </column>
+        </group>
+            
+        <group name="closeVision" title="closeVision" numcolumns="12"/>    
+            
+        <group name="withoutCompensationClose" title="withoutCompensation" numcolumns="6">
+            <!-- Campos para el lejos del OD -->
+            <column name="ODcloseSCnote" order="300" numcolumns="3" >
+                <widget type="text" fieldname="ODcloseSCnote"/>
+            </column>
+            <column name="OScloseSCnote" order="310" numcolumns="3" >
+                <widget type="text" fieldname="OScloseSCnote"/>
+            </column>
+            <column name="CloseSCnote" order="320" numcolumns="4" >
+                <widget type="textarea" fieldname="CloseSCnote" rows="1"/>
+            </column>
+        </group>
+            
+        <group name="withCompensationClose" title="withCompensation" numcolumns="6">
+            <!-- Campos para el lejos del OS -->  
+            <column name="ODcloseCCnote" order="330" numcolumns="3" >
+                <widget type="text" fieldname="ODcloseCCnote"/>
+            </column>
+            <column name="OScloseCCnote" order="340" numcolumns="3" >
+                <widget type="text" fieldname="OScloseCCnote"/>
+            </column>
+            <column name="CloseCCnote" order="350" numcolumns="4" >
+                <widget type="textarea" fieldname="CloseCCnote" rows="1"/>
+            </column>
+        </group>
+        
+        <group title="footer">
+            <column name="generalNote" order="40" numcolumns="12" >
+                <widget type="text" fieldname="generalNote"/>
+            </column>
+            <column name="profesionalNote" order="410" numcolumns="12" >
+                <widget type="textarea" fieldname="profesionalNote" rows="1"/>
+            </column>
+        </group>
+    </columns>
+</view>

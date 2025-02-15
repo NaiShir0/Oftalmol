@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="header">
+            <column name="code" display="none" order="100">
+                <widget type="text" fieldname="id" readonly="true" />
+            </column>
+            <column name="idExpedient" display="none" order="110">
+                <widget type="text" fieldname="idExpedient" readonly="true" />
+            </column>
+            <column name="idNoteType" display="none" order="120">
+                <widget type="text" fieldname="idNoteType" readonly="true" />
+            </column>     
+            <column name="idSpeciality" display="none" order="130">
+                <widget type="text" fieldname="idSpeciality" readonly="true" />
+            </column>
+            <column name="creationDate" numcolumns="2" order="140">
+                <widget type="date" fieldname="creationDate" required="true" />
+            </column>
+            <column name="creationTime" numcolumns="2" order="150">
+                <widget type="time" fieldname="creationTime" required="true" />
+            </column>
+            <column name="modificationDate" order="160" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+            <column name="modificationTime" order="170" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
+        </group>
+        <column name="note" order="200">
+            <widget type="textarea" fieldname="note" required="true" rows="2"/>
+        </column>
+    </columns>
+
+</view>

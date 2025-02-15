@@ -1,30 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view>
     <columns>
-        <column name="id" order="100" display="none" numcolumns="1">
-            <widget type="text" fieldname="id" />
-        </column>
-        <column name="idSpeciality" order="110" display="none" numcolumns="1">
-            <widget type="text" fieldname="idSpeciality" />
-        </column>
-        <column name="idExpedient" display="none" order="120" numcolumns="1">
-            <widget type="text" fieldname="idExpedient" />
-        </column>
-        <column name="idTestType" order="130" numcolumns="1">
-            <widget type="text" fieldname="idTextType" />
-        </column>
-        <column name="creationDate" order="140">
-            <widget type="date" fieldname="creationDate" />
-        </column>
-        <column name="ODnote" order="150">
-            <widget type="textarea" fieldname="ODnote" rows="2"/>
-        </column>
-        <column name="OSnote" order="160">
-            <widget type="textarea" fieldname="OSnote" rows="2"/>
-        </column>
-        <column name="GeneralNote" order="170" numcolumns="12">
-            <widget type="textarea" fieldname="GeneralNote" rows="2"/>
-        </column>
+        <group name="header" numcolumns="12">
+            <column name="id" order="100" display="none" numcolumns="1" >
+                <widget type="text" fieldname="id" />
+            </column>
+            <column name="idSpeciality" order="110" display="none" numcolumns="1">
+                <widget type="text" fieldname="idSpeciality" />
+            </column>
+            <column name="idExpedient" order="120" display="none" numcolumns="1">
+                <widget type="text" fieldname="idExpedient" />
+            </column>
+            <column name="idTestType" order="130" display="none" numcolumns="1">
+                <widget type="text" fieldname="idTestType" />
+            </column>
+            <column name="creationDate" order="140" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+            <column name="creationTime" order="150" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
+            <column name="modificationDate" order="160" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+            <column name="modificationTime" order="170" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
+        </group>
+        
+        <group name="Test Fields">
+            <column name="ODnote" order="150">
+                <widget type="textarea" fieldname="ODnote" rows="2"/>
+            </column>
+            <column name="OSnote" order="160">
+                <widget type="textarea" fieldname="OSnote" rows="2"/>
+            </column>
+            <column name="GeneralNote" order="170" numcolumns="12">
+                <widget type="textarea" fieldname="GeneralNote" rows="2"/>
+            </column>
+        </group>
         <column name="ProfesionalNote" order="180" numcolumns="12">
             <widget type="textarea" fieldname="ProfesionalNote" rows="2"/>
         </column>

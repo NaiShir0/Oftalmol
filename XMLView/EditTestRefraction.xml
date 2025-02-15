@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="code" order="100">
+            <widget type="text" fieldname="idTest" display="none" />
+        </column>
+        <column name="patientName" display="none" order="110">
+            <widget type="text" fieldname="patientName"/>
+        </column>
+        <column name="creationDate" order="120">
+            <widget type="date" fieldname="creationDate"/>
+        </column>
+        <!--<column name="type" order="130">
+            <widget type="select" fieldname="tipo" translate="true" required="true">
+                <values title="visualAcuity">165</values>
+                <values title="visualAcuityWithout">56</values>
+                <values title="autoWithout">52</values>
+                <values title="autoWith">51</values>
+                <values title="subjetiveRefraction">53</values>
+                <values title="lensmeter">54</values>
+                <values title="skiascopy">57</values>
+                <values title="keratometry">999</values>
+                <values title="frontofocometro">154</values>
+                <values title="autorefractometro">151</values>
+            </widget>
+        </column>-->
+       
+       
+       
+       
+        <column name="ODfar" order="140" >
+            <widget type="text" fieldname="ODfar"/>
+        </column>
+        <column name="OSfar" order="150" >
+            <widget type="text" fieldname="OSfar"/>
+        </column>
+        <column name="farNotes" order="160">
+            <widget type="text" fieldname="farNotes"/>
+        </column>
+        <column name="ODclose" order="140" >
+            <widget type="text" fieldname="ODclose"/>
+        </column>
+        <column name="OSclose" order="150" >
+            <widget type="text" fieldname="OSclose"/>
+        </column>
+        <column name="closeNotes" order="160">
+            <widget type="text" fieldname="closeNotes"/>
+        </column>
+    </columns>
+    <rows>
+        <row type="actions">
+            <button action="newTestRefraction" color="success" icon="fas fa-plus fa-fw" label="new" />
+        </row>
+    </rows>
+</view>

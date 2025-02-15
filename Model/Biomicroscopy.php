@@ -8,7 +8,7 @@
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
 
-namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
+namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Core\Model\Base\ModelTrait;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
@@ -28,5 +28,9 @@ class Biomicroscopy extends Base\Test
         $this->idTestType = TestTypes::TEST_TYPE_BIOMICROSCOPY;
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->creationDate = date(self::DATETIME_STYLE);
+    }
+    #[\Override]
+    public static function tableName(): string {
+        return 'oft_refractions';
     }
 }

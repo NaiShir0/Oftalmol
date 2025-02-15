@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<table>
+    <column>
+        <name>allergies</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>personalHistory</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>familyHistory</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>oftalmolHistory</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>observations</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>codcliente</name>
+        <type>character varying(10)</type>
+        <null>NO</null>
+    </column>
+
+    <constraint>
+        <name>oft_patients_pkey</name>
+        <type>PRIMARY KEY (codcliente)</type>
+    </constraint>
+    <constraint>
+        <name>fk_oft_patients_clientes</name>
+        <type>FOREIGN KEY (codcliente) REFERENCES clientes (codcliente) </type>
+    </constraint>
+</table>
