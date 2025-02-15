@@ -43,8 +43,8 @@ class PatientJoin extends JoinModel{
     protected function getSQLFrom(): string {
         return 'clientes'
             . ' INNER JOIN oft_patients patients ON clientes.codcliente = patients.codcliente'
-            . ' LEFT JOIN gruposclientes clientGroup ON clientes.codgrupo = clientGroup.codgrupo'
-            . ' LEFT JOIN oft_expedients expedients ON patients.codcliente = expedients.codcliente';
+            . ' LEFT JOIN gruposclientes clientGroup ON clientes.codgrupo = clientGroup.codgrupo';
+             //. ' LEFT JOIN oft_expedients expedients ON patients.codcliente = expedients.codcliente';
     }
 
     #[\Override]
@@ -53,7 +53,7 @@ class PatientJoin extends JoinModel{
             'clientes',
             'gruposclientes',
             'oft_patients',
-           // 'oft_expedients',
+            //'oft_expedients',
         ];
     }
     protected function getGroupFields(): string

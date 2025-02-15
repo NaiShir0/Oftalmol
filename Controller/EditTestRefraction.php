@@ -18,7 +18,8 @@ class EditTestRefraction extends EditTest {
     #[\Override]
     public function getPageData(): array {
         $data = parent::getPageData();
-        $data['title'] = 'expedient-acuity-test';
+        $data['title'] = 'testRefraction';
+        /* TODO: aquí sería bueno que apareciera el grupo de pruebas en el que estamos y el nombre del cliente */
         return $data;
     }
 
