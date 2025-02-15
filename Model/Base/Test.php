@@ -56,6 +56,8 @@ class Test extends Base\ModelClass {
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->creationDate = date(self::DATE_STYLE);
         $this->creationTime = date(self::HOUR_STYLE);
+        $this->modificationDate = date(self::DATE_STYLE);
+        $this->modificationTime = date(self::HOUR_STYLE);
     }
 
     #[\Override]

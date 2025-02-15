@@ -16,6 +16,15 @@
             <column name="creationDate" order="140" numcolumns="2">
                 <widget type="date" fieldname="creationDate" />
             </column>
+            <column name="creationTime" order="150" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
+            <column name="modificationDate" order="160" numcolumns="2">
+                <widget type="date" fieldname="modificationDate" />
+            </column>
+            <column name="modificationTime" order="170" numcolumns="2">
+                <widget type="time" fieldname="modificationTime" />
+            </column>
         </group>
         
 
