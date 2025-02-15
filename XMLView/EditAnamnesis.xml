@@ -20,6 +20,12 @@
         <column name="creationTime" numcolumns="2" order="150">
             <widget type="time" fieldname="creationTime" required="true" />
         </column>
+        <column name="modificationDate" numcolumns="2" order="140">
+            <widget type="date" fieldname="modificationDate" required="true" />
+        </column>
+        <column name="modificationTime" numcolumns="2" order="150">
+            <widget type="time" fieldname="modificationTime" required="true" />
+        </column>
         <column name="note" order="160">
             <widget type="textarea" fieldname="note" required="true" rows="2"/>
         </column>

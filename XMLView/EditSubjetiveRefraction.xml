@@ -19,6 +19,12 @@
             <column name="creationTime" order="140" numcolumns="2">
                 <widget type="time" fieldname="creationTime" />
             </column>
+            <column name="modificationDate" order="140" numcolumns="2">
+                <widget type="date" fieldname="modificationDate" />
+            </column>
+            <column name="modificationTime" order="140" numcolumns="2">
+                <widget type="time" fieldname="modificationTime" />
+            </column>
         </group>
         
         <group name="withoutCycle" numcolumns="6" title="withoutCycle">    
@@ -68,7 +74,7 @@
                 <widget type="text" fieldname="OSfarNote" />
             </column>
             
-             <column name="farNote" order="340" numcolumns="12" rows="1">
+            <column name="farNote" order="340" numcolumns="12" rows="1">
                 <widget type="textarea" fieldname="farNote"/>
             </column>
         </group>
