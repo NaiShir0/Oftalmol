@@ -101,15 +101,17 @@
         <type>text</type>
     </column>
     
+    <!-- Notas genéricas -->
     <column>
-        <name>GeneralNote</name>
+        <name>generalNote</name>
         <type>text</type>
     </column>
     <column>
-        <name>ProfesionalNote</name>
+        <name>profesionalNote</name>
         <type>text</type>
     </column>
-    
+
+    <!-- KEYS -->
     <constraint>
         <name>oft_visualacuities_pkey</name>
         <type>PRIMARY KEY (id)</type>

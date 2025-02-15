@@ -71,7 +71,6 @@ class EditExpedient extends EditController {
                 $where = [
                     new DataBaseWhere('idExpedient', $idexpedient),
                     new DataBaseWhere('idNoteType', $idnotetype)];
-
                 break;
         }
         $view->loadData(false, $where, ['creationDate' => 'DESC']);

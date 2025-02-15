@@ -26,6 +26,17 @@
         <null>NO</null>
     </column>
 
+    <!-- Notas genéricas -->
+    <column>
+        <name>generalNote</name>
+        <type>text</type>
+    </column>
+    <column>
+        <name>profesionalNote</name>
+        <type>text</type>
+    </column>
+
+    <!-- KEYS -->
     <constraint>
         <name>oft_reasons_pkey</name>
         <type>PRIMARY KEY (id)</type>
