@@ -21,6 +21,13 @@
         <column name="creationTime" numcolumns="2" order="150">
             <widget type="time" fieldname="creationTime" required="true" />
         </column>
+        <column name="modificationDate" order="160" numcolumns="2">
+            <widget type="date" fieldname="creationDate" />
+        </column>
+        <column name="modificationTime" order="170" numcolumns="2">
+            <widget type="time" fieldname="creationTime" />
+        </column>
+
         <column name="note" order="160">
             <widget type="textarea" fieldname="note" required="true" rows="2"/>
         </column>

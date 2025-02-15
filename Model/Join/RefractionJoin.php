@@ -43,15 +43,13 @@ class RefractionJoin extends Base\JoinModel
     
     #[\Override]
     protected function getSQLFrom(): string {
-        return 'oft_expedients expedients'
-            . ' INNER JOIN oft_visualacuities acuity ON expedients.id = acuity.idExpedient'
-            . ' INNER JOIN oft_refractions refraction ON refraction.idExpedient = expedients.id';
+        return 'oft_visualacuities acuity' 
+            . ' INNER JOIN oft_refractions refraction ON refraction.idExpedient = acuity.idExpedient';
     }
     
     #[\Override]
     protected function getTables(): array {
         return [
-            'oft_expedients',
             'oft_refractions',
             'oft_visualacuities',
         ];

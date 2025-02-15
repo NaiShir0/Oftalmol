@@ -51,6 +51,7 @@ class Test extends Base\ModelClass {
      */
     public $professionalNote;
 
+    #[\Override]
     public function clear() {
         parent::clear();
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;

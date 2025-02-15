@@ -64,6 +64,9 @@ class EditExpedient extends EditController {
                 break;
             case Constants::VIEW_EDIT_ANAMNESIS:
             case Constants::VIEW_EDIT_PROFESIONALNOTE:
+            case Constants::VIEW_EDIT_EVOLUTION:
+            case Constants::VIEW_EDIT_TREATMENT:
+            case Constants::VIEW_EDIT_CLINICALJUDGMENT:
                 $idnotetype = $this->getViewModelValue($viewName, 'idNoteType');
                 $where = [
                     new DataBaseWhere('idExpedient', $idexpedient),
@@ -93,9 +96,9 @@ class EditExpedient extends EditController {
         //$this->createViewExploration();
         //$this->createViewTest();
         //$this->createViewComplementary();
-        //$this->createViewEvolution();
-        //$this->createViewClinicalJudgment();
-        //$this->createViewTreatment();
+        $this->createViewEvolution();
+        $this->createViewClinicalJudgment();
+        $this->createViewTreatment();
         //$this->createViewPrescription();
         //$this->createViewExpedientFiles();
     }
@@ -119,17 +122,18 @@ class EditExpedient extends EditController {
         $this->views[$viewName]->setInLine(true);
     }
 
-    private function createViewEvolution(string $viewName = Constants::VIEW_EVOLUTION) {
-        $this->addEditListView($viewName, 'Note', 'evolutionNote', 'fas fa-chart-line');
-    }
-
-    private function createViewClinicalJudgment(string $viewName = Constants::VIEW_CLINICAL) {
-        $this->addEditListView($viewName, 'Note', 'clinicalJudgmentNote', 'fas fa-diagnoses');
+    private function createViewEvolution(string $viewName = Constants::VIEW_EDIT_EVOLUTION) {
+        $this->addEditListView($viewName, 'Evolution', 'evolutionNote', 'fas fa-chart-line');
         $this->views[$viewName]->setInLine(true);
     }
 
-    private function createViewTreatment(string $viewName = Constants::VIEW_TREATMENT) {
-        $this->addEditListView($viewName, 'Note', 'treatmentNote', 'fas fa-prescription-bottle-alt');
+    private function createViewClinicalJudgment(string $viewName = Constants::VIEW_EDIT_CLINICALJUDGMENT) {
+        $this->addEditListView($viewName, 'ClinicalJudgment', 'clinicalJudgmentNote', 'fas fa-diagnoses');
+        $this->views[$viewName]->setInLine(true);
+    }
+
+    private function createViewTreatment(string $viewName = Constants::VIEW_EDIT_TREATMENT) {
+        $this->addEditListView($viewName, 'Treatment', 'treatmentNote', 'fas fa-prescription-bottle-alt');
     }
 
     private function createViewPrescription(string $viewName = Constants::VIEW_PRESCRIPTION) {

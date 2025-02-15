@@ -14,6 +14,9 @@ class Constants {
     const VIEW_LIST_EXPEDIENT = 'ListExpedient';
     const VIEW_EDIT_ANAMNESIS = 'EditAnamnesis';
     const VIEW_EDIT_PROFESIONALNOTE = 'EditProfesionalNote';
+    const VIEW_EDIT_EVOLUTION = 'EditEvolution';
+    const VIEW_EDIT_CLINICALJUDGMENT = 'EditClinicalJudgment';
+    const VIEW_EDIT_TREATMENT = 'EditTreatment';
     
     //REFRACTIONS TEST VIEWS
     const VIEW_LIST_REFRACTIONTEST = 'EditTestRefraction';
