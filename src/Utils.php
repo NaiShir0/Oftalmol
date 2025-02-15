@@ -8,10 +8,10 @@ namespace FacturaScripts\Plugins\Oftalmol\src;
  * @author Nai
  */
 class Utils {
-    public static function CalcularEdad( $fecha ) {
-        $fechaNacimiento = new \DateTime($fecha);
-        $hoy = new \DateTime();
-        $edad = $hoy->diff($fechaNacimiento);
-        return $edad->y; // Devuelve la edad en años
+    public static function CalculateAge( $date ) {
+        $birthDate = new \DateTime($date);
+        $today = new \DateTime();
+        $age = $today->diff($birthDate);
+        return $age->y; // Devuelve la edad en años
     }
 }
