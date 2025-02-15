@@ -9,6 +9,7 @@ use FacturaScripts\Plugins\Oftalmol\Model\Expedient;
 use FacturaScripts\Plugins\Oftalmol\Model\VisualAcuity;
 use FacturaScripts\Plugins\Oftalmol\Model\Autorefractometer;
 use FacturaScripts\Plugins\Oftalmol\Model\Reason;
+use FacturaScripts\Plugins\Oftalmol\Model\Biomicroscopy;
 
 class Init extends InitClass {
 
@@ -47,6 +48,7 @@ class Init extends InitClass {
         new VisualAcuity();
         new Autorefractometer();
         new Reason();
+        new Biomicroscopy();
         //new Amsler();
         //new TestIshihara();
         //new AgudezaVisualCon();

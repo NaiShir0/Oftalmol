@@ -22,64 +22,13 @@ use FacturaScripts\Plugins\Oftalmol\src\Constants;
 class EditTestSlitLamp extends EditTest {
 
     /**
-     * Return the basic data for this page.
-     *
-     * @return array
-     */
-    public function getPageData(): array {
-        $data = parent::getPageData();
-        $data['title'] = 'SlitLamp';
-        return $data;
-    }
-
-    /**
      * Create the view to display.
      */
     protected function createViews() {
         parent::createViews();
 
-        $this->createViewBiomicroscopy();
-        $this->createViewEyeFundus();
-        $this->createViewGonioscopy();
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewBiomicroscopy() {
         $this->addEditListView(Constants::VIEW_EDIT_BIOMICROSCOPY, 'Biomicroscopy', 'Biomicroscopy');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewEyeFundus() {
         $this->addEditListView(Constants::VIEW_EDIT_EYEFUNDUS, 'EyeFundus', 'EyeFundus');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewGonioscopy() {
         $this->addEditListView(Constants::VIEW_EDIT_GONIOSCOPY, 'Gonioscopy', 'Gonioscopy');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsFrontofocometer() {
-        $this->addEditListView(Constants::VIEW_EDIT_FRONTOFOCOMETER, 'Frontofocometer', 'frontofocometer');
-    }
-
-    /**
-     *
-     * @param string $viewName
-     */
-    private function createViewsVisualRefraction() {
-        $this->addEditListView(Constants::VIEW_EDIT_SUBJETIVEREFRACTION, 'SubjetiveRefraction', 'subjetiveRefraction');
     }
 }

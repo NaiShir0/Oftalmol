@@ -35,12 +35,12 @@
             <column name="OSnote" order="160">
                 <widget type="textarea" fieldname="OSnote" rows="2"/>
             </column>
-            <column name="GeneralNote" order="170" numcolumns="12">
-                <widget type="textarea" fieldname="GeneralNote" rows="2"/>
+            <column name="generalNote" order="170" numcolumns="12">
+                <widget type="textarea" fieldname="generalNote" rows="2"/>
             </column>
         </group>
-        <column name="ProfesionalNote" order="180" numcolumns="12">
-            <widget type="textarea" fieldname="ProfesionalNote" rows="2"/>
+        <column name="profesionalNote" order="180" numcolumns="12">
+            <widget type="textarea" fieldname="profesionalNote" rows="2"/>
         </column>
     </columns>
 </view>
