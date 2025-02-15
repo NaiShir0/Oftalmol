@@ -16,9 +16,6 @@ class VisualAcuity extends Base\Test {
     public function clear() {
         parent::clear();
         $this->idTestType = TestTypes::TEST_TYPE_VISUALACUITY;
-        $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->creationDate = date(self::DATE_STYLE);
-        $this->creationTime = date(self::HOUR_STYLE);
     }
 
     #[\Override]
