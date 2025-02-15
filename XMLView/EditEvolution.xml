@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view>
-
     <columns>
+        <group name="header">
             <column name="code" display="none" order="100">
                 <widget type="text" fieldname="id" readonly="true" />
             </column>
@@ -26,7 +26,7 @@
             <column name="modificationTime" order="170" numcolumns="2">
                 <widget type="time" fieldname="creationTime" />
             </column>
-
+        </group>
         <column name="note" order="200">
             <widget type="textarea" fieldname="note" required="true" rows="2"/>
         </column>

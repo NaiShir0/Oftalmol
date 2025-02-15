@@ -27,6 +27,7 @@
                 <widget type="time" fieldname="creationTime" />
             </column>
         </group>
+        
         <group name="Test Fields">
             <column name="ODnote" order="150">
                 <widget type="textarea" fieldname="ODnote" rows="2"/>
