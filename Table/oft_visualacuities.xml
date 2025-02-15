@@ -30,6 +30,16 @@
         <type>time</type>
         <null>NO</null>
     </column>
+        <column>
+        <name>modificationDate</name>
+        <type>date</type>
+        <null>NO</null>
+    </column>
+    <column>
+        <name>modificationTime</name>
+        <type>time</type>
+        <null>NO</null>
+    </column>
         
     <column>
         <name>ODfarSCnote</name>
