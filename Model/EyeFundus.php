@@ -11,12 +11,9 @@
 
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
-use FacturaScripts\Core\Model\Base\ModelTrait;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 
 class EyeFundus extends Base\Test {
-
-    use ModelTrait;
 
     /**
      * Reset the values of all model properties.

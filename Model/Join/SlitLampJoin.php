@@ -33,7 +33,7 @@ class SlitLampJoin extends Base\JoinModel
     
     protected function getSQLFrom(): string {
         return 'oft_expedients expedient' 
-            . ' INNER JOIN oft_slitlamps slitlamp ON slit.idExpedient = expedient.id';
+            . ' INNER JOIN oft_slitlamps slitlamp ON slitlamp.idExpedient = expedient.id';
     }
     
     protected function getTables(): array {

@@ -61,7 +61,7 @@
 
     <rows>
         <row type="actions">
-            <button action="newTestRefraction" color="success" icon="fas fa-plus fa-fw" label="new" />
+            <button action="newTestSlitLamp" color="success" icon="fas fa-plus fa-fw" label="new" />
         </row>
     </rows>
 </view>
