@@ -21,10 +21,10 @@
                 <widget type="time" fieldname="creationTime" required="true" />
             </column>
             <column name="modificationDate" order="160" numcolumns="2">
-                <widget type="date" fieldname="creationDate" />
+                <widget type="date" fieldname="modificationDate" />
             </column>
             <column name="modificationTime" order="170" numcolumns="2">
-                <widget type="time" fieldname="creationTime" />
+                <widget type="time" fieldname="modificationTime" />
             </column>
         </group>
         
