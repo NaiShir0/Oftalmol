@@ -12,9 +12,10 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
-
-class EyeFundus extends Base\Test {
-
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+use FacturaScripts\Core\Model\Base;
+class EyeFundus extends Test {
+    use Base\ModelTrait;
     /**
      * Reset the values of all model properties.
      * Set the medical test type.
@@ -27,5 +28,9 @@ class EyeFundus extends Base\Test {
     #[\Override]
     public static function tableName(): string {
         return 'oft_slitlamps';
+    }
+    #[\Override]
+    public static function primaryColumn(): string {
+        return 'id';
     }
 }

@@ -14,6 +14,7 @@ namespace FacturaScripts\Plugins\Oftalmol\Model;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
 use FacturaScripts\Core\Model\Base;
+
 class Biomicroscopy extends Test {
     use Base\ModelTrait;
 
@@ -30,5 +31,9 @@ class Biomicroscopy extends Test {
     #[\Override]
     public static function tableName(): string {
         return 'oft_slitlamps';
+    }
+    #[\Override]
+    public static function primaryColumn(): string {
+        return 'id';
     }
 }

@@ -26,7 +26,6 @@ class Autorefractometer extends Test  {
     }
         #[\Override]
     public static function primaryColumn(): string {
-             \FacturaScripts\Core\Tools::log()->warning('mi putisima madreeeeeeeeeeeeeeeeeeeeeeee refactometer');
         return 'id';
     }
 }

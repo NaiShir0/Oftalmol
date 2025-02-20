@@ -26,7 +26,6 @@ class VisualAcuity extends Test {
     }
         #[\Override]
     public static function primaryColumn(): string {
-            \FacturaScripts\Core\Tools::log()->warning('mi putisima madreeeeeeeeeeeeeeeeeeeeeeee acuity');
         return 'id';
     }
 }

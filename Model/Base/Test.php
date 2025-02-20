@@ -60,13 +60,5 @@ abstract class Test extends Base\ModelClass {
         $this->modificationTime = date(self::HOUR_STYLE);
     }
 
-    #[\Override]
-    public static function primaryColumn(): string {
-        parent::primaryColumn();
-    }
-
-    #[\Override]
-    public static function tableName(): string {
-        parent::tableName();
-    }
+   
 }

@@ -12,13 +12,16 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+use FacturaScripts\Core\Model\Base;
 
-class Gonioscopy extends Base\Test {
-
+class Gonioscopy extends Test {
+    use Base\ModelTrait;
     /**
      * Reset the values of all model properties.
      * Set the medical test type.
      */
+    #[\Override]
     public function clear() {
         parent::clear();
         $this->idTestType = TestTypes::TEST_TYPE_GONIOSCOPY;
@@ -27,5 +30,9 @@ class Gonioscopy extends Base\Test {
     #[\Override]
     public static function tableName(): string {
         return 'oft_slitlamps';
+    }
+    #[\Override]
+    public static function primaryColumn(): string {
+        return 'id';
     }
 }
