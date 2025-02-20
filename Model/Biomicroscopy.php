@@ -12,8 +12,10 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
-
-class Biomicroscopy extends Base\Test {
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+use FacturaScripts\Core\Model\Base;
+class Biomicroscopy extends Test {
+    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.

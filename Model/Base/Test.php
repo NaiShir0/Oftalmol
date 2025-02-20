@@ -5,9 +5,8 @@ namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
 use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class Test extends Base\ModelClass {
+abstract class Test extends Base\ModelClass {
 
-    use Base\ModelTrait;
 
     /**
      *
@@ -63,11 +62,11 @@ class Test extends Base\ModelClass {
 
     #[\Override]
     public static function primaryColumn(): string {
-        return 'id';
+        parent::primaryColumn();
     }
 
     #[\Override]
     public static function tableName(): string {
-        return '';
+        parent::tableName();
     }
 }

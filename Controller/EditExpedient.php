@@ -90,7 +90,7 @@ class EditExpedient extends EditController {
         $this->createViewPatient();
         $this->createViewAnamnesis();
         $this->createViewProfesionalNote();
-        //$this->createViewRefraction();
+        $this->createViewRefraction();
         $this->createViewSlitLamp();
         //$this->createViewFuncionMotora();
         //$this->createViewPresionIntraocular();

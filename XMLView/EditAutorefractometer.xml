@@ -96,8 +96,13 @@
             </column>
         </group>
         
-        <column name="profesionalNote" order="330" numcolumns="12" rows="1">
-            <widget type="textarea" fieldname="profesionalNote"/>
-        </column>
+        <group title="footer">
+            <column name="generalNote" order="40" numcolumns="12" >
+                <widget type="text" fieldname="generalNote"/>
+            </column>
+            <column name="profesionalNote" order="410" numcolumns="12" >
+                <widget type="textarea" fieldname="profesionalNote" rows="1"/>
+            </column>
+        </group>
     </columns>
 </view>
