@@ -60,8 +60,10 @@ class EditExpedient extends EditController {
                 }
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
+                $where = [new DataBaseWhere('acuity.id', $idexpedient)];
+                break;
             case Constants::VIEW_LIST_SLITLAMP:
-                $where = [new DataBaseWhere('id', $idexpedient)];
+                $where = [new DataBaseWhere('slitlamp.id', $idexpedient)];
                 break;
             case Constants::VIEW_EDIT_ANAMNESIS:
             case Constants::VIEW_EDIT_PROFESIONALNOTE:
@@ -88,7 +90,7 @@ class EditExpedient extends EditController {
         $this->createViewPatient();
         $this->createViewAnamnesis();
         $this->createViewProfesionalNote();
-        $this->createViewRefraction();
+        //$this->createViewRefraction();
         $this->createViewSlitLamp();
         //$this->createViewFuncionMotora();
         //$this->createViewPresionIntraocular();
@@ -184,7 +186,7 @@ class EditExpedient extends EditController {
         switch ($action) {
             case Constants::ACTION_NEW_TEST_REFRACTION:
                 $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('typeTest', 0);
+                $newtype = $this->request->request->get('idTestType', 0);
                 //Tools::log()->warning($idExpedient);
                 if (false === empty($idExpedient)) {
                     $this->redirect('EditTestRefraction?code=' . $idExpedient . '&newtest=' . $newtype, 0);
@@ -193,7 +195,7 @@ class EditExpedient extends EditController {
                 return true;
             case Constants::ACTION_NEW_TEST_SLITLAMP:
                 $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('typeTest', 0);
+                $newtype = $this->request->request->get('idTestType', 0);
                 if (false === empty($idExpedient)) {
                     $this->redirect('EditTestSlitLamp?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
