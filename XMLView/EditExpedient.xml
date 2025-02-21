@@ -21,8 +21,8 @@
                 fieldcode: identificador de los valores que se van a mostrar
                 fieldname: valores que se muestran. Cada id de estos valores es lo que almacena fieldcode
             -->
-            <column name="reasonName" titleurl="ListAdministracion?activetab=ListMotivo" order="130">
-                <widget type="select" fieldname="idReason" required="true" readonly="dinamic" onclick="EditMotivo">
+            <column name="reasonName" titleurl="ListAdministracion?activetab=ListReason" order="130">
+                <widget type="select" fieldname="idReason" required="true" readonly="dinamic" onclick="EditReason">
                     <values source="oft_reasons" fieldcode="id" fieldtitle="reasonName"/>
                 </widget>
             </column>

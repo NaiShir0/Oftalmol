@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <group name="header" numcolumns="12">
+            <column name="id" order="100" display="none" numcolumns="1" >
+                <widget type="text" fieldname="id" />
+            </column>
+            <column name="idSpeciality" order="110" display="none" numcolumns="1">
+                <widget type="text" fieldname="idSpeciality" />
+            </column>
+            <column name="creationDate" order="140" numcolumns="2">
+                <widget type="date" fieldname="creationDate" />
+            </column>
+            <column name="creationTime" order="150" numcolumns="2">
+                <widget type="time" fieldname="creationTime" />
+            </column>
+        </group>
+        
+        <column name="reasonName" order="230" numcolumns="4">
+            <widget type="text" fieldname="reasonName" rows="1"/>
+        </column>
+        <column name="generalNote" order="240" numcolumns="4">
+            <widget type="text" fieldname="generalNote" rows="1"/>
+        </column>
+        <column name="profesionalNote" order="250" numcolumns="4">
+            <widget type="text" fieldname="profesionalNote" rows="1"/>
+        </column>
+    </columns>
+</view>

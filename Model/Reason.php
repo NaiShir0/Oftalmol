@@ -15,13 +15,12 @@ class Reason extends Base\ModelClass {
     use Base\ModelTrait;
 
     public $id;
+    public $idSpeciality;
     public $reasonName;
     public $creationDate;
     public $creationTime;
-    public $idSpeciality;
-       
-    public function clear()
-    {
+
+    public function clear() {
         parent::clear();
         $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
         $this->creationDate = date(self::DATE_STYLE);
@@ -54,11 +53,10 @@ class Reason extends Base\ModelClass {
      *
      * @param string $type
      * @param string $list
-     *
      * @return string
      */
-    /*public function url(string $type = 'auto', string $list = 'List'): string {
-        $list = 'EditExpediente?code=' . $this->idexpediente . '&active=Edit';
-        return parent::url($type, $list);
-    }*/
+    public function url(string $type = 'auto', string $list = 'List'): string
+    {
+        return parent::url($type, 'ListAdministration?activetab=' . $list);
+    }
 }

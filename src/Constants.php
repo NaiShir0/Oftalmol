@@ -6,6 +6,9 @@ class Constants {
 
     const SPECIALITE_OPHTALMOLOGY = 1;
     
+    //ADMIN
+    const VIEW_LIST_REASON = 'ListReason';
+    
 
     //VIEWS
     const VIEW_EDIT_PATIENT = 'EditPatient';
