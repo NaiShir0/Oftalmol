@@ -13,6 +13,9 @@
     "modificationTime": "Hora de modirficación",
     "release": "Fecha de Alta médica",
     
+    "queryReason": "Motivos de consulta",
+    "administration": "Administración",
+    
     "anamnesis": "Anamnesis",
     "profesionalNote": "Notas del Profesional",
     "refractionTests": "Pruebas de Refracción",
