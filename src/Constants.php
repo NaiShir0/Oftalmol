@@ -34,6 +34,12 @@ class Constants {
     const VIEW_EDIT_EYEFUNDUS = 'EditEyeFundus';
     const VIEW_EDIT_GONIOSCOPY = 'EditGonioscopy';
     
+        //INTRAOCULARPRESSURE TEST VIEWS
+    const VIEW_LIST_INTRAOCULARPRESSURE = 'EditTestIntraocularPressure';
+    const VIEW_EDIT_TONOMETRY = 'EditTonometry';
+    const VIEW_EDIT_TONOMETRYBRALEY = 'EditTonometryBraley';
+    const VIEW_EDIT_PACHYMETRY = 'EditPachymetry';
+    
 
     //ACTIONS
     const ACTION_OPEN_EXPEDIENT = 'open-expedient';
@@ -43,4 +49,5 @@ class Constants {
     const ACTION_PRINT_DOSSIER = 'print-dossier';
     const ACTION_NEW_TEST_REFRACTION = 'newTestRefraction';
     const ACTION_NEW_TEST_SLITLAMP = 'newTestSlitLamp';
+    const ACTION_NEW_TEST_INTRAOCULARPRESSURE = 'newTestIntraocularPressure';
 }

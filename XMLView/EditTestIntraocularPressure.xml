@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <columns>
+        <column name="id" order="100" display="none" numcolumns="1" >
+            <widget type="text" fieldname="id" />
+        </column>
+        <column name="idSpeciality" order="110" display="none" numcolumns="1">
+            <widget type="text" fieldname="idSpeciality" />
+        </column>
+        <column name="idExpedient" order="120" display="none" numcolumns="1">
+            <widget type="text" fieldname="idExpedient" />
+        </column>
+        <column name="idTestType" order="130" display="none" numcolumns="1">
+            <widget type="text" fieldname="idTestType" />
+        </column>
+        <column name="creationDate" order="140" numcolumns="2">
+            <widget type="date" fieldname="creationDate" />
+        </column>
+        <column name="creationTime" order="150" numcolumns="2">
+            <widget type="time" fieldname="creationTime" />
+        </column>
+        <column name="modificationDate" order="160" numcolumns="2">
+            <widget type="date" fieldname="modificationDate" />
+        </column>
+        <column name="modificationTime" order="170" numcolumns="2">
+            <widget type="time" fieldname="modificationTime" />
+        </column>
+
+        
+        
+        
+        <!--<column name="type" order="130">
+            <widget type="select" fieldname="tipo" translate="true" required="true">
+                <values title="visualAcuity">165</values>
+                <values title="visualAcuityWithout">56</values>
+                <values title="autoWithout">52</values>
+                <values title="autoWith">51</values>
+                <values title="subjetiveRefraction">53</values>
+                <values title="lensmeter">54</values>
+                <values title="skiascopy">57</values>
+                <values title="keratometry">999</values>
+                <values title="frontofocometro">154</values>
+                <values title="autorefractometro">151</values>
+            </widget>
+        </column>-->
+       
+        <column name="ODnote" order="200" >
+            <widget type="text" fieldname="ODnote"/>
+        </column>
+        <column name="OSnote" order="210" >
+            <widget type="text" fieldname="OSnote"/>
+        </column>
+        
+        <column name="generalNote" order="220">
+            <widget type="text" fieldname="generalNote"/>
+        </column>
+        <column name="profesionalNote" order="230" >
+            <widget type="text" fieldname="profesionalNote"/>
+        </column>
+    </columns>
+
+    <rows>
+        <row type="actions">
+            <button action="newTestIntraocularPressure" color="success" icon="fas fa-plus fa-fw" label="new" />
+        </row>
+    </rows>
+</view>

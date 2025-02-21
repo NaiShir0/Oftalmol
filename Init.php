@@ -10,6 +10,7 @@ use FacturaScripts\Plugins\Oftalmol\Model\VisualAcuity;
 use FacturaScripts\Plugins\Oftalmol\Model\Autorefractometer;
 use FacturaScripts\Plugins\Oftalmol\Model\Reason;
 use FacturaScripts\Plugins\Oftalmol\Model\Biomicroscopy;
+use FacturaScripts\Plugins\Oftalmol\Model\Tonometry;
 
 class Init extends InitClass {
 
@@ -49,7 +50,7 @@ class Init extends InitClass {
         new Autorefractometer();
         new Reason();
         new Biomicroscopy();
-        //new Amsler();
+        new Tonometry();
         //new TestIshihara();
         //new AgudezaVisualCon();
         //new Queratometria();
