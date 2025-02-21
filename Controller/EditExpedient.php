@@ -167,7 +167,7 @@ class EditExpedient extends EditController {
     }
 
     private function createViewSlitLamp(string $viewName = Constants::VIEW_LIST_SLITLAMP) {
-        $this->addListView($viewName, 'Join\SlitLampJoin', 'slimLampTests', 'fas fa-laptop-medical');
+        $this->addListView($viewName, 'Join\SlitLampJoin', 'slitLampTests', 'fas fa-laptop-medical');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 

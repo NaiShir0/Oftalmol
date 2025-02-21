@@ -61,11 +61,12 @@ class Expedient extends Base\ModelClass {
      */
     public function install(): string {
         new Reason();
-        
+
         //REFRACTION TESTS
         new VisualAcuity();
         new Autorefractometer();
         new Biomicroscopy();
+        new Tonometry();
 
         return parent::install();
     }

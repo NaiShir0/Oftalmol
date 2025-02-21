@@ -30,7 +30,7 @@ class EditTestRefraction extends EditTest {
         parent::createViews();
 
         $this->addEditListView(Constants::VIEW_EDIT_VISUALACUITY, 'VisualAcuity', 'visualAcuity');
-        $this->addEditListView(Constants::VIEW_EDIT_AUTOREFRACTOMETER, 'Autorefractometer', 'autoRefractometer');
+        $this->addEditListView(Constants::VIEW_EDIT_AUTOREFRACTOMETER, 'Autorefractometer', 'autorefractometer');
         $this->addEditListView(Constants::VIEW_EDIT_SHIASCOPY, 'Shiascopy', 'shiascopy');
         $this->addEditListView(Constants::VIEW_EDIT_FRONTOFOCOMETER, 'Frontofocometer', 'Frontofocometer');
         //$this->createViewsRefraccion();
