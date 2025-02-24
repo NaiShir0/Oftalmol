@@ -62,6 +62,7 @@ abstract class Test extends Base\ModelClass {
         $this->nick = Session::user()->nick;
     }
 
+    #[\Override]
     public function delete(): bool {
         // add audit log
         Tools::log(Constants::LOG_OFTALMOL)->warning('testDeleted', [
@@ -75,16 +76,17 @@ abstract class Test extends Base\ModelClass {
         return parent::delete();
     }
 
+    #[\Override]
     public function save(): bool {
         // add audit log
-        Tools::log(Constants::LOG_OFTALMOL)->info('testUpdated', [
+        /*Tools::log(Constants::LOG_OFTALMOL)->info('testUpdated', [
             '%tipoPrueba%' => $this->modelClassName(),
             '%idPrueba%' => $this->primaryColumnValue(),
             '%nombrePrueba%' => $this->primaryDescription(),
-            'model-class' => $this->modelClassName(),
-            'model-code' => $this->primaryColumnValue(),
+            //'model-class' => $this->modelClassName(),
+            //'model-code' => $this->primaryColumnValue(),
             'model-data' => $this->toArray()
-        ]);
+        ]);*/
         return parent::save();
     }
 }

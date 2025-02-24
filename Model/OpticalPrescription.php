@@ -4,7 +4,6 @@
  * This file is part of Oftalmologia plugin for FacturaScripts.
  * FacturaScripts Copyright (C) 2015-2022 Carlos Garcia Gomez <carlos@facturascripts.com>
  * Oftalmologia   Copyright (C) 2022-2022 Clinica Castillo <jquingarcia@gmail.com>
- *                Copyright (C) 2022-2022 Jose Antonio Cuello Principal <yopli2000@gmail.com>
  *
  * This program and its files are under the terms of the license specified in the LICENSE file.
  */
@@ -15,7 +14,7 @@ use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
 use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
 use FacturaScripts\Core\Model\Base;
 
-class Frontofocometer extends Test {
+class OpticalPrescription extends Test {
 
     use Base\ModelTrait;
 
@@ -26,13 +25,14 @@ class Frontofocometer extends Test {
     #[\Override]
     public function clear() {
         parent::clear();
-        $this->idTestType = TestTypes::TEST_TYPE_FRONTOFOCOMETER;
+        $this->idTestType = TestTypes::TEST_TYPE_OPTICALPRESCRIPTION;
     }
 
     #[\Override]
     public static function tableName(): string {
         return 'oft_refractions';
     }
+
     #[\Override]
     public static function primaryColumn(): string {
         return 'id';

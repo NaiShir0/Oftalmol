@@ -5,7 +5,6 @@ namespace FacturaScripts\Plugins\Oftalmol\Controller;
 use FacturaScripts\Core\Lib\ExtendedController\EditController;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 use FacturaScripts\Core\Base\DataBase\DataBaseWhere;
-use FacturaScripts\Core\Tools;
 
 class EditExpedient extends EditController {
 
@@ -24,6 +23,12 @@ class EditExpedient extends EditController {
         return $data;
     }
 
+    /*
+     * TODO: En el tratamiento tendríamos que seleccionar de un combo cuándo vuelve a revisión
+     * a los 7 días, a los 14 días, al mes, a los 6 meses, al año.......
+     * y que esa selección se añadiera en negrita al final del tratamiento cuando se imprimiera el informe
+     */
+
     #[\Override]
     public function getModelClassName(): string {
         return 'Expedient';
@@ -41,10 +46,6 @@ class EditExpedient extends EditController {
         $mainViewName = $this->getMainViewName();
         $idexpedient = $this->getViewModelValue($mainViewName, 'id');
         $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
-                                
-        $user = \FacturaScripts\Core\Session::user();
-        Tools::log()->notice('Usuario: ' . $this->user->nick );
-        
 
         if ($viewName === $mainViewName) {
             parent::loadData($viewName, $view);
@@ -64,8 +65,9 @@ class EditExpedient extends EditController {
                 }
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
+            case Constants::VIEW_LIST_OPTICALPRESCRIPTION:
                 $where = [new DataBaseWhere('acuity.id', $idexpedient)];
-                
+
                 break;
             case Constants::VIEW_LIST_SLITLAMP:
                 $where = [new DataBaseWhere('slitlamp.id', $idexpedient)];
@@ -109,7 +111,7 @@ class EditExpedient extends EditController {
         $this->createViewEvolution();
         $this->createViewClinicalJudgment();
         $this->createViewTreatment();
-        //$this->createViewPrescription();
+        $this->createViewopticalPrescription();
         //$this->createViewExpedientFiles();
     }
 
@@ -146,8 +148,10 @@ class EditExpedient extends EditController {
         $this->addEditListView($viewName, 'Treatment', 'treatmentNote', 'fas fa-prescription-bottle-alt');
     }
 
-    private function createViewPrescription(string $viewName = Constants::VIEW_PRESCRIPTION) {
-        $this->addEditListView($viewName, 'Note', 'opticalPrescriptionNote', 'fas fa-glasses');
+    private function createViewOpticalPrescription(string $viewName = Constants::VIEW_LIST_OPTICALPRESCRIPTION) {
+        $this->addEditListView($viewName, 'Join\RefractionJoin', 'opticalPrescriptionTests', 'fas fa-glasses');
+        $this->setSettings($viewName, 'btnNew', false);
+        $this->setSettings($viewName, 'btnDelete', false);
     }
 
     private function createViewRefraction(string $viewName = Constants::VIEW_LIST_REFRACTIONTEST) {
@@ -188,7 +192,7 @@ class EditExpedient extends EditController {
          * 
          */
     }
-    
+
     private function createViewIntraocularPressure(string $viewName = Constants::VIEW_LIST_INTRAOCULARPRESSURE) {
         $this->addListView($viewName, 'Join\IntraocularPressureJoin', 'intraocularPressureTests', 'fas fa-laptop-medical');
         $this->setSettings($viewName, 'btnNew', false);
@@ -220,6 +224,14 @@ class EditExpedient extends EditController {
                     return false;
                 }
                 return true;
+            case Constants::ACTION_NEW_TEST_OPTICALPRESCRIPTION:
+                $idExpedient = (int) $this->request->get('code', 0);
+                $newtype = $this->request->request->get('idTestType', 0);
+                if (false === empty($idExpedient)) {
+                    $this->redirect('EditTestOpticalPrescription?code=' . $idExpedient . '&newtest=' . $newtype, 0);
+                    return false;
+                }
+                return true;
             case Constants::ACTION_NEW_TEST_SLITLAMP:
                 $idExpedient = (int) $this->request->get('code', 0);
                 $newtype = $this->request->request->get('idTestType', 0);
@@ -228,7 +240,7 @@ class EditExpedient extends EditController {
                     return false;
                 }
                 return true;
-                case Constants::ACTION_NEW_TEST_INTRAOCULARPRESSURE:
+            case Constants::ACTION_NEW_TEST_INTRAOCULARPRESSURE:
                 $idExpedient = (int) $this->request->get('code', 0);
                 $newtype = $this->request->request->get('idTestType', 0);
                 if (false === empty($idExpedient)) {
