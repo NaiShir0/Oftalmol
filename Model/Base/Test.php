@@ -8,7 +8,6 @@ use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 abstract class Test extends Base\ModelClass {
 
-
     /**
      *
      * @var int
@@ -51,7 +50,7 @@ abstract class Test extends Base\ModelClass {
      */
     public $professionalNote;
     public $nick;
-    
+
     #[\Override]
     public function clear() {
         parent::clear();
@@ -63,5 +62,29 @@ abstract class Test extends Base\ModelClass {
         $this->nick = Session::user()->nick;
     }
 
-   
+    public function delete(): bool {
+        // add audit log
+        Tools::log(Constants::LOG_OFTALMOL)->warning('testDeleted', [
+            '%tipoPrueba%' => $this->modelClassName(),
+            '%idPrueba%' => $this->primaryColumnValue(),
+            '%nombrePrueba%' => $this->primaryDescription(),
+            //'model-class' => $this->modelClassName(),
+            //'model-code' => $this->primaryColumnValue(),
+            'DatosPrueba' => $this->toArray()
+        ]);
+        return parent::delete();
+    }
+
+    public function save(): bool {
+        // add audit log
+        Tools::log(Constants::LOG_OFTALMOL)->info('testUpdated', [
+            '%tipoPrueba%' => $this->modelClassName(),
+            '%idPrueba%' => $this->primaryColumnValue(),
+            '%nombrePrueba%' => $this->primaryDescription(),
+            'model-class' => $this->modelClassName(),
+            'model-code' => $this->primaryColumnValue(),
+            'model-data' => $this->toArray()
+        ]);
+        return parent::save();
+    }
 }

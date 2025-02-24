@@ -7,7 +7,6 @@ use FacturaScripts\Core\Session;
 use FacturaScripts\Core\Tools;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-
 /**
  * Description of Notes
  *
@@ -89,30 +88,30 @@ class Note extends Base\ModelClass {
      *
      * @return string
      */
-    /*public function url(string $type = 'auto', string $list = 'List'): string {
-        $list = 'EditExpedient?code=' . $this->idExpedient . '&active=Edit';
-        return parent::url($type, $list);
-    }*/
-    
+    /* public function url(string $type = 'auto', string $list = 'List'): string {
+      $list = 'EditExpedient?code=' . $this->idExpedient . '&active=Edit';
+      return parent::url($type, $list);
+      } */
+
     public function delete(): bool {
         // add audit log
-        Tools::log(Constants::LOG_OFTALMOL)->warning('deleted-model', [
-            '%model%' => $this->modelClassName(),
-            '%key%' => $this->primaryColumnValue(),
-            '%desc%' => $this->primaryDescription(),
-            'model-class' => $this->modelClassName(),
-            'model-code' => $this->primaryColumnValue(),
-            'model-data' => $this->toArray()
+        Tools::log(Constants::LOG_OFTALMOL)->warning('testDeleted', [
+            '%tipoPrueba%' => $this->modelClassName(),
+            '%idPrueba%' => $this->primaryColumnValue(),
+            '%nombrePrueba%' => $this->primaryDescription(),
+            //'model-class' => $this->modelClassName(),
+            //'model-code' => $this->primaryColumnValue(),
+            'DatosPrueba' => $this->toArray()
         ]);
         return parent::delete();
     }
-    
-    public function save(): bool{
+
+    public function save(): bool {
         // add audit log
-        Tools::log(Constants::LOG_OFTALMOL)->info('updated-model', [
-            '%model%' => $this->modelClassName(),
-            '%key%' => $this->primaryColumnValue(),
-            '%desc%' => $this->primaryDescription(),
+        Tools::log(Constants::LOG_OFTALMOL)->info('testUpdated', [
+            '%tipoPrueba%' => $this->modelClassName(),
+            '%idPrueba%' => $this->primaryColumnValue(),
+            '%nombrePrueba%' => $this->primaryDescription(),
             'model-class' => $this->modelClassName(),
             'model-code' => $this->primaryColumnValue(),
             'model-data' => $this->toArray()

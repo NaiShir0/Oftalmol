@@ -58,6 +58,9 @@
 
     "profesionalNote": "Notas del Profesional",
     "generalNote": "Observaciones Generales",
+    
+    "testUpdated": "Actualizada la prueba: %tipoPrueba% con id: %idPrueba%",
+    "testDeleted": "Eliminada la prueba: %tipoPrueba% con id: %idPrueba%",
 
     "": ""
 }
