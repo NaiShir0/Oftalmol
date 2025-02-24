@@ -3,6 +3,8 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
 
 use FacturaScripts\Core\Model\Base;
+use FacturaScripts\Core\Session;
+use FacturaScripts\Core\Tools;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 
@@ -42,6 +44,7 @@ class Note extends Base\ModelClass {
     public $idExpedient;
     public $idNoteType;
     public $idSpeciality;
+    public $nick;
 
     /**
      * Reset the values of all model properties.
@@ -54,6 +57,7 @@ class Note extends Base\ModelClass {
         $this->creationTime = date(self::HOUR_STYLE);
         $this->modificationDate = date(self::DATE_STYLE);
         $this->modificationTime = date(self::HOUR_STYLE);
+        $this->nick = Session::user()->nick;
     }
 
     /*
@@ -89,4 +93,30 @@ class Note extends Base\ModelClass {
         $list = 'EditExpedient?code=' . $this->idExpedient . '&active=Edit';
         return parent::url($type, $list);
     }*/
+    
+    public function delete(): bool {
+        // add audit log
+        Tools::log(Constants::LOG_OFTALMOL)->warning('deleted-model', [
+            '%model%' => $this->modelClassName(),
+            '%key%' => $this->primaryColumnValue(),
+            '%desc%' => $this->primaryDescription(),
+            'model-class' => $this->modelClassName(),
+            'model-code' => $this->primaryColumnValue(),
+            'model-data' => $this->toArray()
+        ]);
+        return parent::delete();
+    }
+    
+    public function save(): bool{
+        // add audit log
+        Tools::log(Constants::LOG_OFTALMOL)->info('updated-model', [
+            '%model%' => $this->modelClassName(),
+            '%key%' => $this->primaryColumnValue(),
+            '%desc%' => $this->primaryDescription(),
+            'model-class' => $this->modelClassName(),
+            'model-code' => $this->primaryColumnValue(),
+            'model-data' => $this->toArray()
+        ]);
+        return parent::save();
+    }
 }
