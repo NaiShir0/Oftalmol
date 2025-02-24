@@ -7,7 +7,24 @@ use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
 use FacturaScripts\Core\Model\Base;
 
 class VisualAcuity extends Test {
+
     use Base\ModelTrait;
+
+    public $ODfarSCnote;
+    public $OSfarSCnote;
+    public $FarSCnote;
+    public $ODfarCCnote;
+    public $OSfarCCnote;
+    public $FarCCnote;
+    public $FarNote;
+    
+    public $ODcloseSCnote;
+    public $OScloseSCnote;
+    public $CloseSCnote;
+    public $ODcloseCCnote;
+    public $OScloseCCnote;
+    public $CloseCCnote;
+    public $CloseNote;
 
     /**
      * Reset the values of all model properties.
@@ -21,11 +38,18 @@ class VisualAcuity extends Test {
 
     #[\Override]
     public static function tableName(): string {
-        
+
         return 'oft_visualacuities';
     }
-        #[\Override]
+
+    #[\Override]
     public static function primaryColumn(): string {
         return 'id';
+    }
+
+    #[\Override]
+    public function save(): bool {
+        //validate();
+        return parent::save();
     }
 }

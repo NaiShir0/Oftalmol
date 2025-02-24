@@ -14,6 +14,10 @@ namespace FacturaScripts\Plugins\Oftalmol\src;
  */
 class Validations {
 
+    function validateDecilmal($value) {
+        return str_replace(',', '.', $value);
+    }
+
     function validateRange($value) {
         if ($value === "" || $value === null) {
             return "";
