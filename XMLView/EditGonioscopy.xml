@@ -21,25 +21,25 @@
                 <widget type="time" fieldname="creationTime" />
             </column>
             <column name="modificationDate" order="160" numcolumns="2">
-                <widget type="date" fieldname="creationDate" />
+                <widget type="date" fieldname="modificationDate" />
             </column>
             <column name="modificationTime" order="170" numcolumns="2">
-                <widget type="time" fieldname="creationTime" />
+                <widget type="time" fieldname="modificationTime" />
             </column>
         </group>
         <group name="Test Fields">
-            <column name="ODnote" order="150">
+            <column name="ODnote" order="200">
                 <widget type="textarea" fieldname="ODnote" rows="2"/>
             </column>
-            <column name="OSnote" order="160">
+            <column name="OSnote" order="210">
                 <widget type="textarea" fieldname="OSnote" rows="2"/>
             </column>
-            <column name="GeneralNote" order="170" numcolumns="12">
-                <widget type="textarea" fieldname="GeneralNote" rows="2"/>
+            <column name="generalNote" order="220" numcolumns="12">
+                <widget type="textarea" fieldname="generalNote" rows="2"/>
             </column>
         </group>
-        <column name="ProfesionalNote" order="180" numcolumns="12">
-            <widget type="textarea" fieldname="ProfesionalNote" rows="2"/>
+        <column name="profesionalNote" order="230" numcolumns="12">
+            <widget type="textarea" fieldname="profesionalNote" rows="2"/>
         </column>
     </columns>
 </view>

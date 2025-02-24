@@ -6,7 +6,7 @@ class Constants {
 
     const SPECIALITE_OPHTALMOLOGY = 1;
     
-    
+
     //VIEWS
     const VIEW_EDIT_PATIENT = 'EditPatient';
     const VIEW_LIST_PATIENT = 'ListPatient';
@@ -18,6 +18,7 @@ class Constants {
     const VIEW_EDIT_CLINICALJUDGMENT = 'EditClinicalJudgment';
     const VIEW_EDIT_TREATMENT = 'EditTreatment';
     
+
     //REFRACTIONS TEST VIEWS
     const VIEW_LIST_REFRACTIONTEST = 'EditTestRefraction';
     const VIEW_EDIT_VISUALACUITY = 'EditVisualAcuity';
@@ -26,6 +27,14 @@ class Constants {
     const VIEW_EDIT_FRONTOFOCOMETER = 'EditFrontofocometer';
     const VIEW_EDIT_SUBJETIVEREFRACTION = 'EditSubjetiveRefraction';
     
+
+    //SLITLAMPS TEST VIEWS
+    const VIEW_LIST_SLITLAMP = 'EditTestSlitLamp';
+    const VIEW_EDIT_BIOMICROSCOPY = 'EditBiomicroscopy';
+    const VIEW_EDIT_EYEFUNDUS = 'EditEyeFundus';
+    const VIEW_EDIT_GONIOSCOPY = 'EditGonioscopy';
+    
+
     //ACTIONS
     const ACTION_OPEN_EXPEDIENT = 'open-expedient';
     const ACTION_CLOSE_EXPEDIENT = 'close-expedient';
@@ -33,4 +42,5 @@ class Constants {
     const ACTION_PRINT_TREATMENT = 'print-treatment';
     const ACTION_PRINT_DOSSIER = 'print-dossier';
     const ACTION_NEW_TEST_REFRACTION = 'newTestRefraction';
+    const ACTION_NEW_TEST_SLITLAMP = 'newTestSlitLamp';
 }

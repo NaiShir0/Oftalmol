@@ -65,6 +65,7 @@ class Expedient extends Base\ModelClass {
         //REFRACTION TESTS
         new VisualAcuity();
         new Autorefractometer();
+        new Biomicroscopy();
 
         return parent::install();
     }

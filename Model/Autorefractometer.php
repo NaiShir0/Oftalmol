@@ -3,9 +3,11 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+use FacturaScripts\Core\Model\Base;
 
-class Autorefractometer extends Base\Test {
-
+class Autorefractometer extends Test  {
+    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.
@@ -19,6 +21,11 @@ class Autorefractometer extends Base\Test {
 
     #[\Override]
     public static function tableName(): string {
+        
         return 'oft_refractions';
+    }
+        #[\Override]
+    public static function primaryColumn(): string {
+        return 'id';
     }
 }

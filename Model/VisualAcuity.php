@@ -3,10 +3,11 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
-use FacturaScripts\Plugins\Oftalmol\src\Constants;
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+use FacturaScripts\Core\Model\Base;
 
-class VisualAcuity extends Base\Test {
-
+class VisualAcuity extends Test {
+    use Base\ModelTrait;
 
     /**
      * Reset the values of all model properties.
@@ -20,6 +21,11 @@ class VisualAcuity extends Base\Test {
 
     #[\Override]
     public static function tableName(): string {
+        
         return 'oft_visualacuities';
+    }
+        #[\Override]
+    public static function primaryColumn(): string {
+        return 'id';
     }
 }

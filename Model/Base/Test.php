@@ -5,9 +5,8 @@ namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
 use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
-class Test extends Base\ModelClass {
+abstract class Test extends Base\ModelClass {
 
-    use Base\ModelTrait;
 
     /**
      *
@@ -61,13 +60,5 @@ class Test extends Base\ModelClass {
         $this->modificationTime = date(self::HOUR_STYLE);
     }
 
-    #[\Override]
-    public static function primaryColumn(): string {
-        return 'id';
-    }
-
-    #[\Override]
-    public static function tableName(): string {
-        return '';
-    }
+   
 }

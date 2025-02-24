@@ -44,8 +44,7 @@ class PatientJoin extends JoinModel{
         return 'clientes'
             . ' INNER JOIN oft_patients patients ON clientes.codcliente = patients.codcliente'
             . ' LEFT JOIN gruposclientes clientGroup ON clientes.codgrupo = clientGroup.codgrupo'
-             . ' LEFT JOIN oft_expedients expedients ON patients.codcliente = expedients.codcliente'
-            ;
+             . ' LEFT JOIN oft_expedients expedients ON patients.codcliente = expedients.codcliente';
     }
 
     #[\Override]

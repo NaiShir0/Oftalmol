@@ -60,7 +60,10 @@ class EditExpedient extends EditController {
                 }
                 break;
             case Constants::VIEW_LIST_REFRACTIONTEST:
-                $where = [new DataBaseWhere('id', $idexpedient)];
+                $where = [new DataBaseWhere('acuity.id', $idexpedient)];
+                break;
+            case Constants::VIEW_LIST_SLITLAMP:
+                $where = [new DataBaseWhere('slitlamp.id', $idexpedient)];
                 break;
             case Constants::VIEW_EDIT_ANAMNESIS:
             case Constants::VIEW_EDIT_PROFESIONALNOTE:
@@ -88,7 +91,7 @@ class EditExpedient extends EditController {
         $this->createViewAnamnesis();
         $this->createViewProfesionalNote();
         $this->createViewRefraction();
-        //$this->createViewFissureLamp();
+        $this->createViewSlitLamp();
         //$this->createViewFuncionMotora();
         //$this->createViewPresionIntraocular();
         //$this->createViewViaLagrimal();
@@ -159,15 +162,42 @@ class EditExpedient extends EditController {
           $this->views[$viewName]->addFilterSelect('type', 'acuity-tests', 'tipo', $values); */
     }
 
+    private function createViewSlitLamp(string $viewName = Constants::VIEW_LIST_SLITLAMP) {
+        $this->addListView($viewName, 'Join\SlitLampJoin', 'slimLampTests', 'fas fa-laptop-medical');
+        $this->setSettings($viewName, 'btnNew', false);
+        $this->setSettings($viewName, 'btnDelete', false);
+
+        /* $this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
+
+          $i18n = $this->toolBox()->i18n();
+          $values = [
+          ['code' => 0, 'description' => '----------------------'],
+          ['code' => PruebaGraduacion::TIPO_BIOMICROSCOPIA, 'description' => $i18n->trans('biomicroscopy')],
+          ['code' => PruebaGraduacion::TIPO_FONDOOJOS, 'description' => $i18n->trans('eye-fundus')],
+          ['code' => PruebaGraduacion::TIPO_GONIOSCOPIA, 'description' => $i18n->trans('gonioscopy')],
+          ];
+          $this->views[$viewName]->addFilterSelect('type', 'fissure-lamp-tests', 'pruebas.tipo', $values);
+         * 
+         */
+    }
+
     #[\Override]
     protected function execPreviousAction($action) {
         switch ($action) {
             case Constants::ACTION_NEW_TEST_REFRACTION:
                 $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('typeTest', 0);
-                Tools::log()->warning($idExpedient);
+                $newtype = $this->request->request->get('idTestType', 0);
+                //Tools::log()->warning($idExpedient);
                 if (false === empty($idExpedient)) {
                     $this->redirect('EditTestRefraction?code=' . $idExpedient . '&newtest=' . $newtype, 0);
+                    return false;
+                }
+                return true;
+            case Constants::ACTION_NEW_TEST_SLITLAMP:
+                $idExpedient = (int) $this->request->get('code', 0);
+                $newtype = $this->request->request->get('idTestType', 0);
+                if (false === empty($idExpedient)) {
+                    $this->redirect('EditTestSlitLamp?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
                 }
                 return true;

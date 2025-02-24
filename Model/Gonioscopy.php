@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This file is part of Oftalmologia plugin for FacturaScripts.
  * FacturaScripts Copyright (C) 2015-2022 Carlos Garcia Gomez <carlos@facturascripts.com>
@@ -10,23 +11,28 @@
 
 namespace FacturaScripts\Plugins\Oftalmol\Model;
 
-use FacturaScripts\Core\Model\Base;
 use FacturaScripts\Plugins\Oftalmol\src\TestTypes;
-use FacturaScripts\Plugins\Oftalmol\src\Constants;
+use FacturaScripts\Plugins\Oftalmol\Model\Base\Test;
+use FacturaScripts\Core\Model\Base;
 
-class Gonioscopy extends Base\Test
-{
+class Gonioscopy extends Test {
     use Base\ModelTrait;
-
     /**
      * Reset the values of all model properties.
      * Set the medical test type.
      */
-    public function clear()
-    {
+    #[\Override]
+    public function clear() {
         parent::clear();
         $this->idTestType = TestTypes::TEST_TYPE_GONIOSCOPY;
-        $this->idSpeciality = Constants::SPECIALITE_OPHTALMOLOGY;
-        $this->date = date(self::DATETIME_STYLE);
+    }
+
+    #[\Override]
+    public static function tableName(): string {
+        return 'oft_slitlamps';
+    }
+    #[\Override]
+    public static function primaryColumn(): string {
+        return 'id';
     }
 }
