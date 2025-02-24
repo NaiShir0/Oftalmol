@@ -9,6 +9,9 @@ class Constants {
     //ADMIN
     const VIEW_LIST_REASON = 'ListReason';
     
+    //LOGS
+    const LOG_OFTALMOL = 'Oftalmología';
+    
 
     //VIEWS
     const VIEW_EDIT_PATIENT = 'EditPatient';

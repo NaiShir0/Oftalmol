@@ -21,6 +21,11 @@
         <null>NO</null>
     </column>
     <column>
+        <name>nick</name>
+        <type>varchar(50)</type>
+        <null>NO</null>
+    </column>
+    <column>
         <name>creationDate</name>
         <type>date</type>
         <null>NO</null>

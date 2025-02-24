@@ -6,18 +6,17 @@
     
     "reasonName": "Motivo de consulta",
     "birthDate": "Fecha de Nacimiento",
-    
+
     "creationDate": "Fecha de creación",
     "creationTime": "Hora de creación",
-    "modificationDate": "Fecha de modirficación",
-    "modificationTime": "Hora de modirficación",
+    "modificationDate": "Fecha de modificación",
+    "modificationTime": "Hora de modificación",
     "release": "Fecha de Alta médica",
-    
+
     "queryReason": "Motivos de consulta",
     "administration": "Administración",
-    
+
     "anamnesis": "Anamnesis",
-    "profesionalNote": "Notas del Profesional",
     "refractionTests": "Pruebas de Refracción",
     "slitLampTests": "Lámpara de Hendidura",
     "intraocularPressureTests": "Presión Intraocular",
@@ -28,11 +27,19 @@
     "autorefractometer": "Autorefractómetro",
     "shiascopy": "Esquiascopia",
     "Frontofocometer": "Frontofocómetro",
-    
+    "Biomicroscopy": "Biomicroscopia",
+    "EyeFundus": "Fondo de ojos",
+    "Gonioscopy": "Gonioscopia",
+    "Tonometry": "Tonometría",
+    "TonometryBraley": "Tonometría de Braley",
+    "Pachymetry": "Paquimetría",
+
     "ODfar": "OD Lejos",
     "OSfar": "OS Lejos",
     "ODclose": "OD Cerca",
     "OSclose": "OS Cerca",
+    "ODnote": "OD Observaciones",
+    "OSnote": "OS Observaciones",
     "farNotes": "Observaciones de lejos",
     "closeNotes": "Observaciones de cerca",
     "ODfarSphere": "OD esfera lejos",
@@ -45,8 +52,12 @@
     "OSfarPrism": "OS prisma lejos",
     "ODfarAddition": "OD adición lejos",
     "OSfarAddition": "OS adición lejos",
-    
+
     "withoutCycle": "Sin Ciclo",
     "withCycle": "Con Ciclo",
+
+    "profesionalNote": "Notas del Profesional",
+    "generalNote": "Observaciones Generales",
+
     "": ""
 }

@@ -41,6 +41,10 @@ class EditExpedient extends EditController {
         $mainViewName = $this->getMainViewName();
         $idexpedient = $this->getViewModelValue($mainViewName, 'id');
         $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
+                                
+        $user = \FacturaScripts\Core\Session::user();
+        Tools::log()->notice('Usuario: ' . $this->user->nick );
+        
 
         if ($viewName === $mainViewName) {
             parent::loadData($viewName, $view);

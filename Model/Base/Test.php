@@ -3,6 +3,7 @@
 namespace FacturaScripts\Plugins\Oftalmol\Model\Base;
 
 use FacturaScripts\Core\Model\Base;
+use FacturaScripts\Core\Session;
 use FacturaScripts\Plugins\Oftalmol\src\Constants;
 
 abstract class Test extends Base\ModelClass {
@@ -49,7 +50,8 @@ abstract class Test extends Base\ModelClass {
      * @var string
      */
     public $professionalNote;
-
+    public $nick;
+    
     #[\Override]
     public function clear() {
         parent::clear();
@@ -58,6 +60,7 @@ abstract class Test extends Base\ModelClass {
         $this->creationTime = date(self::HOUR_STYLE);
         $this->modificationDate = date(self::DATE_STYLE);
         $this->modificationTime = date(self::HOUR_STYLE);
+        $this->nick = Session::user()->nick;
     }
 
    
