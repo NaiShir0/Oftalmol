@@ -52,7 +52,7 @@ class Init extends InitClass {
         new Biomicroscopy();
         new Tonometry();
         //new TestIshihara();
-        //new AgudezaVisualCon();
+        new Model\TestJones();
         //new Queratometria();
         //new PlantillaImprimir();
     }

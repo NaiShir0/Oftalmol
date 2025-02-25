@@ -67,13 +67,15 @@ class EditExpedient extends EditController {
             case Constants::VIEW_LIST_REFRACTIONTEST:
             case Constants::VIEW_LIST_OPTICALPRESCRIPTION:
                 $where = [new DataBaseWhere('acuity.id', $idexpedient)];
-
                 break;
             case Constants::VIEW_LIST_SLITLAMP:
                 $where = [new DataBaseWhere('slitlamp.id', $idexpedient)];
                 break;
             case Constants::VIEW_LIST_INTRAOCULARPRESSURE:
                 $where = [new DataBaseWhere('intraocularpressure.id', $idexpedient)];
+                break;
+            case Constants::VIEW_LIST_TEARDUCT:
+                $where = [new DataBaseWhere('tearducts.id', $idexpedient)];
                 break;
             case Constants::VIEW_EDIT_ANAMNESIS:
             case Constants::VIEW_EDIT_PROFESIONALNOTE:
@@ -103,8 +105,8 @@ class EditExpedient extends EditController {
         $this->createViewRefraction();
         $this->createViewSlitLamp();
         //$this->createViewFuncionMotora();
-        $this->createViewIntraocularPressure();
-        //$this->createViewViaLagrimal();
+        //$this->createViewIntraocularPressure();
+        $this->createViewTearDuct();
         //$this->createViewExploration();
         //$this->createViewTest();
         //$this->createViewComplementary();
@@ -193,6 +195,25 @@ class EditExpedient extends EditController {
          */
     }
 
+    private function createViewTearDuct(string $viewName = Constants::VIEW_LIST_TEARDUCT) {
+        $this->addListView($viewName, 'Join\TearDuctJoin', 'tearDuctTests', 'fas fa-laptop-medical');
+        $this->setSettings($viewName, 'btnNew', false);
+        $this->setSettings($viewName, 'btnDelete', false);
+
+        /* $this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
+
+          $i18n = $this->toolBox()->i18n();
+          $values = [
+          ['code' => 0, 'description' => '----------------------'],
+          ['code' => PruebaGraduacion::TIPO_BIOMICROSCOPIA, 'description' => $i18n->trans('biomicroscopy')],
+          ['code' => PruebaGraduacion::TIPO_FONDOOJOS, 'description' => $i18n->trans('eye-fundus')],
+          ['code' => PruebaGraduacion::TIPO_GONIOSCOPIA, 'description' => $i18n->trans('gonioscopy')],
+          ];
+          $this->views[$viewName]->addFilterSelect('type', 'fissure-lamp-tests', 'pruebas.tipo', $values);
+         * 
+         */
+    }
+
     private function createViewIntraocularPressure(string $viewName = Constants::VIEW_LIST_INTRAOCULARPRESSURE) {
         $this->addListView($viewName, 'Join\IntraocularPressureJoin', 'intraocularPressureTests', 'fas fa-laptop-medical');
         $this->setSettings($viewName, 'btnNew', false);
@@ -237,6 +258,14 @@ class EditExpedient extends EditController {
                 $newtype = $this->request->request->get('idTestType', 0);
                 if (false === empty($idExpedient)) {
                     $this->redirect('EditTestSlitLamp?code=' . $idExpedient . '&newtest=' . $newtype, 0);
+                    return false;
+                }
+                return true;
+            case Constants::ACTION_NEW_TEST_TEARDUCT:
+                $idExpedient = (int) $this->request->get('code', 0);
+                $newtype = $this->request->request->get('idTestType', 0);
+                if (false === empty($idExpedient)) {
+                    $this->redirect('EditTestTearDuct?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
                 }
                 return true;

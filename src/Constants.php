@@ -48,6 +48,12 @@ class Constants {
     const VIEW_LIST_OPTICALPRESCRIPTION = 'EditTestOpticalPrescription';
     const VIEW_EDIT_OPTICALPRESCRIPTION = 'EditOpticalPrescription';
     
+    //TEAR DUCT TESTS VIEWS
+    const VIEW_LIST_TEARDUCT = 'EditTestIntraocularPressure';
+    const VIEW_EDIT_TESTJONES = 'EditTestJones';
+    const VIEW_EDIT_TEARDUCTPROBING = 'EditTearDuctProbing';
+    const VIEW_EDIT_TESTSCHIRMER = 'EditTestSchirmer';
+    
     //ACTIONS
     //const ACTION_OPEN_EXPEDIENT = 'open-expedient';
     //const ACTION_CLOSE_EXPEDIENT = 'close-expedient';
@@ -58,4 +64,5 @@ class Constants {
     const ACTION_NEW_TEST_SLITLAMP = 'newTestSlitLamp';
     const ACTION_NEW_TEST_INTRAOCULARPRESSURE = 'newTestIntraocularPressure';
     const ACTION_NEW_TEST_OPTICALPRESCRIPTION = 'newTestOpticalPrescription';
+    const ACTION_NEW_TEST_TEARDUCT = 'newTestTearDuct';
 }
