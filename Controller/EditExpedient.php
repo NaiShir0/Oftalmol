@@ -149,7 +149,7 @@ class EditExpedient extends EditController {
     }
 
     private function createViewOpticalPrescription(string $viewName = Constants::VIEW_LIST_OPTICALPRESCRIPTION) {
-        $this->addEditListView($viewName, 'Join\RefractionJoin', 'opticalPrescriptionTests', 'fas fa-glasses');
+        $this->addListView($viewName, 'OpticalPrescription', 'opticalPrescriptionTests', 'fas fa-glasses');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
     }
