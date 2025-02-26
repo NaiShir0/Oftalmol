@@ -52,7 +52,7 @@ class EditExpedient extends EditController {
             if (false === empty($idpatient)) {
                 $this->addActionsButton();
             }
-            //$this->setValueSelectFechas($idexpedient);
+//$this->setValueSelectFechas($idexpedient);
             return;
         }
 
@@ -104,17 +104,17 @@ class EditExpedient extends EditController {
         $this->createViewProfesionalNote();
         $this->createViewRefraction();
         $this->createViewSlitLamp();
-        //$this->createViewFuncionMotora();
-        //$this->createViewIntraocularPressure();
+//$this->createViewFuncionMotora();
+//$this->createViewIntraocularPressure();
         $this->createViewTearDuct();
-        //$this->createViewExploration();
-        //$this->createViewTest();
-        //$this->createViewComplementary();
+//$this->createViewExploration();
+//$this->createViewTest();
+//$this->createViewComplementary();
         $this->createViewEvolution();
         $this->createViewClinicalJudgment();
         $this->createViewTreatment();
         $this->createViewopticalPrescription();
-        //$this->createViewExpedientFiles();
+//$this->createViewExpedientFiles();
     }
 
     private function createViewPatient(string $viewName = Constants::VIEW_LIST_PATIENT) {
@@ -161,8 +161,8 @@ class EditExpedient extends EditController {
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 
-        //$this->views[$viewName]->addOrderBy(['COALESCE(graduaciones.fecha)'], 'date', 2);
-        //$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
+//$this->views[$viewName]->addOrderBy(['COALESCE(graduaciones.fecha)'], 'date', 2);
+//$this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
         /* $this->views[$viewName]->addOrderBy(['fecha'], 'date', 2);
           $i18n = $this->toolBox()->i18n();
           $values = [
@@ -235,50 +235,30 @@ class EditExpedient extends EditController {
 
     #[\Override]
     protected function execPreviousAction($action) {
-        switch ($action) {
-            case Constants::ACTION_NEW_TEST_REFRACTION:
-                $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('idTestType', 0);
-                //Tools::log()->warning($idExpedient);
-                if (false === empty($idExpedient)) {
+        $idExpedient = (int) $this->request->get('code', 0);
+        $newtype = $this->request->request->get('idTestType', 0);
+        if (!empty($idExpedient)) {
+            switch ($action) {
+                case Constants::ACTION_NEW_TEST_REFRACTION:
                     $this->redirect('EditTestRefraction?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
-                }
-                return true;
-            case Constants::ACTION_NEW_TEST_OPTICALPRESCRIPTION:
-                $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('idTestType', 0);
-                if (false === empty($idExpedient)) {
+                case Constants::ACTION_NEW_TEST_OPTICALPRESCRIPTION:
                     $this->redirect('EditTestOpticalPrescription?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
-                }
-                return true;
-            case Constants::ACTION_NEW_TEST_SLITLAMP:
-                $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('idTestType', 0);
-                if (false === empty($idExpedient)) {
+                case Constants::ACTION_NEW_TEST_SLITLAMP:
                     $this->redirect('EditTestSlitLamp?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
-                }
-                return true;
-            case Constants::ACTION_NEW_TEST_TEARDUCT:
-                $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('idTestType', 0);
-                if (false === empty($idExpedient)) {
+                case Constants::ACTION_NEW_TEST_TEARDUCT:
                     $this->redirect('EditTestTearDuct?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
-                }
-                return true;
-            case Constants::ACTION_NEW_TEST_INTRAOCULARPRESSURE:
-                $idExpedient = (int) $this->request->get('code', 0);
-                $newtype = $this->request->request->get('idTestType', 0);
-                if (false === empty($idExpedient)) {
+                case Constants::ACTION_NEW_TEST_INTRAOCULARPRESSURE:
                     $this->redirect('EditTestIntraocularPressure?code=' . $idExpedient . '&newtest=' . $newtype, 0);
                     return false;
-                }
-                return true;
-            default:
-                return parent::execPreviousAction($action);
+                default:
+                    return parent::execPreviousAction($action);
+            }
+        } else {
+            return true;
         }
     }
 
@@ -327,7 +307,7 @@ class EditExpedient extends EditController {
             'label' => 'print-dossier',
             'type' => 'modal',
                 // level para que sólo le aparezca el botón a los administradores
-                //'level' => '99'
+//'level' => '99'
         ]);
     }
 
