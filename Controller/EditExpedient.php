@@ -46,19 +46,19 @@ class EditExpedient extends EditController {
         $mainViewName = $this->getMainViewName();
         $idexpedient = $this->getViewModelValue($mainViewName, 'id');
         $idpatient = $this->getViewModelValue($mainViewName, 'codcliente');
+        $where = NULL;
 
         if ($viewName === $mainViewName) {
             parent::loadData($viewName, $view);
-            if (false === empty($idpatient)) {
+            if (!empty($idpatient)) {
                 $this->addActionsButton();
             }
 //$this->setValueSelectFechas($idexpedient);
             return;
         }
-
         switch ($viewName) {
             case Constants::VIEW_LIST_PATIENT:
-                if (false === empty($idpatient)) {
+                if (!empty($idpatient)) {
                     $view->loadData($idpatient);
                     $view->model->loadClientData();
                     $view->count = -1;
@@ -75,6 +75,7 @@ class EditExpedient extends EditController {
                 $where = [new DataBaseWhere('intraocularpressure.id', $idexpedient)];
                 break;
             case Constants::VIEW_LIST_TEARDUCT:
+                \FacturaScripts\Core\Tools::log()->warning($idexpedient);
                 $where = [new DataBaseWhere('tearducts.id', $idexpedient)];
                 break;
             case Constants::VIEW_EDIT_ANAMNESIS:
@@ -105,7 +106,7 @@ class EditExpedient extends EditController {
         $this->createViewRefraction();
         $this->createViewSlitLamp();
 //$this->createViewFuncionMotora();
-//$this->createViewIntraocularPressure();
+        $this->createViewIntraocularPressure();
         $this->createViewTearDuct();
 //$this->createViewExploration();
 //$this->createViewTest();
@@ -195,8 +196,11 @@ class EditExpedient extends EditController {
          */
     }
 
-    private function createViewTearDuct(string $viewName = Constants::VIEW_LIST_TEARDUCT) {
-        $this->addListView($viewName, 'Join\TearDuctJoin', 'tearDuctTests', 'fas fa-laptop-medical');
+    
+
+    private function createViewIntraocularPressure(string $viewName = Constants::VIEW_LIST_INTRAOCULARPRESSURE) {
+        \FacturaScripts\Core\Tools::log()->warning($viewName);
+        $this->addListView($viewName, 'Join\IntraocularPressureJoin', 'intraocularPressureTests', 'fas fa-laptop-medical');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 
@@ -213,9 +217,9 @@ class EditExpedient extends EditController {
          * 
          */
     }
-
-    private function createViewIntraocularPressure(string $viewName = Constants::VIEW_LIST_INTRAOCULARPRESSURE) {
-        $this->addListView($viewName, 'Join\IntraocularPressureJoin', 'intraocularPressureTests', 'fas fa-laptop-medical');
+    
+    private function createViewTearDuct(string $viewName = Constants::VIEW_LIST_TEARDUCT) {
+        $this->addListView($viewName, 'Join\TearDuctJoin', 'tearDuctTests', 'fas fa-laptop-medical');
         $this->setSettings($viewName, 'btnNew', false);
         $this->setSettings($viewName, 'btnDelete', false);
 
@@ -237,7 +241,9 @@ class EditExpedient extends EditController {
     protected function execPreviousAction($action) {
         $idExpedient = (int) $this->request->get('code', 0);
         $newtype = $this->request->request->get('idTestType', 0);
+
         if (!empty($idExpedient)) {
+
             switch ($action) {
                 case Constants::ACTION_NEW_TEST_REFRACTION:
                     $this->redirect('EditTestRefraction?code=' . $idExpedient . '&newtest=' . $newtype, 0);

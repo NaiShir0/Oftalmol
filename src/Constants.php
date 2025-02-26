@@ -49,7 +49,7 @@ class Constants {
     const VIEW_EDIT_OPTICALPRESCRIPTION = 'EditOpticalPrescription';
     
     //TEAR DUCT TESTS VIEWS
-    const VIEW_LIST_TEARDUCT = 'EditTestIntraocularPressure';
+    const VIEW_LIST_TEARDUCT = 'EditTestTearDuct';
     const VIEW_EDIT_TESTJONES = 'EditTestJones';
     const VIEW_EDIT_TEARDUCTPROBING = 'EditTearDuctProbing';
     const VIEW_EDIT_TESTSCHIRMER = 'EditTestSchirmer';
